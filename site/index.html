@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>placebo.wiki: работает ли БАД лучше плацебо</title>
+<meta name="description" content="Вбейте БАД или цель и получите ответ: работает ли, в какой дозе, что говорят обзоры исследований.">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="icon" href="img/logo.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="img/icon-180.png">
+<meta property="og:image" content="https://placebo.wiki/img/og.png">
+<meta property="og:site_name" content="placebo.wiki">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="fonts/Inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="search.css">
+</head>
+<body>
+<nav class="bar"><a href="./" class="bar-mark" id="home" aria-label="placebo.wiki"><svg class="bar-svg" viewBox="0 0 512 512" aria-hidden="true"><defs><mask id="lm"><rect width="512" height="512" fill="#fff"/><g fill="#000" transform="translate(-33 -4)"><rect x="150" y="140" width="64" height="240" rx="32"/><circle cx="266" cy="236" r="96"/><circle class="lm-dot" cx="394" cy="298" r="34"/></g><circle cx="233" cy="232" r="40" fill="#fff"/></mask></defs><rect width="512" height="512" rx="116" fill="currentColor" mask="url(#lm)"/></svg></a><div class="bar-links"><a href="b/">Все БАДы</a><a href="about.html">Наши правила</a><a href="mcp.html">Для агентов</a></div></nav>
+
+<header class="top" id="top">
+  <a href="./" class="logo" id="logo"><span class="logo-word">placebo<span>.wiki</span></span></a>
+  <form class="field" id="form" role="search">
+    <input id="q" type="search" placeholder="БАД, проблема или ссылка" autocomplete="off" autofocus aria-label="БАД или цель">
+    <button aria-label="Найти"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    <a class="mymap" href="profile.html" aria-label="Моя карта здоровья"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><span class="tip">Моя карта здоровья</span></a>
+    <div class="sugg" id="sugg" hidden></div>
+  </form>
+  <!--stats--><div class="st" id="stats"><div class="st-big">158 676</div><p class="st-cap">исследований собрано. <b>378</b> сильнейших легли в вердикты по <b>134</b> БАДам</p><div class="st-bar" role="img" aria-label="Из собранного: 17 824 мета-анализа, 93 022 РКИ, 23 002 испытания без рандомизации и наблюдения, 24 828 прочих: опыты на животных, обзоры"><span class="st-meta" style="flex:17824" data-t="17 824 мета-анализа"></span><span class="st-rct" style="flex:93022" data-t="93 022 РКИ"></span><span class="st-obs" style="flex:23002" data-t="23 002 испытания без рандомизации и наблюдения"></span><span class="st-other" style="flex:24828" data-t="24 828 прочих: опыты на животных, обзоры"></span></div><p class="st-leg" id="st-leg">мета-анализы · РКИ · наблюдения · прочее</p></div><!--/stats-->
+  <div class="top-q" id="chips"></div>
+  <p class="top-note" id="top-note"></p>
+</header>
+
+<main id="out"></main>
+
+<footer><a href="about.html">Наши правила</a><a href="privacy.html">Конфиденциальность</a><a href="mcp.html">MCP для агентов</a><a href="https://github.com/placebo-wiki/placebo-wiki">Открытый код</a><span>Не лекарство. Перед приёмом посоветуйтесь с врачом.</span></footer>
+
+<script src="catalog.js"></script>
+<script src="profile.js"></script>
+<script src="check.js"></script>
+<script src="account.js"></script>
+<script src="search.js"></script>
+<script src="metrika.js"></script>
+</body>
+</html>

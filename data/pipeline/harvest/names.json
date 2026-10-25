@@ -1,0 +1,460 @@
+{
+ "kreatin": [
+  "creatine"
+ ],
+ "omega-3": [
+  "omega-3",
+  "fish oil",
+  "n-3 fatty acids",
+  "omega-3 fatty acids"
+ ],
+ "vitamin-d": [
+  "vitamin D",
+  "cholecalciferol",
+  "ergocalciferol",
+  "vitamin D3"
+ ],
+ "b12": [
+  "vitamin B12",
+  "cobalamin",
+  "cyanocobalamin",
+  "methylcobalamin"
+ ],
+ "magniy": [
+  "magnesium"
+ ],
+ "kofein": [
+  "caffeine"
+ ],
+ "l-teanin": [
+  "theanine",
+  "L-theanine"
+ ],
+ "bakopa": [
+  "Bacopa monnieri",
+  "Bacopa monniera",
+  "brahmi"
+ ],
+ "ezhovik": [
+  "Hericium erinaceus",
+  "lion's mane"
+ ],
+ "ginkgo": [
+  "Ginkgo biloba"
+ ],
+ "rodiola": [
+  "Rhodiola rosea",
+  "rhodiola"
+ ],
+ "ashvaganda": [
+  "ashwagandha",
+  "Withania somnifera"
+ ],
+ "fosfatidilserin": [
+  "phosphatidylserine"
+ ],
+ "alpha-gpc": [
+  "Alpha-GPC"
+ ],
+ "cdp-holin": [
+  "citicoline",
+  "CDP-choline"
+ ],
+ "guperzin-a": [
+  "huperzine A"
+ ],
+ "kurkumin": [
+  "curcumin",
+  "turmeric",
+  "Curcuma longa"
+ ],
+ "resveratrol": [
+  "resveratrol"
+ ],
+ "nac": [
+  "acetylcysteine",
+  "N-acetylcysteine",
+  "N-acetyl cysteine"
+ ],
+ "tsink": [
+  "zinc"
+ ],
+ "tirozin": [
+  "tyrosine"
+ ],
+ "taurin": [
+  "taurine"
+ ],
+ "coq10": [
+  "coenzyme Q10",
+  "ubiquinone",
+  "ubiquinol"
+ ],
+ "piknogenol": [
+  "pycnogenol"
+ ],
+ "gotu-kola": [
+  "Centella asiatica"
+ ],
+ "melatonin": [
+  "melatonin"
+ ],
+ "gaba": [
+  "GABA"
+ ],
+ "glitsin": [
+  "glycine"
+ ],
+ "valeriana": [
+  "valerian",
+  "Valeriana officinalis"
+ ],
+ "beta-alanin": [
+  "beta-alanine"
+ ],
+ "l-tsitrullin": [
+  "citrulline"
+ ],
+ "vitamin-c": [
+  "vitamin C",
+  "ascorbic acid"
+ ],
+ "ehinatseya": [
+  "Echinacea"
+ ],
+ "buzina": [
+  "elderberry"
+ ],
+ "zveroboy": [
+  "St John's wort",
+  "Hypericum perforatum",
+  "hypericum"
+ ],
+ "5-htp": [
+  "5-hydroxytryptophan",
+  "5-HTP"
+ ],
+ "kollagen": [
+  "collagen"
+ ],
+ "probiotiki": [
+  "probiotic",
+  "probiotics",
+  "Lactobacillus",
+  "Bifidobacterium"
+ ],
+ "b9": [
+  "folic acid",
+  "folate",
+  "methylfolate"
+ ],
+ "zhelezo": [
+  "iron"
+ ],
+ "triptofan": [
+  "tryptophan"
+ ],
+ "glyukozamin-hondroitin": [
+  "glucosamine",
+  "chondroitin"
+ ],
+ "vitamin-e": [
+  "vitamin E",
+  "tocopherol",
+  "tocotrienol"
+ ],
+ "biotin": [
+  "biotin"
+ ],
+ "l-karnitin": [
+  "carnitine",
+  "L-carnitine",
+  "acetyl-L-carnitine"
+ ],
+ "bcaa": [
+  "branched-chain amino acids",
+  "BCAA",
+  "leucine"
+ ],
+ "arginin": [
+  "arginine"
+ ],
+ "kaltsiy": [
+  "calcium"
+ ],
+ "gialuronovaya-kislota": [
+  "hyaluronic acid"
+ ],
+ "psillium": [
+  "psyllium",
+  "Plantago ovata",
+  "ispaghula"
+ ],
+ "imbir": [
+  "ginger"
+ ],
+ "chesnok": [
+  "garlic"
+ ],
+ "klyukva": [
+  "cranberry"
+ ],
+ "pustyrnik": [
+  "motherwort"
+ ],
+ "boyaryshnik": [
+  "hawthorn"
+ ],
+ "beta-glyukany-ovsa": [
+  "oat beta-glucan"
+ ],
+ "riboflavin": [
+  "riboflavin"
+ ],
+ "lyutein-zeaksantin": [
+  "lutein",
+  "zeaxanthin"
+ ],
+ "inozitol": [
+  "inositol"
+ ],
+ "alfa-lipoevaya-kislota": [
+  "alpha-lipoic acid"
+ ],
+ "d-mannoza": [
+  "D-mannose"
+ ],
+ "maka": [
+  "maca",
+  "Lepidium meyenii"
+ ],
+ "hrom": [
+  "chromium"
+ ],
+ "astaksantin": [
+  "astaxanthin"
+ ],
+ "rastoropsha": [
+  "milk thistle",
+  "silymarin",
+  "Silybum marianum"
+ ],
+ "laktoferrin": [
+  "lactoferrin"
+ ],
+ "same": [
+  "S-adenosylmethionine"
+ ],
+ "yohimbin": [
+  "yohimbine"
+ ],
+ "pazhitnik": [
+  "fenugreek"
+ ],
+ "chernyy-tmin": [
+  "Nigella sativa"
+ ],
+ "tribulus": [
+  "Tribulus terrestris"
+ ],
+ "nmn": [
+  "nicotinamide mononucleotide"
+ ],
+ "korditseps": [
+  "Cordyceps"
+ ],
+ "reyshi": [
+  "Ganoderma lucidum"
+ ],
+ "hlorofill": [
+  "chlorophyll"
+ ],
+ "syvorotochnyy-protein": [
+  "whey protein"
+ ],
+ "glutamin": [
+  "glutamine"
+ ],
+ "bosvelliya": [
+  "Boswellia"
+ ],
+ "vitamin-k2": [
+  "vitamin K2",
+  "menaquinone",
+  "menaquinone-7"
+ ],
+ "berberin": [
+  "berberine"
+ ],
+ "kvertsetin": [
+  "quercetin"
+ ],
+ "shatavari": [
+  "Asparagus racemosus"
+ ],
+ "astragal": [
+  "Astragalus"
+ ],
+ "shlemnik": [
+  "Scutellaria baicalensis"
+ ],
+ "passiflora": [
+  "Passiflora"
+ ],
+ "melissa": [
+  "Melissa officinalis"
+ ],
+ "lavanda": [
+  "lavender"
+ ],
+ "chaga": [
+  "Inonotus obliquus"
+ ],
+ "shiitake": [
+  "Lentinula edodes"
+ ],
+ "glutation": [
+  "glutathione"
+ ],
+ "pqq": [
+  "pyrroloquinoline quinone"
+ ],
+ "sulforafan": [
+  "sulforaphane"
+ ],
+ "msm": [
+  "methylsulfonylmethane"
+ ],
+ "gimnema": [
+  "Gymnema"
+ ],
+ "b1": [
+  "thiamine",
+  "thiamin",
+  "benfotiamine"
+ ],
+ "holin": [
+  "choline"
+ ],
+ "epa": [
+  "eicosapentaenoic acid"
+ ],
+ "vitamin-a": [
+  "vitamin A",
+  "retinol"
+ ],
+ "b2": [
+  "riboflavin"
+ ],
+ "b3": [
+  "niacin",
+  "nicotinic acid",
+  "nicotinamide"
+ ],
+ "b5": [
+  "pantothenic acid"
+ ],
+ "b6": [
+  "vitamin B6",
+  "pyridoxine"
+ ],
+ "lizin": [
+  "lysine"
+ ],
+ "kremniy": [
+  "silicon"
+ ],
+ "hmb": [
+  "beta-hydroxy-beta-methylbutyrate"
+ ],
+ "karnozin": [
+  "carnosine"
+ ],
+ "zhenshen": [
+  "ginseng",
+  "Panax ginseng",
+  "ginsenoside"
+ ],
+ "selen": [
+  "selenium"
+ ],
+ "yod": [
+  "iodine"
+ ],
+ "molibden": [
+  "molybdenum"
+ ],
+ "vitamin-k1": [
+  "phylloquinone"
+ ],
+ "niatsinamid": [
+  "niacinamide"
+ ],
+ "tsistein": [
+  "cysteine"
+ ],
+ "s-boulardii": [
+  "Saccharomyces boulardii"
+ ],
+ "lgg": [
+  "Lactobacillus rhamnosus GG"
+ ],
+ "b-lactis": [
+  "Bifidobacterium lactis"
+ ],
+ "dha": [
+  "docosahexaenoic acid"
+ ],
+ "gla": [
+  "gamma-linolenic acid"
+ ],
+ "med": [
+  "copper"
+ ],
+ "marganets": [
+  "manganese"
+ ],
+ "kaliy": [
+  "potassium"
+ ],
+ "bor": [
+  "boron"
+ ],
+ "betain": [
+  "betaine"
+ ],
+ "metionin": [
+  "methionine"
+ ],
+ "ornitin": [
+  "ornithine"
+ ],
+ "maytake": [
+  "Grifola frondosa"
+ ],
+ "paba": [
+  "para-aminobenzoic acid"
+ ],
+ "prolin": [
+  "proline"
+ ],
+ "serin": [
+  "serine"
+ ],
+ "alanin": [
+  "alanine"
+ ],
+ "tongkat": [
+  "Eurycoma longifolia",
+  "tongkat ali"
+ ],
+ "forskolin": [
+  "forskolin"
+ ],
+ "soy": [
+  "soy protein"
+ ],
+ "gels": [
+  "carbohydrate gel"
+ ]
+}

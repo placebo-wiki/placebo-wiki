@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>placebo.wiki: MCP для агентов</title>
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="icon" href="img/logo.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="img/icon-180.png">
+<meta property="og:image" content="https://placebo.wiki/img/og.png">
+<meta property="og:site_name" content="placebo.wiki">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="fonts/Inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="search.css">
+<style>
+  main { padding-top: 40px; }
+  pre { background: var(--soft); border-radius: 14px; padding: 16px; overflow-x: auto; font-size: 14px; line-height: 1.5; }
+  code { font-family: ui-monospace, "SF Mono", Menlo, monospace; }
+  li { line-height: 1.6; margin-bottom: 6px; }
+</style>
+</head>
+<body class="has-answer">
+<nav class="bar"><a href="./" class="bar-mark" id="home" aria-label="placebo.wiki"><svg class="bar-svg" viewBox="0 0 512 512" aria-hidden="true"><defs><mask id="lm"><rect width="512" height="512" fill="#fff"/><g fill="#000" transform="translate(-33 -4)"><rect x="150" y="140" width="64" height="240" rx="32"/><circle cx="266" cy="236" r="96"/><circle class="lm-dot" cx="394" cy="298" r="34"/></g><circle cx="233" cy="232" r="40" fill="#fff"/></mask></defs><rect width="512" height="512" rx="116" fill="currentColor" mask="url(#lm)"/></svg></a><div class="bar-links"><a href="b/">Все БАДы</a><a href="profile.html">Моя карта</a><a href="about.html">Наши правила</a><a href="mcp.html">Для агентов</a></div></nav>
+<main>
+  <a href="./" class="logo" style="font-size:22px;text-align:left"><span class="logo-word">placebo<span>.wiki</span></span></a>
+  <h1>MCP для агентов</h1>
+  <p class="lead">Подключите базу к Claude, Cursor или своему агенту: он будет отвечать о БАДах с уровнем доказанности и ссылками на исследования, а не выдумывать.</p>
+  <h2>Инструменты</h2>
+  <ul>
+    <li><code>search(query)</code>: найти БАД по названию или синониму, на русском или английском.</li>
+    <li><code>get_supplement(name)</code>: полная карточка: эффекты с уровнями, доза, верхний предел, формы, мифы, взаимодействия, источники (PMID, DOI).</li>
+    <li><code>by_goal(goal)</code>: что помогает для цели (сон, либидо, стресс и другие), самое надёжное первым.</li>
+    <li><code>list_goals()</code>: список целей.</li>
+  </ul>
+  <h2>Подключение (Claude Code)</h2>
+  <pre><code>claude mcp add bady -- uv run --script /путь/к/placebo-wiki/mcp/server.py</code></pre>
+  <p class="text">Нужен <code>uv</code>; зависимости он поставит сам.</p>
+</main>
+<script src="metrika.js"></script>
+</body>
+</html>
