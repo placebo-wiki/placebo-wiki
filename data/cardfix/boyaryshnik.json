@@ -1,0 +1,15 @@
+{
+ "id": "boyaryshnik",
+ "changes": {
+  "effects": [
+   {"text": "При ХСН помогает только как дополнение к стандартной терапии; здоровым пользы нет", "level": "зависит"},
+   {"text": "СН NYHA I-III: максимальная нагрузка +5.4-7 Вт, толерантность выше (855/632 чел.)", "level": "работает"},
+   {"text": "При СН: одышка и утомляемость ниже; двойное произведение в минус (-20)", "level": "работает"}
+  ]
+ },
+ "evidence": [
+  {"pmid": "18254076", "quote": "For the physiologic outcome of maximal workload, treatment with hawthorn extract was more beneficial than placebo"},
+  {"pmid": "18254076", "quote": "Symptoms such as shortness of breath and fatigue improved significantly with hawthorn treatment as compared with placebo"}
+ ],
+ "note": "Кокрановский обзор 2008 и мета-анализ 2003 согласованно показывают значимое увеличение максимальной нагрузки и уменьшение одышки/утомляемости при ХСН (как адъюнкт), поэтому уровни эффектов 1 и 2 подняты с «не подтверждено» до «работает»; условие «только как дополнение к терапии» сохранено в effect:0 со уровнем «зависит»."
+}

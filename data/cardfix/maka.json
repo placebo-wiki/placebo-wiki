@@ -1,0 +1,31 @@
+{
+  "id": "maka",
+  "changes": {
+    "myths": "«Афродизиак всем»: эффект в 3 из 4 РКИ, доказательства ограничены. «Качает тестостерон»: гормоны не меняются. «Менопауза решена»: 4/4 РКИ в плюс, качество низкое.",
+    "effects": [
+      {
+        "text": "Либидо: малые положительные МА; гормоны: нет",
+        "level": "не подтверждено"
+      },
+      {
+        "text": "Сексуальная функция в плюс в 3/4 РКИ (в т.ч. IIEF-5 при ЭД); limited evidence",
+        "level": "не подтверждено"
+      },
+      {
+        "text": "Kupperman/Greene в плюс (4/4 РКИ); качество низкое, безопасность не доказана",
+        "level": "не подтверждено"
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "pmid": "20691074",
+      "quote": "The further RCT assessed the effects of maca in patients with erectile dysfunction using the International Index of Erectile Dysfunction-5 and showed significant effects."
+    },
+    {
+      "pmid": "20691074",
+      "quote": "The results of our systematic review provide limited evidence for the effectiveness of maca in improving sexual function."
+    }
+  ],
+  "note": "Систематический обзор (2010) сообщает о значимом положительном эффекте в 3 из 4 РКИ (два РКИ у здоровых + РКИ при эректильной дисфункции по IIEF-5), а не в 2 из 4; исправлен счёт в effect:1 и в myths, уровень оставлен «не подтверждено», так как обзор называет доказательства ограниченными."
+}

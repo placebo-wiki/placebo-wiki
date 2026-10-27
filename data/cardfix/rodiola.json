@@ -1,0 +1,17 @@
+{
+ "id": "rodiola",
+ "changes": {
+  "effects": [
+   {"text": "Утомление при остром стрессе", "level": "зависит"},
+   {"text": "Психическая усталость: 3/5 РКИ в плюс, риск смещения высокий (SR 2012)", "level": "не подтверждено"},
+   {"text": "Спортивные результаты: мета-анализ 2025 года (26 РКИ) показал улучшение выносливости, но разброс между исследованиями большой", "level": "зависит"}
+  ]
+ },
+ "evidence": [
+  {
+   "pmid": "41080184",
+   "quote": "In conclusion, RR supplementation is an effective ergogenic aid for enhancing endurance performance and improving physiological biomarkers related to oxidative stress, muscle damage, and metabolic efficiency, though heterogeneity across studies warrants cautious interpretation."
+  }
+ ],
+ "note": "Эффект по спортивным результатам был «не подтверждено», но самый свежий и сильный обзор в базе (мета-анализ 2025 года, 26 РКИ, 668 участников) показывает значимое улучшение выносливости (VO2max, время до истощения); из-за высокой гетерогенности и риска смещения в более ранних обзорах уровень поставлен «зависит», а не «работает». Вердикт карточки «зависит» сохранён."
+}

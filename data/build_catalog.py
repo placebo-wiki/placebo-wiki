@@ -20,7 +20,8 @@ STRENGTH = {"сильно": "работает", "умеренно": "работ�
 GOALS = {
     "сон": ["сон", "засып", "бессон", "циркад"],
     "стресс": ["стресс", "тревог", "кортизол", "настроен", "депресс", "психик"],
-    "либидо": ["либидо", "сексуальн", "тестостерон", "эрекц", "эректил", "влечени"],
+    "либидо": ["либидо", "сексуальн", "влечени"],
+    "потенция": ["потенц(?!иальн)", "эрекц", "эректил"],
     "энергия": ["энерг", "усталост", "выносл", "производительн"],
     "мышцы": ["мышц", "спорт", "сила", "саркопен"],
     "иммунитет": ["иммун", "простуд", "орви", "вирус"],
@@ -32,6 +33,10 @@ GOALS = {
     "вес и сахар": ["вес", "жир", "метабол", "диабет", "глюкоз", "ожирен"],
     "щитовидка": ["щитовид", "йод"],
     "беременность": ["беремен", "плод"],
+    "тестостерон": ["тестостерон"],
+    "печень": ["печен", "гепат"],
+    "зрение": ["зрени", "глаз", "сетчат", "макул"],
+    "климакс": ["климакс", "менопауз", "прилив"],
 }
 
 ALIASES = {
@@ -71,6 +76,12 @@ OWN = [
 ]
 
 
+# Narrow goals are rarely named in effect lines, so their match also reads the summary and the "who needs" field.
+NARROW_GOALS = {"тестостерон", "печень", "зрение", "климакс", "потенция"}
+# The summary names it only as a failure ("неэффективна при … сухих глазах").
+NOT_GOAL = {"gla": {"зрение"}}
+
+
 def goals_of(text: str) -> list[str]:
     t = text.lower()
     return [g for g, words in GOALS.items() if any(re.search(r"(?<![а-яё])" + w, t) for w in words)]
@@ -89,6 +100,46 @@ def forms_from_map(substance: str) -> list[dict]:
 
 EVIDENCE_DIR = ROOT / "evidence"
 IDISK_DIR = ROOT / "evidence_idisk"
+
+# Indirect effects: substance -> mediator -> goal, curated in chains.json with sources.
+# The chain's level is its weakest link (his rule of 26.10), computed here, never written by hand.
+CHAINS = json.loads((ROOT / "chains.json").read_text())
+WEAK = {"работает": 0, "зависит": 1, "не подтверждено": 2}
+
+
+def indirect_of(sid: str) -> list[dict]:
+    out = []
+    for ln in CHAINS["links"]:
+        if ln["id"] != sid:
+            continue
+        med = CHAINS["mediators"][ln["mediator"]]
+        for g, rel in med["goals"].items():
+            level = max((ln["level"], rel["level"]), key=lambda x: WEAK[x])
+            out.append({"goal": g, "via": med["label"], "text": ln["text"], "note": rel["note"],
+                        "level": level, "sources": ln.get("sources") or []})
+    return out
+
+
+PATCH_DIR = ROOT / "cardfix"
+
+
+def apply_patches(rec: dict) -> dict:
+    """Card patches from data/cardfix/ (rule "freshest review wins", decision 28.10). Recomputes goals."""
+    f = PATCH_DIR / f"{rec['id']}.json"
+    if not f.exists():
+        return rec
+    p = json.loads(f.read_text())
+    ch = p.get("changes") or {}
+    for k, v in ch.items():
+        rec[k] = v
+    if {"effects", "about", "who_needs"} & set(ch):
+        rec["effects"] = with_goals([{**e} for e in rec["effects"]])
+        blob = " ".join([rec.get("category") or "", " ".join(e["text"] for e in rec["effects"])])
+        base = goals_of(blob)
+        rec["goals"] = base + [g for g in goals_of(f"{rec.get('about') or ''} {rec.get('who_needs') or ''}")
+                               if g in NARROW_GOALS and g not in base and g not in NOT_GOAL.get(rec["id"], set())]
+    rec["patched"] = {"pmids": [x.get("pmid") for x in p.get("evidence") or []], "note": p.get("note")}
+    return rec
 
 
 def enrich(rec: dict) -> dict:
@@ -114,11 +165,13 @@ def build():
         out.append({
             "id": slug(b["id"]), "name": b["name"], "aliases": ALIASES.get(b["id"], []),
             "verdict": VERDICT[b["verdict"]], "grade": b.get("grade"), "category": b.get("category"),
-            "goals": goals_of(blob), "about": b.get("about"), "who_needs": b.get("who_needs"), "effects": effects,
+            "goals": goals_of(blob) + [g for g in goals_of(f"{b.get('about') or ''} {b.get('who_needs') or ''}") if g in NARROW_GOALS and g not in goals_of(blob) and g not in NOT_GOAL.get(slug(b["id"]), set())],
+            "about": b.get("about"), "who_needs": b.get("who_needs"), "effects": effects,
             "dosage": b.get("dosage"), "upper_limit": b.get("upper_limit"), "onset": b.get("onset"), "course": b.get("course"),
             "forms_note": b.get("forms") or b.get("how_to_choose"), "forms": forms_from_map(b["id"]),
             "food": b.get("food_sources"), "myths": b.get("myths"), "caution": b.get("caution"),
             "interactions": b.get("interactions") or [],
+            "indirect": indirect_of(slug(b["id"])),
             "sources": [{"pmid": s.get("pmid"), "title": s.get("title"), "year": s.get("year"), "doi": s.get("doi"),
                          "type": ", ".join(s.get("pubtype") or [])} for s in (b.get("key_sources") or [])[:6]],
             "origin": "Brain 25 Evidence (MIT)",
@@ -134,9 +187,9 @@ def build():
             "about": it["about"], "who_needs": it["who_needs"], "effects": effects, "dosage": it.get("dosage"),
             "upper_limit": None, "onset": None, "course": None, "forms_note": it["form_note"],
             "forms": [{"name": it["name"], "form": it["form"], "note": it["form_note"]}], "food": None, "myths": None,
-            "caution": None, "interactions": [], "sources": it["sources"], "origin": "PubMed",
+            "caution": None, "interactions": [], "indirect": indirect_of(o["id"]), "sources": it["sources"], "origin": "PubMed",
         })
-    out = [enrich(r) for r in out]
+    out = [enrich(apply_patches(r)) for r in out]
     text = clean(json.dumps({"goals": list(GOALS), "items": out}, ensure_ascii=False, indent=1))
     (ROOT / "catalog.json").write_text(text)
     (ROOT.parent / "site/catalog.js").write_text("window.CATALOG = " + text + ";\n")

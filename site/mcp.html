@@ -10,7 +10,7 @@
 <meta property="og:image" content="https://placebo.wiki/img/og.png">
 <meta property="og:site_name" content="placebo.wiki">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preload" href="fonts/Inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/Geist-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="search.css">
 <style>
   main { padding-top: 40px; }
@@ -20,8 +20,8 @@
 </style>
 </head>
 <body class="has-answer">
-<nav class="bar"><a href="./" class="bar-mark" id="home" aria-label="placebo.wiki"><svg class="bar-svg" viewBox="0 0 512 512" aria-hidden="true"><defs><mask id="lm"><rect width="512" height="512" fill="#fff"/><g fill="#000" transform="translate(-33 -4)"><rect x="150" y="140" width="64" height="240" rx="32"/><circle cx="266" cy="236" r="96"/><circle class="lm-dot" cx="394" cy="298" r="34"/></g><circle cx="233" cy="232" r="40" fill="#fff"/></mask></defs><rect width="512" height="512" rx="116" fill="currentColor" mask="url(#lm)"/></svg></a><div class="bar-links"><a href="b/">Все БАДы</a><a href="profile.html">Моя карта</a><a href="about.html">Наши правила</a><a href="mcp.html">Для агентов</a></div></nav>
-<main>
+<a class="skip" href="#main">К содержимому</a><nav class="bar"><a href="./" class="bar-mark" id="home" aria-label="placebo.wiki"><svg class="bar-svg" viewBox="0 0 512 512" aria-hidden="true"><defs><mask id="lm"><rect width="512" height="512" fill="#fff"/><g fill="#000" transform="translate(-33 -4)"><rect x="150" y="140" width="64" height="240" rx="32"/><circle cx="266" cy="236" r="96"/><circle class="lm-dot" cx="394" cy="298" r="34"/></g><circle cx="233" cy="232" r="40" fill="#fff"/></mask></defs><rect width="512" height="512" rx="116" fill="currentColor" mask="url(#lm)"/></svg></a><div class="bar-links"><a href="b/">Все БАДы</a><a href="profile.html">Моя карта</a><a href="about.html">Наши правила</a><a href="mcp.html">Для агентов</a></div></nav>
+<main id="main">
   <a href="./" class="logo" style="font-size:22px;text-align:left"><span class="logo-word">placebo<span>.wiki</span></span></a>
   <h1>MCP для агентов</h1>
   <p class="lead">Подключите базу к Claude, Cursor или своему агенту: он будет отвечать о БАДах с уровнем доказанности и ссылками на исследования, а не выдумывать.</p>
@@ -35,6 +35,8 @@
   <h2>Подключение (Claude Code)</h2>
   <pre><code>claude mcp add bady -- uv run --script /путь/к/placebo-wiki/mcp/server.py</code></pre>
   <p class="text">Нужен <code>uv</code>; зависимости он поставит сам.</p>
+  <h2>Открытая база исследований</h2>
+  <p class="text">Всё, что собирает наш сборщик: статьи, мета-анализы, испытания из реестра, жалобы на вред, с уровнем доказательности у каждой записи. Файлы Parquet лежат <a href="https://github.com/placebo-wiki/placebo-wiki/tree/main/data/open" target="_blank" rel="noopener">в открытом коде</a>; полный текст только там, где его разрешено распространять.</p>
 </main>
 <script src="metrika.js"></script>
 </body>

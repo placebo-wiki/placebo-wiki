@@ -1,0 +1,30 @@
+{
+  "id": "vitamin-e",
+  "changes": {
+    "effects": [
+      {
+        "text": "Профилактика ССЗ и смертности: не подтверждён",
+        "level": "не подтверждено"
+      },
+      {
+        "text": "При НАЖБП у взрослых улучшает печёночные ферменты и гистологию (мета-анализы РКИ); применение по назначению врача",
+        "level": "работает"
+      },
+      {
+        "text": "Когниция при БА и УКН: клинически значимого эффекта нет",
+        "level": "не подтверждено"
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "pmid": "26059365",
+      "quote": "Vitamin E significantly improved liver function and histologic changes in patients with NAFLD/NASH."
+    },
+    {
+      "pmid": "31434683",
+      "quote": "Adjuvant vitamin E therapy provides significant biochemical and histological improvements in adult patients with NAFLD, while paediatric patients showed insignificant efficacy compared with placebo."
+    }
+  ],
+  "note": "effect:1 «при НАЖБП польза не определена» противоречит двум мета-анализам РКИ из базы (26059365 и 31434683): оба показывают значимое улучшение печёночных ферментов и гистологии у взрослых с НАЖБП/НАСГ. Уровень поднят до «работает» с условием (взрослые, по назначению врача). Цифра «16 РКИ, 1066 чел.» в базе не подтверждается и убрана. Вердикт «зависит» не менялся: он не сильнее сильнейшего эффекта."
+}

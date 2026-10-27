@@ -6,13 +6,14 @@ const RANK = { "работает": 0, "зависит": 1, "не подтвер�
 const GRADE = { A: 4, B: 3, C: 2, D: 1 };
 const GRADE_TEXT = { 4: "много крупных обзоров", 3: "есть хорошие испытания", 2: "мало испытаний", 1: "почти нет данных на людях" };
 const GOAL_WORDS = {
-  "сон": ["сон", "сна", "спать", "засып", "бессон"], "стресс": ["стресс", "тревог", "нерв", "успок", "настроен"],
-  "либидо": ["либид", "потенц", "тестостер", "секс", "эрекц", "влечен"], "энергия": ["энерг", "устал", "бодр"],
-  "мышцы": ["мышц", "масс", "трениров", "спорт", "сил"], "иммунитет": ["иммун", "простуд", "болею", "орви"],
+  "тестостерон": ["тестостер"], "потенция": ["потенц", "эрекц", "эректил"], "печень": ["печен", "гепат", "желчн"], "зрение": ["зрени", "глаз", "сетчат"], "климакс": ["климакс", "менопауз", "прилив"],
+  "сон": ["сон", "сна", "спать", "засып", "бессон"], "стресс": ["стресс", "тревог", "нерв", "успок", "настроен", "кортизол", "спокойств"],
+  "либидо": ["либид", "секс", "влечен"], "энергия": ["энерг", "устал", "бодр", "работоспособ"],
+  "мышцы": ["мышц", "масс", "трениров", "спорт", "сил", "выносл"], "иммунитет": ["иммун", "простуд", "болею", "орви"],
   "сердце": ["сердц", "давлен", "сосуд", "холестер"], "память": ["памят", "мозг", "концентр", "внимани", "учеб"],
-  "кости и суставы": ["кост", "сустав", "перелом"], "кожа и волосы": ["кож", "волос", "ногт", "прыщ", "акне"],
-  "кишечник": ["кишеч", "живот", "пищевар", "вздут", "диаре"], "вес и сахар": ["похуд", "вес", "сахар", "диабет", "жир"],
-  "щитовидка": ["щитовид"], "беременность": ["беремен"],
+  "кости и суставы": ["кост", "сустав", "перелом", "связк", "хрящ"], "кожа и волосы": ["кож", "волос", "ногт", "прыщ", "акне", "выпаден"],
+  "кишечник": ["кишеч", "живот", "пищевар", "вздут", "диаре", "микрофлор", "жкт", "желуд"], "вес и сахар": ["похуд", "вес", "сахар", "диабет", "жир", "аппетит", "метабол"],
+  "щитовидка": ["щитовид"], "беременность": ["беремен", "зачат", "планирован"],
 };
 const CHIPS = ["сон", "стресс", "либидо", "энергия", "память", "мышцы", "иммунитет", "кожа и волосы"];
 const $ = (s) => document.querySelector(s);
@@ -42,6 +43,36 @@ function find(raw) {
   if (!q) return { items: [], goal: null };
   const items = C.items.map((it) => ({ it, s: score(it, q) })).filter((x) => x.s > 0).sort((a, b) => b.s - a.s).map((x) => x.it);
   return { items, goal: goalOf(q) };
+}
+
+const EN = "qwertyuiop[]asdfghjkl;'zxcvbnm,.`";
+const RU = "йцукенгшщзхъфывапролджэячсмитьбюё";
+const fromLatinLayout = (s) => s.replace(/./g, (c) => (EN.includes(c) ? RU[EN.indexOf(c)] : c));
+
+function dist(a, b) {
+  const d = Array.from({ length: b.length + 1 }, (_, j) => j);
+  for (let i = 1; i <= a.length; i++) {
+    let prev = d[0];
+    d[0] = i;
+    for (let j = 1; j <= b.length; j++) {
+      const t = d[j];
+      d[j] = Math.min(d[j] + 1, d[j - 1] + 1, prev + (a[i - 1] === b[j - 1] ? 0 : 1));
+      prev = t;
+    }
+  }
+  return d[b.length];
+}
+
+function nearest(raw) {
+  const tries = [norm(raw), norm(fromLatinLayout(norm(raw)))];
+  const hit = find(tries[1]).items[0];
+  if (hit && tries[1] !== tries[0]) return [hit];
+  return C.items
+    .map((it) => ({ it, d: Math.min(...[it.name, ...it.aliases].map((n) => dist(tries[0], norm(n)))) }))
+    .filter((x) => x.d <= Math.max(2, Math.floor(tries[0].length / 3)))
+    .sort((a, b) => a.d - b.d)
+    .slice(0, 3)
+    .map((x) => x.it);
 }
 
 function suggest() {
@@ -115,6 +146,7 @@ function cardHtml(it) {
     ${personal(it)}
     <p class="say">${say}</p>
     <div class="grade">${meter(g)}${GRADE_TEXT[g] || ""}</div>
+    <figure class="evf" data-src="b/ev/${esc(it.id)}.json"></figure>
     <div class="nums rv">${num("Доза", it.dosage)}${num("Предел", it.upper_limit)}${num("Эффект через", it.onset)}${num("Кому нужно", it.who_needs)}</div>
     ${sec("Суть", `<p class="big">${esc(it.about)}</p>`)}
     ${sec("Что говорят исследования", effects.map((e) => `<div class="ef"><span>${esc(e.text)}</span><span class="badge b-${LV[e.level]}">${LV_TEXT[e.level]}</span></div>`).join(""))}
@@ -163,24 +195,30 @@ function newCardHtml(c) {
 }
 
 function reveal() {
+  if (window.EVF) EVF.mount(document.getElementById("out"));
   const els = document.querySelectorAll("#out .rv");
   if (!("IntersectionObserver" in window)) return els.forEach((el) => el.classList.add("in"));
   const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: 0.1 });
   els.forEach((el) => io.observe(el));
 }
 
+const NARROW_GOALS = ["тестостерон", "печень", "зрение", "климакс", "потенция"];
 function goalHtml(goal) {
   const rows = C.items.filter((it) => it.goals.includes(goal))
     .map((it) => {
       const own = it.effects.filter((e) => e.goals.includes(goal)).sort((a, b) => RANK[a.level] - RANK[b.level]);
-      return { it, best: own[0] || { text: it.about, level: it.verdict } };
+      const borrowed = NARROW_GOALS.includes(goal) && it.verdict === "работает" ? "зависит" : it.verdict;
+      return { it, best: own[0] || { text: it.about, level: borrowed } };
     })
     .sort((a, b) => RANK[a.best.level] - RANK[b.best.level] || (GRADE[b.it.grade] || 0) - (GRADE[a.it.grade] || 0));
+  const ind = C.items.flatMap((it) => (it.indirect || []).filter((x) => x.goal === goal).map((x) => ({ it, x })))
+    .sort((a, b) => RANK[a.x.level] - RANK[b.x.level]);
   const works = rows.filter((r) => r.best.level === "работает").length;
   return `<article class="card">
     <h1>${esc(goal[0].toUpperCase() + goal.slice(1))}</h1>
     <p class="lead">${works ? `Доказано работают: ${works} из ${rows.length}.` : "Надёжно доказанного нет."} Сначала самое надёжное.</p>
     <div class="list">${rows.map(({ it, best }) => `<div class="row" data-q="${esc(it.name)}"><div><div class="nm">${esc(it.name)}${ME && !PROFILE.isEmpty(ME) && PROFILE.warningsFor(it, ME).length ? ' <span class="me-dot">осторожно вам</span>' : ""}</div><div class="ef">${esc(best.text)}</div></div><span class="badge b-${LV[best.level]}">${LV_TEXT[best.level]}</span></div>`).join("")}</div>
+    ${ind.length ? `<h2>Опосредованно</h2><p class="mlabel">Действуют не напрямую, а через посредника; итог не сильнее самого слабого звена цепочки.</p><div class="list">${ind.map(({ it, x }) => `<div class="row" data-q="${esc(it.name)}"><div><div class="nm">${esc(it.name)}</div><div class="ef">${esc(x.via)} → ${esc(goal)}: ${esc(x.text)}. ${esc(x.note)}</div></div><span class="badge b-${LV[x.level]}">${LV_TEXT[x.level]}</span></div>`).join("")}</div>` : ""}
   </article>`;
 }
 
@@ -200,7 +238,9 @@ function render(q) {
   else if (goal) { out.innerHTML = goalHtml(goal); document.title = `БАДы для цели «${goal}» по исследованиям`; }
   else if (items.length) { out.innerHTML = cardHtml(items[0]); document.title = `${items[0].name}: работает ли, доза, исследования`; }
   else {
-    out.innerHTML = `<div class="card"><p class="empty">Пока не знаем «${esc(q)}». Проверьте название или попробуйте цель: сон, стресс, либидо.</p><div class="add" id="add" hidden><button class="add-btn">Создать карточку «${esc(q)}»</button><p class="mlabel">Сайт сам соберёт обзоры исследований, вердикт появится после проверки.</p></div></div>`;
+    const near = nearest(q);
+    const chips = (near.length ? near.map((it) => it.name) : ["сон", "стресс", "либидо"]).map((n) => `<a class="chip" href="/?q=${encodeURIComponent(n)}">${esc(n)}</a>`).join("");
+    out.innerHTML = `<div class="card"><p class="empty">Пока не знаем «${esc(q)}». ${near.length ? "Возможно, вы искали:" : "Попробуйте цель:"}</p><div class="goal-chips empty-chips">${chips}<a class="chip" href="/b/">Все БАДы</a></div><div class="add" id="add" hidden><button class="add-btn">Создать карточку «${esc(q)}»</button><p class="mlabel">Сайт сам соберёт обзоры исследований, вердикт появится после проверки.</p></div></div>`;
     if (typeof ACC !== "undefined") ACC.ready.then(async (ok) => {
       const a = $("#add");
       if (!ok || !a) return;
@@ -242,7 +282,7 @@ window.addEventListener("popstate", () => { const q = new URLSearchParams(locati
 const human = (n) => (n >= 1e6 ? (n / 1e6).toFixed(1).replace(".", ",") + " млн" : Math.round(n / 1e3) + " тыс.");
 function topCol(title, rows) {
   const max = Math.max(...rows.map((r) => r.count));
-  return `<section><h3>${title}</h3><ol>${rows.map((r, i) => `<li><button data-q="${esc(r.q)}"><span class="nm">${esc(r.label)}</span><span class="num">${human(r.count)}</span><span class="bar"><i style="width:${(r.count / max) * 100}%;animation-delay:${0.3 + i * 0.08}s"></i></span></button></li>`).join("")}</ol></section>`;
+  return `<section><h3>${title}</h3><ol>${rows.map((r, i) => `<li><button data-q="${esc(r.q)}"><span class="nm">${esc(r.label)}</span><span class="num">${human(r.count)}</span><span class="tq-bar"><i style="width:${(r.count / max) * 100}%;animation-delay:${0.3 + i * 0.08}s"></i></span></button></li>`).join("")}</ol></section>`;
 }
 fetch("top.json", { cache: "no-cache" }).then((r) => r.json()).then((t) => {
   $("#chips").innerHTML = topCol("Что беспокоит", t.problems) + topCol("Что ищут", t.supplements);

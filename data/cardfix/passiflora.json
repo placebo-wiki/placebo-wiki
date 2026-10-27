@@ -1,0 +1,13 @@
+{
+ "id": "passiflora",
+ "changes": {
+  "who_needs": "Люди с трудностями засыпания (стрессовые периоды). При тревожности: эффект менее выражен у людей с лёгкими симптомами."
+ },
+ "evidence": [
+  {
+   "pmid": "33352740",
+   "quote": "The majority of studies reported reduced anxiety levels following the administration of <i>Passiflora incarnata</i> preparations, with the effect less evident in people with mild anxiety symptoms."
+  }
+ ],
+ "note": "who_needs рекомендовал пассифлору «для мягкой тревожности», но самый свежий систематический обзор в базе (2020, 9 РКИ) говорит обратное: эффект менее выражен именно при лёгкой тревожности. Поле приведено к обзору, вердикт «зависит» сохранён."
+}

@@ -63,7 +63,7 @@ def get_supplement(name: str) -> dict:
 
 @mcp.tool()
 def by_goal(goal: str) -> list[dict]:
-    """Supplements for a goal, most reliable first. Goals: сон, стресс, либидо, энергия, мышцы, иммунитет, сердце, память, кости и суставы, кожа и волосы, кишечник, вес и сахар, щитовидка, беременность."""
+    """Supplements for a goal, most reliable first. Goals: сон, стресс, либидо, потенция, энергия, мышцы, иммунитет, сердце, память, кости и суставы, кожа и волосы, кишечник, вес и сахар, щитовидка, беременность, тестостерон, печень, зрение, климакс."""
     g = _norm(goal)
     rows = []
     for it in CATALOG["items"]:

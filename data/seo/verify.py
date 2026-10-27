@@ -26,11 +26,12 @@ def check(article: str, card_id: str) -> list[str]:
     allowed = card_numbers(card)
     body = re.sub(r"Обновлено[^\n]*", "", article.split("Источники")[0])
     for n in NUM.findall(body):
-        if n.replace(",", ".") not in allowed and not re.fullmatch(r"[1-9]", n):
+        if n.replace(",", ".") not in allowed:
             errors.append(f"число {n} не из карточки")
     errors += [f"запретное слово «{w}»" for w in BANNED if w in low]
     if not (card["verdict"] == "работает" and card.get("grade") == "A"):
-        errors += [f"слово «{w}» сильнее уровня данных ({card['verdict']}, {card.get('grade')})" for w in STRONG if w in low]
+        claims = re.sub(r"не\s+доказан\w*|«[^»]*»", "", low)
+        errors += [f"слово «{w}» сильнее уровня данных ({card['verdict']}, {card.get('grade')})" for w in STRONG if w in claims]
     errors += [f"нет обязательной части «{r}»" for r in REQUIRED if r.lower() not in low]
     if DASH in article:
         errors.append("длинное тире")

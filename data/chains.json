@@ -1,0 +1,33 @@
+{
+ "mediators": {
+  "кортизол": {
+   "label": "кортизол ниже",
+   "goals": {
+    "тестостерон": {"level": "зависит", "note": "постоянно высокий кортизол подавляет выработку тестостерона; снижение кортизола помогает, когда стресс и есть причина низкого тестостерона"}
+   }
+  },
+  "кровоток": {
+   "label": "кровоток лучше",
+   "goals": {
+    "потенция": {"level": "работает", "note": "эрекция напрямую зависит от притока крови; вопрос только в том, насколько вещество его улучшает"}
+   }
+  }
+ },
+ "links": [
+  {"id": "ashvaganda", "mediator": "кортизол", "level": "работает",
+   "text": "снижает кортизол у людей в стрессе (систематические обзоры 2023-2026)",
+   "sources": [{"pmid": "38140274", "doi": "10.3390/nu15245015", "title": "Effects of Withania somnifera on Cortisol Levels in Stressed Human Subjects: A Systematic Review", "year": 2023},
+               {"pmid": "40746175", "doi": "10.1177/02601060251363647", "title": "Dual impact of Ashwagandha: Significant cortisol reduction: systematic review and meta-analysis", "year": 2025},
+               {"pmid": "41740946", "doi": "10.1055/a-2802-8363", "title": "Hormonal Modulation with Withania somnifera: Systematic Review and Meta-Analysis of RCTs", "year": 2026}]},
+  {"id": "l-tsitrullin", "mediator": "кровоток", "level": "зависит",
+   "text": "предшественник оксида азота, расширяет сосуды; при лёгкой эректильной дисфункции испытания маленькие, прямая вазодилатация непостоянна",
+   "sources": []},
+  {"id": "arginin", "mediator": "кровоток", "level": "зависит",
+   "text": "предшественник оксида азота; мета-анализы: небольшое улучшение эректильной функции, дозы высокие",
+   "sources": [{"pmid": "30770070", "doi": "10.1016/j.jsxm.2018.12.002", "title": "The Potential Role of Arginine Supplements on Erectile Dysfunction: A Systematic Review and Meta-Analysis", "year": 2019},
+               {"pmid": "33587304", "doi": "10.1111/and.14007", "title": "Comparison of efficacy and safety of daily oral L-arginine and PDE5 inhibitors alone or in combination", "year": 2021}]},
+  {"id": "piknogenol", "mediator": "кровоток", "level": "зависит",
+   "text": "улучшает работу эндотелия сосудов; в паре с аргинином эффект на эректильную функцию заметнее",
+   "sources": [{"pmid": "37908749", "doi": "10.3389/fendo.2023.1211720", "title": "Efficacy of L-arginine and Pycnogenol in the treatment of male erectile dysfunction: a systematic review and meta-analysis", "year": 2023}]}
+ ]
+}

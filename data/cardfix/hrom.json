@@ -1,0 +1,38 @@
+{
+ "id": "hrom",
+ "changes": {
+  "effects": [
+   {
+    "text": "Гликемия при диабете 2 типа: мета-анализы показывают снижение HbA1c и глюкозы натощак, но обзоры конфликтуют и качество исследований низкое; у людей без диабета эффекта нет",
+    "level": "зависит"
+   },
+   {
+    "text": "Вес: эффект мал и клинически незначим (Cochrane 2013, 9 РКИ, 622)",
+    "level": "не подтверждено"
+   },
+   {
+    "text": "ЛПВП выше, ТГ и общий холестерин ниже; hs-CRP и МДА ниже (мета-анализы)",
+    "level": "не подтверждено"
+   },
+   {
+    "text": "PCOS: инсулин/ЛГ ниже, овуляция чаще; 200 мкг лучше метформина по HOMA-IR",
+    "level": "зависит"
+   }
+  ]
+ },
+ "evidence": [
+  {
+   "pmid": "17519436",
+   "quote": "Chromium supplementation significantly improved glycemia among patients with diabetes."
+  },
+  {
+   "pmid": "32730903",
+   "quote": "The results of the current meta-analysis study might support the use of chromium supplementation for the improvement of glycemic control indices in T2DM patients."
+  },
+  {
+   "pmid": "24293356",
+   "quote": "The analysis indicated that there was no significant effect of chromium supplementation in diabetics or nondiabetics"
+  }
+ ],
+ "note": "Старый effect:0 отрицал эффект на гликемию, но мета-анализы РКИ (2007, 2014, 2020) показывают значимое снижение HbA1c и глюкозы натощак при диабете 2 типа. Сопоставимые обзоры конфликтуют (2014 с улучшенной методикой эффекта не нашёл), поэтому уровень «зависит» с разнобоем в тексте. Вес вынесен отдельным пунктом «не подтверждено» по Cochrane 2013. Вердикт карточки «зависит» не менялся."
+}

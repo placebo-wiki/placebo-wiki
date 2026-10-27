@@ -1,0 +1,30 @@
+{
+  "id": "kvertsetin",
+  "changes": {
+    "effects": [
+      {
+        "text": "Аллергия/ОРВИ: не подтверждён у людей",
+        "level": "не подтверждено"
+      },
+      {
+        "text": "САД −1.9–2.4 мм рт.ст.; ДАД только в (пре)гиперт. подгруппе −3.1",
+        "level": "работает"
+      },
+      {
+        "text": "ВО2max +1.9%, EP +0.7%; «trivial» для тренированных и нетренированных (n=288)",
+        "level": "зависит"
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "pmid": "31940027",
+      "quote": "Quercetin intake resulted in significantly decreased BP in humans."
+    },
+    {
+      "pmid": "27405810",
+      "quote": "The results of the meta-analysis showed a statistically significant effect of quercetin supplementation in the reduction of BP"
+    }
+  ],
+  "note": "Эффект на артериальное давление был помечен как «не подтверждено», но два мета-анализа РКИ (2016, 2020) показывают значимое снижение САД и ДАД; уровень эффекта поднят до «работает», что согласуется с вердиктом и лидом самой карточки."
+}

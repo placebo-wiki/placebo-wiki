@@ -11,7 +11,7 @@ def git_staged() -> int:
                            capture_output=True, text=True, check=True).stdout.split()
     bad = []
     for f in files:
-        if f.endswith((".png", ".jpg", ".zip")):
+        if f.endswith((".png", ".jpg", ".jpeg", ".gif", ".webp", ".ico", ".mp4", ".woff2", ".zip")):
             continue
         blob = subprocess.run(["git", "show", f":{f}"], capture_output=True, check=True).stdout
         if DASH.encode() in blob:
