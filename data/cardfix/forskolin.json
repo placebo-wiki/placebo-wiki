@@ -1,0 +1,26 @@
+{
+  "id": "forskolin",
+  "changes": {
+    "myths": "«Сжигает жир и гарантирует похудение»: доказательства противоречивы. В систематическом обзоре 2026 года (4 РКИ) экстракт колеуса, возможно, снижает массу жира и процент жира, но результаты по снижению веса и составу тела в целом непоследовательны.",
+    "caution": "Долгосрочная безопасность не подтверждена: в 4 РКИ побочные эффекты были в целом лёгкими и редкими, но для подтверждения эффективности и безопасности требуются высококачественные длительные двойные слепые рандомизированные плацебо-контролируемые испытания."
+  },
+  "evidence": [
+    {
+      "pmid": "42847203",
+      "quote": "Four randomized controlled trials met inclusion criteria."
+    },
+    {
+      "pmid": "42847203",
+      "quote": "Evidence suggests that C. forskohlii extract may reduce fat mass and body fat percentage; however, findings regarding weight loss and overall body composition have been inconsistent."
+    },
+    {
+      "pmid": "42847203",
+      "quote": "Adverse effects were generally mild and infrequent."
+    },
+    {
+      "pmid": "42847203",
+      "quote": "High-quality, long-term, double-blind, randomized, placebo-controlled trials are required to confirm its efficacy and safety."
+    }
+  ],
+  "note": "Единственный систематический обзор по заголовочному запросу (PMID 42847203, 2026, Journal of Integrative and Complementary Medicine): PubMed ещё не присвоил ему тип Systematic Review (в pubType только Review и Journal Article), тип объявлен в самом заголовке, поэтому строгий запрос дополнен условием TITLE:(\"systematic review\" OR \"meta-analysis\"). Аннотация не содержит данных о дозах, сроке наступления эффекта и длительности приёма, поэтому поля upper_limit, onset и course оставлены пустыми; заполнены только myths (противоречивые данные по снижению веса при возможном снижении массы жира, 4 РКИ) и caution (лёгкие редкие побочные в 4 РКИ, долгосрочная безопасность не подтверждена)."
+}

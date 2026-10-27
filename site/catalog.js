@@ -2258,8 +2258,23 @@ window.CATALOG = {
     }
    ],
    "origin": "Brain 25 Evidence (MIT)",
-   "reviews_total": 0,
-   "reviews": [],
+   "reviews_total": 2,
+   "reviews": [
+    {
+     "pmid": "36683513",
+     "doi": "10.3233/jad-221189",
+     "title": "Activity of Choline Alphoscerate on Adult-Onset Cognitive Dysfunctions: A Systematic Review and Meta-Analysis.",
+     "year": "2023",
+     "cited_by": 31
+    },
+    {
+     "pmid": "41426989",
+     "doi": "10.3389/fneur.2025.1649661",
+     "title": "Comparison of the effects of choline alphoscerate and citicoline in patients with dementia disorders: a systematic review and meta-analysis.",
+     "year": "2025",
+     "cited_by": 1
+    }
+   ],
    "idisk_interactions": [],
    "idisk_adverse": []
   },
@@ -3801,9 +3816,6 @@ window.CATALOG = {
    "patched": {
     "pmids": [
      "35608922",
-     "35608922",
-     "35608922",
-     "35608922",
      "26192349",
      "17560286",
      "14695924"
@@ -4614,41 +4626,6 @@ window.CATALOG = {
    "reviews_total": 14,
    "reviews": [
     {
-     "pmid": "30837465",
-     "doi": "10.1038/s41467-019-08936-1",
-     "title": "Assessing the causal association of glycine with risk of cardio-metabolic diseases.",
-     "year": "2019",
-     "cited_by": 129
-    },
-    {
-     "pmid": "28587169",
-     "doi": "10.3390/ijms18061180",
-     "title": "Meta-Analyses of QTLs Associated with Protein and Oil Contents and Compositions in Soybean [Glycine max (L.) Merr.] Seed.",
-     "year": "2017",
-     "cited_by": 62
-    },
-    {
-     "pmid": "26047669",
-     "doi": "10.3382/ps/pev129",
-     "title": "Meta-analysis of the influence of dietary glycine and serine, with consideration of methionine and cysteine, on growth and feed conversion of broilers.",
-     "year": "2015",
-     "cited_by": 36
-    },
-    {
-     "pmid": "31070104",
-     "doi": "10.1161/jaha.119.011922",
-     "title": "Genetic Determinants of Circulating Glycine Levels and Risk of Coronary Artery Disease.",
-     "year": "2019",
-     "cited_by": 26
-    },
-    {
-     "pmid": "14871582",
-     "doi": "10.1016/j.fct.2003.10.003",
-     "title": "Human variability for metabolic pathways with limited data (CYP2A6, CYP2C9, CYP2E1, ADH, esterases, glycine and sulphate conjugation).",
-     "year": "2004",
-     "cited_by": 26
-    },
-    {
      "pmid": "37851316",
      "doi": "10.1007/s11357-023-00970-8",
      "title": "The effect of glycine administration on the characteristics of physiological systems in human adults: A systematic review.",
@@ -4656,32 +4633,11 @@ window.CATALOG = {
      "cited_by": 19
     },
     {
-     "pmid": "38183566",
-     "doi": "10.1007/s42977-023-00198-9",
-     "title": "Emerging role of osmoprotectant glycine betaine to mitigate heavy metals toxicity in plants: a systematic review.",
-     "year": "2024",
-     "cited_by": 15
-    },
-    {
-     "pmid": "35745197",
-     "doi": "10.3390/nu14122467",
-     "title": "Role of Phytoestrogen-Rich Bioactive Substances (<i>Linum usitatissimum</i> L., <i>Glycine max</i> L., <i>Trifolium pratense</i> L.) in Cardiovascular Disease Prevention in Postmenopausal Women: A Systematic Review and Meta-Analysis.",
-     "year": "2022",
-     "cited_by": 12
-    },
-    {
      "pmid": "1835674",
      "doi": null,
      "title": "Impact of glycine-containing ORS solutions on stool output and duration of diarrhoea: a meta-analysis of seven clinical trials. The International Study Group on Improved ORS.",
      "year": "1991",
      "cited_by": 11
-    },
-    {
-     "pmid": "35988070",
-     "doi": "10.12740/pp/onlinefirst/126661",
-     "title": "Glycine transporters in schizophrenia. A new hope or informational noise?",
-     "year": "2022",
-     "cited_by": 6
     }
    ],
    "idisk_interactions": [],
@@ -5076,7 +5032,26 @@ window.CATALOG = {
      "text": "предшественник оксида азота, расширяет сосуды; при лёгкой эректильной дисфункции испытания маленькие, прямая вазодилатация непостоянна",
      "note": "эрекция напрямую зависит от притока крови; вопрос только в том, насколько вещество его улучшает",
      "level": "зависит",
-     "sources": []
+     "sources": [
+      {
+       "pmid": "31977835",
+       "doi": "10.1519/jsc.0000000000003426",
+       "title": "Effects of Citrulline Supplementation on Exercise Performance in Humans: A Review of the Current Literature.",
+       "year": 2020
+      },
+      {
+       "pmid": "40789388",
+       "doi": "10.1016/j.clnesp.2025.07.1130",
+       "title": "Does l-citrulline supplementation and watermelon intake reduce blood pressure in middle-aged and older adults? A systematic review and meta-analysis of randomized controlled trials.",
+       "year": 2025
+      },
+      {
+       "pmid": "41323997",
+       "doi": "10.3389/fnut.2025.1632952",
+       "title": "Effects of L-citrulline supplementation and watermelon intake on arterial stiffness and endothelial function in middle-aged and older adults: a systematic review and meta-analysis of randomized controlled trials.",
+       "year": 2025
+      }
+     ]
     }
    ],
    "sources": [
@@ -6384,7 +6359,6 @@ window.CATALOG = {
    "origin": "Brain 25 Evidence (MIT)",
    "patched": {
     "pmids": [
-     "22570464",
      "22570464"
     ],
     "note": "Эффект effect:3 был помечен «не подтверждено» и приписывал обзору 82 РКИ «нестабильный» эффект на длительность диареи. Мета-анализ JAMA 2012 (82 РКИ, 11811 участников) показывает статистически значимое и устойчивое снижение антибиотик-ассоциированной диареи (RR 0.58): уровень повышен до «работает», текст приведён к тому, что реально измерял обзор."
@@ -9151,7 +9125,6 @@ window.CATALOG = {
    "origin": "Brain 25 Evidence (MIT)",
    "patched": {
     "pmids": [
-     "18254076",
      "18254076"
     ],
     "note": "Кокрановский обзор 2008 и мета-анализ 2003 согласованно показывают значимое увеличение максимальной нагрузки и уменьшение одышки/утомляемости при ХСН (как адъюнкт), поэтому уровни эффектов 1 и 2 подняты с «не подтверждено» до «работает»; условие «только как дополнение к терапии» сохранено в effect:0 со уровнем «зависит»."
@@ -10141,7 +10114,6 @@ window.CATALOG = {
    "origin": "Brain 25 Evidence (MIT)",
    "patched": {
     "pmids": [
-     "20691074",
      "20691074"
     ],
     "note": "Систематический обзор (2010) сообщает о значимом положительном эффекте в 3 из 4 РКИ (два РКИ у здоровых + РКИ при эректильной дисфункции по IIEF-5), а не в 2 из 4; исправлен счёт в effect:1 и в myths, уровень оставлен «не подтверждено», так как обзор называет доказательства ограниченными."
@@ -10462,7 +10434,6 @@ window.CATALOG = {
    "origin": "Brain 25 Evidence (MIT)",
    "patched": {
     "pmids": [
-     "34578794",
      "34578794"
     ],
     "note": "Мета-анализ 2021 (Nutrients) значимо улучшил влажность (SMD 0.53, p=0.03) и эластичность (SMD 0.77, p=0.009) кожи, но не глубину морщин; формулировка «не доказано» для влажности и текстуры заменена на «зависит» с разделением маркеров (гетерогенность высокая, исследований мало)."
@@ -10766,10 +10737,7 @@ window.CATALOG = {
    "patched": {
     "pmids": [
      "32232984",
-     "32232984",
-     "28658720",
-     "32232984",
-     "32232984"
+     "28658720"
     ],
     "note": "Вердикт понижен с «работает» до «зависит» по правилу 28.10: вердикт не сильнее сильнейшего доказанного эффекта, а в карточке нет ни одного эффекта уровня «работает» (сильнейший: железо-адъювант «зависит»). About и caution обещали больше данных («2 Cochrane-обзора подтверждают профилактику позднего сепсиса и НЭК»). Свежий и сильнейший обзор Cochrane 2020 (32232984, 12 РКИ, 5425 участников) находит снижение только позднего сепсиса и только при низкой уверенности (RR 0.82, RD -0.04, NNTB 25), на НЭК эффекта нет (RR 1.10), на смертность тоже. Сопоставимый Cochrane 2017 (28658720, 6 РКИ) на малых данных видел снижение и НЭК, отсюда разнобой обзоров: в caution помечено расхождение, уровень остаётся «зависит». «Безопасен» смягчено до «в РКИ побочных эффектов не отмечено, но данных мало»: аннотация 2020 сообщает лишь об отсутствии НЯ во включённых исследованиях, а публикационное смещение и слабые исследования могут завышать эффект, поэтому рекомендации для практики авторы называют затруднительными. Эффекты не менялись: уровни соответствуют аннотациям. Педиатрический обзор 2025 (39841980) есть в sources карточки, но отсутствует в базе аннотаций, правка опирается на Cochrane."
    },
@@ -10926,47 +10894,14 @@ window.CATALOG = {
    "patched": {
     "pmids": [
      "19821403",
-     "19821403",
-     "19821403",
-     "19821403",
-     "27727432",
-     "27727432",
      "27727432",
      "28682528",
      "39519500"
     ],
     "note": "Вердикт «работает» понижен до «зависит»: ни один эффект карточки не достигает уровня «работает» (депрессия адъювант «зависит», боль при остеоартрозе «не подтверждено», печень «зависит»), а по правилу вердикт не сильнее самого сильного доказанного эффекта. Депрессия: свежий Cochrane 2016 (27727432) не нашёл убедительных различий с плацебо при монотерапии (очень низкое качество доказательств), эффект показан только как добавка к СИОЗС и тоже при низком качестве; обзор 2017 (28682528) называет доказательства перспективными, но ограниченными; старые обзоры (7941964, 16021987) находили эффект против плацебо, отсюда разнобой и уровень «зависит». Боль при остеоартрозе: Cochrane 2009 (19821403) нашёл лишь малый SMD -0.17 с доверительным интервалом, включающим ноль, и без эффекта на функцию, вывод обзора неопределённый, рутинный приём не рекомендуется; поэтому из caution убрана фраза «подтверждает обезболивающий эффект» и заменена уровнем данных (SMD, интервал, функция), из about убрано обещание помощи при боли и добавлен малый SMD. Печень в about сохранена по 39519500 (улучшение печёночных показателей при редких НЯ). Эффекты не менялись: их уровни соответствуют аннотациям."
    },
-   "reviews_total": 226,
+   "reviews_total": 19,
    "reviews": [
-    {
-     "pmid": "21321008",
-     "doi": "10.1093/her/cyr005",
-     "title": "What are the most effective intervention techniques for changing physical activity self-efficacy and physical activity behaviour--and are they the same?",
-     "year": "2011",
-     "cited_by": 397
-    },
-    {
-     "pmid": "17028106",
-     "doi": "10.1136/bmj.38973.444699.0b",
-     "title": "Cochrane reviews compared with industry supported meta-analyses and other meta-analyses of the same drugs: systematic review.",
-     "year": "2006",
-     "cited_by": 271
-    },
-    {
-     "pmid": "29224990",
-     "doi": "10.1016/j.arth.2017.11.027",
-     "title": "The Shift to Same-Day Outpatient Joint Arthroplasty: A Systematic Review.",
-     "year": "2018",
-     "cited_by": 184
-    },
-    {
-     "pmid": "20438145",
-     "doi": "10.1037/a0018947",
-     "title": "A meta-analytic review of achievement goal measures: different labels for the same constructs or different constructs with similar labels?",
-     "year": "2010",
-     "cited_by": 158
-    },
     {
      "pmid": "28682528",
      "doi": "10.4088/jcp.16r11113",
@@ -10975,39 +10910,67 @@ window.CATALOG = {
      "cited_by": 111
     },
     {
-     "pmid": "28698318",
-     "doi": "10.1136/bmjopen-2016-014129",
-     "title": "Words do matter: a systematic review on how different terminology for the same condition influences management preferences.",
-     "year": "2017",
-     "cited_by": 110
+     "pmid": "7941964",
+     "doi": "10.1111/j.1600-0404.1994.tb05403.x",
+     "title": "S-adenosyl-l-methionine (SAMe) as antidepressant: meta-analysis of clinical studies.",
+     "year": "1994",
+     "cited_by": 87
     },
     {
-     "pmid": "31705437",
-     "doi": "10.1007/s12325-019-01144-9",
-     "title": "Ibuprofen Safety at the Golden Anniversary: Are all NSAIDs the Same? A Narrative Review.",
-     "year": "2020",
-     "cited_by": 106
-    },
-    {
-     "pmid": "27499361",
-     "doi": "10.1016/j.schres.2016.07.018",
-     "title": "Safety and tolerability of long-acting injectable versus oral antipsychotics: A meta-analysis of randomized controlled studies comparing the same antipsychotics.",
+     "pmid": "27727432",
+     "doi": "10.1002/14651858.cd011286.pub2",
+     "title": "S-adenosyl methionine (SAMe) for depression in adults.",
      "year": "2016",
-     "cited_by": 105
+     "cited_by": 57
     },
     {
-     "pmid": "31689344",
-     "doi": "10.1093/tbm/ibz147",
-     "title": "Is there a trial bias impacting user engagement with unguided e-mental health interventions? A systematic comparison of published reports and real-world usage of the same programs.",
-     "year": "2019",
-     "cited_by": 103
+     "pmid": "16021987",
+     "doi": null,
+     "title": "S-adenosylmethionine (SAMe) as treatment for depression: a systematic review.",
+     "year": "2005",
+     "cited_by": 50
     },
     {
-     "pmid": "26995485",
-     "doi": "10.1111/medu.12898",
-     "title": "Same-level peer-assisted learning in medical clinical placements: a narrative systematic review.",
-     "year": "2016",
-     "cited_by": 90
+     "pmid": "25774783",
+     "doi": "10.1371/journal.pone.0122124",
+     "title": "S-adenosyl-L-methionine for the treatment of chronic liver disease: a systematic review and meta-analysis.",
+     "year": "2015",
+     "cited_by": 44
+    },
+    {
+     "pmid": "16625556",
+     "doi": "10.1002/14651858.cd002235.pub2",
+     "title": "S-adenosyl-L-methionine for alcoholic liver diseases.",
+     "year": "2006",
+     "cited_by": 42
+    },
+    {
+     "pmid": "12019049",
+     "doi": null,
+     "title": "Safety and efficacy of S-adenosylmethionine (SAMe) for osteoarthritis.",
+     "year": "2002",
+     "cited_by": 38
+    },
+    {
+     "pmid": "19821403",
+     "doi": "10.1002/14651858.cd007321.pub2",
+     "title": "S-Adenosylmethionine for osteoarthritis of the knee or hip.",
+     "year": "2009",
+     "cited_by": 33
+    },
+    {
+     "pmid": "11687153",
+     "doi": "10.1002/14651858.cd002235",
+     "title": "S-adenosyl-L-methionine for alcoholic liver diseases.",
+     "year": "2001",
+     "cited_by": 16
+    },
+    {
+     "pmid": "38199136",
+     "doi": "10.1016/j.genhosppsych.2024.01.001",
+     "title": "S-Adenosylmethionine (SAMe) as an adjuvant therapy for patients with depression: An updated systematic review and meta-analysis.",
+     "year": "2024",
+     "cited_by": 10
     }
    ],
    "idisk_interactions": [
@@ -11935,7 +11898,6 @@ window.CATALOG = {
    "origin": "Brain 25 Evidence (MIT)",
    "patched": {
     "pmids": [
-     "25519252",
      "25519252",
      "26457607",
      "39839641",
@@ -12938,7 +12900,41 @@ window.CATALOG = {
      "note": "может влиять на свёртываемость"
     }
    ],
-   "indirect": [],
+   "indirect": [
+    {
+     "goal": "вес и сахар",
+     "via": "чувствительность к инсулину выше",
+     "text": "снижает инсулинорезистентность (мета-анализы)",
+     "note": "инсулинорезистентность: один из драйверов веса и сахара; снижение резистентности помогает, когда она и есть причина",
+     "level": "зависит",
+     "sources": [
+      {
+       "pmid": "34956436",
+       "doi": "10.1155/2021/2074610",
+       "title": "The Effect of Berberine on Metabolic Profiles in Type 2 Diabetic Patients: A Systematic Review and Meta-Analysis of Randomized Controlled Trials.",
+       "year": 2021
+      },
+      {
+       "pmid": "36313096",
+       "doi": "10.3389/fnut.2022.1013055",
+       "title": "The effects of berberine supplementation on cardiovascular risk factors in adults: A systematic review and dose-response meta-analysis.",
+       "year": 2022
+      },
+      {
+       "pmid": "36999891",
+       "doi": "10.1002/ptr.7806",
+       "title": "Berberine and health outcomes: An umbrella review.",
+       "year": 2023
+      },
+      {
+       "pmid": "38429794",
+       "doi": "10.1186/s12967-024-05011-2",
+       "title": "The clinical efficacy and safety of berberine in the treatment of non-alcoholic fatty liver disease: a meta-analysis and systematic review.",
+       "year": 2024
+      }
+     ]
+    }
+   ],
    "sources": [
     {
      "pmid": "38016844",
@@ -13333,8 +13329,79 @@ window.CATALOG = {
     }
    ],
    "origin": "Brain 25 Evidence (MIT)",
-   "reviews_total": 0,
-   "reviews": [],
+   "reviews_total": 11,
+   "reviews": [
+    {
+     "pmid": "17240097",
+     "doi": "10.1016/j.jep.2007.01.001",
+     "title": "Asparagus racemosus--ethnopharmacological evaluation and conservation needs.",
+     "year": "2007",
+     "cited_by": 83
+    },
+    {
+     "pmid": "29635127",
+     "doi": "10.1016/j.biopha.2018.04.003",
+     "title": "Impact of stress on female reproductive health disorders: Possible beneficial effects of shatavari (Asparagus racemosus).",
+     "year": "2018",
+     "cited_by": 53
+    },
+    {
+     "pmid": "26463825",
+     "doi": "10.1080/14786419.2015.1092148",
+     "title": "Asparagus racemosus: a review on its phytochemical and therapeutic potential.",
+     "year": "2016",
+     "cited_by": 49
+    },
+    {
+     "pmid": "14515032",
+     "doi": "",
+     "title": "Asparagus racemosus--an update.",
+     "year": "2003",
+     "cited_by": 37
+    },
+    {
+     "pmid": "33689806",
+     "doi": "10.1016/j.neuint.2021.105013",
+     "title": "Neuro-nutraceutical potential of Asparagus racemosus: A review.",
+     "year": "2021",
+     "cited_by": 23
+    },
+    {
+     "pmid": "37095959",
+     "doi": "10.1016/j.heliyon.2023.e14932",
+     "title": "Adaptogenic property of <i>Asparagus racemosus</i>: Future trends and prospects.",
+     "year": "2023",
+     "cited_by": 16
+    },
+    {
+     "pmid": "40454371",
+     "doi": "10.1007/s13205-025-04355-w",
+     "title": "Exploring the neuroprotective role of &lt;i&gt;Asparagus racemosus&lt;/i&gt; (Shatavari) in Alzheimer's disease: mechanisms, evidence, and future directions.",
+     "year": "2025",
+     "cited_by": 4
+    },
+    {
+     "pmid": "40974515",
+     "doi": "10.1007/s13668-025-00694-5",
+     "title": "Shatavari (Asparagus racemosus): A Promising Ally for Fertility.",
+     "year": "2025",
+     "cited_by": 2
+    },
+    {
+     "pmid": "41293186",
+     "doi": "10.3389/fnut.2025.1677952",
+     "title": "Phytochemical insights and neuro-gut axis modulation of &lt;i&gt;Asparagus racemosus&lt;/i&gt; (Shatavari) in Postpartum Depression: a mini review with HPTLC-Based justification.",
+     "year": "2025",
+     "cited_by": 0
+    },
+    {
+     "pmid": "40334116",
+     "doi": "10.1080/27697061.2025.2496945",
+     "title": "An Updated Insight on the Chemistry, Ethnobotany, and Health Benefits of &lt;i&gt;Asparagus racemosus&lt;/i&gt; (Shatavari): With a Special Emphasis on Shatavarin IV.",
+     "year": "2025",
+     "cited_by": 0
+    }
+   ],
    "idisk_interactions": [],
    "idisk_adverse": []
   },
@@ -13750,7 +13817,7 @@ window.CATALOG = {
     ],
     "note": "who_needs рекомендовал пассифлору «для мягкой тревожности», но самый свежий систематический обзор в базе (2020, 9 РКИ) говорит обратное: эффект менее выражен именно при лёгкой тревожности. Поле приведено к обзору, вердикт «зависит» сохранён."
    },
-   "reviews_total": 2,
+   "reviews_total": 3,
    "reviews": [
     {
      "pmid": "33352740",
@@ -13758,6 +13825,13 @@ window.CATALOG = {
      "title": "<i>Passiflora incarnata</i> in Neuropsychiatric Disorders-A Systematic Review.",
      "year": "2020",
      "cited_by": 44
+    },
+    {
+     "pmid": "17253512",
+     "doi": "10.1002/14651858.cd004518.pub2",
+     "title": "Passiflora for anxiety disorder.",
+     "year": "2007",
+     "cited_by": 23
     },
     {
      "pmid": "22432466",
@@ -13992,8 +14066,29 @@ window.CATALOG = {
     ],
     "note": "Антидепрессивный эффект был помечен как «не подтверждено», но мета-анализ РКИ 2021 года показал значимое снижение баллов депрессии (SMD -0.66, p<0.001); из-за высокой неоднородности и пограничного эффекта при диагностированной депрессии уровень поднят только до «зависит»."
    },
-   "reviews_total": 2,
+   "reviews_total": 23,
    "reviews": [
+    {
+     "pmid": "31655395",
+     "doi": "10.1016/j.phymed.2019.153099",
+     "title": "Effects of lavender on anxiety: A systematic review and meta-analysis.",
+     "year": "2019",
+     "cited_by": 87
+    },
+    {
+     "pmid": "22464012",
+     "doi": "10.1016/j.phymed.2012.02.013",
+     "title": "Is lavender an anxiolytic drug? A systematic review of randomised clinical trials.",
+     "year": "2012",
+     "cited_by": 66
+    },
+    {
+     "pmid": "31792285",
+     "doi": "10.1038/s41598-019-54529-9",
+     "title": "Efficacy and safety of lavender essential oil (Silexan) capsules among patients suffering from anxiety disorders: A network meta-analysis.",
+     "year": "2019",
+     "cited_by": 36
+    },
     {
      "pmid": "15364646",
      "doi": "10.1080/j157v04n02_07",
@@ -14002,11 +14097,32 @@ window.CATALOG = {
      "cited_by": 34
     },
     {
+     "pmid": "32088511",
+     "doi": "10.1016/j.genhosppsych.2020.02.001",
+     "title": "The best route of administration of lavender for anxiety: a systematic review and network meta-analysis.",
+     "year": "2020",
+     "cited_by": 21
+    },
+    {
      "pmid": "33549687",
      "doi": "10.1016/j.ctim.2021.102679",
      "title": "The antidepressant effects of lavender (Lavandula angustifolia Mill.): A systematic review and meta-analysis of randomized controlled clinical trials.",
      "year": "2021",
      "cited_by": 17
+    },
+    {
+     "pmid": "27861196",
+     "doi": "10.1097/jcp.0000000000000615",
+     "title": "Lavender Oil Preparation (Silexan) for Treating Anxiety: An Updated Meta-Analysis.",
+     "year": "2017",
+     "cited_by": 10
+    },
+    {
+     "pmid": "30439747",
+     "doi": "10.11124/jbisrir-2017-003823",
+     "title": "Effectiveness of Silexan oral lavender essential oil compared to inhaled lavender essential oil aromatherapy for sleep in adults: a systematic review.",
+     "year": "2018",
+     "cited_by": 4
     }
    ],
    "idisk_interactions": [],
@@ -14106,8 +14222,79 @@ window.CATALOG = {
     }
    ],
    "origin": "Brain 25 Evidence (MIT)",
-   "reviews_total": 0,
-   "reviews": [],
+   "reviews_total": 19,
+   "reviews": [
+    {
+     "pmid": "34195023",
+     "doi": "10.1016/j.jtcme.2020.08.003",
+     "title": "&lt;i&gt;Inonotus obliquus&lt;/i&gt; - from folk medicine to clinical use.",
+     "year": "2021",
+     "cited_by": 61
+    },
+    {
+     "pmid": "31209936",
+     "doi": "10.1002/ptr.6384",
+     "title": "The pharmacological potential and possible molecular mechanisms of action of Inonotus obliquus from preclinical studies.",
+     "year": "2019",
+     "cited_by": 54
+    },
+    {
+     "pmid": "23679238",
+     "doi": "10.7314/apjcp.2013.14.3.1571",
+     "title": "Progress on understanding the anticancer mechanisms of medicinal mushroom: inonotus obliquus.",
+     "year": "2013",
+     "cited_by": 54
+    },
+    {
+     "pmid": "25746615",
+     "doi": "10.1615/intjmedmushrooms.v17.i2.10",
+     "title": "Review on Chaga Medicinal Mushroom, Inonotus obliquus (Higher Basidiomycetes): Realm of Medicinal Applications and Approaches on Estimating its Resource Potential.",
+     "year": "2015",
+     "cited_by": 50
+    },
+    {
+     "pmid": "32877719",
+     "doi": "10.1016/j.jep.2020.113321",
+     "title": "Deciphering the antitumoral potential of the bioactive metabolites from medicinal mushroom Inonotus obliquus.",
+     "year": "2021",
+     "cited_by": 34
+    },
+    {
+     "pmid": "19407959",
+     "doi": "10.1007/s11655-009-0156-2",
+     "title": "Progress of research on Inonotus obliquus.",
+     "year": "2009",
+     "cited_by": 33
+    },
+    {
+     "pmid": "38813471",
+     "doi": "10.1080/21501203.2023.2260408",
+     "title": "Therapeutic properties of <i>Inonotus obliquus</i> (Chaga mushroom): A review.",
+     "year": "2024",
+     "cited_by": 31
+    },
+    {
+     "pmid": "38116085",
+     "doi": "10.3389/fphar.2023.1273786",
+     "title": "Chaga mushroom: a super-fungus with countless facets and untapped potential.",
+     "year": "2023",
+     "cited_by": 21
+    },
+    {
+     "pmid": "39170453",
+     "doi": "10.1016/j.heliyon.2024.e35638",
+     "title": "A brief overview of the medicinal and nutraceutical importance of <i>Inonotus obliquus</i> (chaga) mushrooms.",
+     "year": "2024",
+     "cited_by": 16
+    },
+    {
+     "pmid": "38987829",
+     "doi": "10.1186/s40694-024-00176-3",
+     "title": "A review on the cultivation, bioactive compounds, health-promoting factors and clinical trials of medicinal mushrooms Taiwanofungus camphoratus, Inonotus obliquus and Tropicoporus linteus.",
+     "year": "2024",
+     "cited_by": 11
+    }
+   ],
    "idisk_interactions": [],
    "idisk_adverse": []
   },
@@ -14480,8 +14667,65 @@ window.CATALOG = {
     }
    ],
    "origin": "Brain 25 Evidence (MIT)",
-   "reviews_total": 0,
-   "reviews": [],
+   "reviews_total": 62,
+   "reviews": [
+    {
+     "pmid": "22581337",
+     "doi": "10.1007/s12038-012-9195-5",
+     "title": "Pyrroloquinoline-quinone and its versatile roles in biological processes.",
+     "year": "2012",
+     "cited_by": 110
+    },
+    {
+     "pmid": "19803551",
+     "doi": "",
+     "title": "Potential physiological importance of pyrroloquinoline quinone.",
+     "year": "2009",
+     "cited_by": 110
+    },
+    {
+     "pmid": "7770184",
+     "doi": "10.1111/j.1753-4887.1995.tb01502.x",
+     "title": "The role of phenolics, conjugated linoleic acid, carnosine, and pyrroloquinoline quinone as nonessential dietary antioxidants.",
+     "year": "1995",
+     "cited_by": 100
+    },
+    {
+     "pmid": "26168402",
+     "doi": "10.1080/09168451.2015.1062715",
+     "title": "Recent progress in studies on the health benefits of pyrroloquinoline quinone.",
+     "year": "2016",
+     "cited_by": 92
+    },
+    {
+     "pmid": "34680074",
+     "doi": "10.3390/biom11101441",
+     "title": "Pyrroloquinoline-Quinone Is More Than an Antioxidant: A Vitamin-like Accessory Factor Important in Health and Disease Prevention.",
+     "year": "2021",
+     "cited_by": 82
+    },
+    {
+     "pmid": "9810806",
+     "doi": "10.1111/j.1753-4887.1998.tb01661.x",
+     "title": "Pyrroloquinoline quinone: a novel vitamin?",
+     "year": "1998",
+     "cited_by": 30
+    },
+    {
+     "pmid": "1850521",
+     "doi": "10.3181/00379727-197-43218",
+     "title": "Physiologic importance of pyrroloquinoline quinone.",
+     "year": "1991",
+     "cited_by": 28
+    },
+    {
+     "pmid": "37214340",
+     "doi": "10.3389/fmolb.2023.1200025",
+     "title": "Pyrroloquinoline-quinone to reduce fat accumulation and ameliorate obesity progression.",
+     "year": "2023",
+     "cited_by": 23
+    }
+   ],
    "idisk_interactions": [],
    "idisk_adverse": []
   },
@@ -15879,8 +16123,79 @@ window.CATALOG = {
     }
    ],
    "origin": "Brain 25 Evidence (MIT)",
-   "reviews_total": 0,
-   "reviews": [],
+   "reviews_total": 28,
+   "reviews": [
+    {
+     "pmid": "1746161",
+     "doi": "10.1016/s0083-6729(08)60684-6",
+     "title": "Pantothenic acid in health and disease.",
+     "year": "1991",
+     "cited_by": 115
+    },
+    {
+     "pmid": "7009467",
+     "doi": "",
+     "title": "Vitamins and alcoholism. V. Riboflavin, VI. Niacin, VII. Pantothenic acid, and VIII. Biotin.",
+     "year": "1980",
+     "cited_by": 35
+    },
+    {
+     "pmid": "37482959",
+     "doi": "10.1002/eji.202350435",
+     "title": "The vitamin B5/coenzyme A axis: A target for immunomodulation?",
+     "year": "2023",
+     "cited_by": 33
+    },
+    {
+     "pmid": "23193625",
+     "doi": "10.17226/6015",
+     "title": "Dietary Reference Intakes for Thiamin, Riboflavin, Niacin, Vitamin B6, Folate, Vitamin B12, Pantothenic Acid, Biotin, and Choline",
+     "year": "1998",
+     "cited_by": 31
+    },
+    {
+     "pmid": "24450420",
+     "doi": "10.1586/17512433.2014.871202",
+     "title": "Evidence for a potential protective effect of carnitine-pantothenic acid co-treatment on valproic acid-induced hepatotoxicity.",
+     "year": "2014",
+     "cited_by": 26
+    },
+    {
+     "pmid": "38591231",
+     "doi": "10.1002/jimd.12737",
+     "title": "Impaired coenzyme A homeostasis in cardiac dysfunction and benefits of boosting coenzyme A production with vitamin B5 and its derivatives in the management of heart failure.",
+     "year": "2024",
+     "cited_by": 10
+    },
+    {
+     "pmid": "40469981",
+     "doi": "10.3389/fphar.2025.1587627",
+     "title": "Vitamin B5 and vitamin U review: justification of combined use for the treatment of mucosa-associated gastrointestinal pathologies.",
+     "year": "2025",
+     "cited_by": 9
+    },
+    {
+     "pmid": "38187802",
+     "doi": "10.29219/fnr.v67.10255",
+     "title": "Pantothenic acid - a scoping review for Nordic Nutrition Recommendations 2023.",
+     "year": "2023",
+     "cited_by": 8
+    },
+    {
+     "pmid": "10540865",
+     "doi": "",
+     "title": "[Pantothenic acid].",
+     "year": "1999",
+     "cited_by": 2
+    },
+    {
+     "pmid": "7041419",
+     "doi": "",
+     "title": "[Pantothenic acid in human nutrition and its importance in stimulating intestinal bifidoflora].",
+     "year": "1982",
+     "cited_by": 1
+    }
+   ],
    "idisk_interactions": [],
    "idisk_adverse": []
   },
@@ -17275,8 +17590,36 @@ window.CATALOG = {
     }
    ],
    "origin": "Brain 25 Evidence (MIT)",
-   "reviews_total": 2,
+   "reviews_total": 423,
    "reviews": [
+    {
+     "pmid": "16801507",
+     "doi": "10.1001/archinte.166.12.1256",
+     "title": "Vitamin K and the prevention of fractures: systematic review and meta-analysis of randomized controlled trials.",
+     "year": "2006",
+     "cited_by": 225
+    },
+    {
+     "pmid": "28403946",
+     "doi": "10.1016/j.metabol.2017.01.032",
+     "title": "Vitamin K and osteoporosis: Myth or reality?",
+     "year": "2017",
+     "cited_by": 89
+    },
+    {
+     "pmid": "16505257",
+     "doi": "10.1001/.391",
+     "title": "Treatment of excessive anticoagulation with phytonadione (vitamin K): a meta-analysis.",
+     "year": "2006",
+     "cited_by": 78
+    },
+    {
+     "pmid": "27109090",
+     "doi": "10.1038/jp.2016.30",
+     "title": "Vitamin K prophylaxis for prevention of vitamin K deficiency bleeding: a systematic review.",
+     "year": "2016",
+     "cited_by": 76
+    },
     {
      "pmid": "25411281",
      "doi": "10.3945/ajcn.114.093146",
@@ -17539,77 +17882,77 @@ window.CATALOG = {
     ],
     "note": "Оба эффекта «работает» опираются на данные по N-ацетилцистеину (NAC), а не по свободному цистеину: по аннотациям базы при передозировке парацетамола тяжесть поражения печени снижают NAC и метионин (12835357), роль NAC при парацетамоловом поражении печени хорошо установлена (33722689), муколитик, разжижающий мокроту, тоже NAC (34775122), а Cochrane-обзор по неонатальному питанию разделяет цистеин и NAC как отдельные вмешательства (17054219). Сам Cochrane 2018 (29473717) в базе аннотаций отсутствует; родственные аннотации подтверждают: лечение при отравлении парацетамолом это про NAC. Эффекты NAC на цистеин переносить нельзя, у самого цистеина эффектов такой силы не доказано, поэтому по правилу 28.10 (понижать можно) оба эффекта понижены до «не подтверждено» с честным указанием молекулы. Вердикт «не подтверждено» остаётся, about уже честен и правок не требует."
    },
-   "reviews_total": 25,
+   "reviews_total": 180,
    "reviews": [
     {
-     "pmid": "28902129",
-     "doi": "10.3390/ijms18091964",
-     "title": "Systematic Review of Cysteine-Sparing NOTCH3 Missense Mutations in Patients with Clinical Suspicion of CADASIL.",
-     "year": "2017",
-     "cited_by": 63
-    },
-    {
-     "pmid": "29623672",
-     "doi": "10.1007/s40256-018-0275-2",
-     "title": "A Systematic Review on the Protective Effect of N-Acetyl Cysteine Against Diabetes-Associated Cardiovascular Complications.",
-     "year": "2018",
-     "cited_by": 54
-    },
-    {
-     "pmid": "17054219",
-     "doi": "10.1002/14651858.cd004869.pub2",
-     "title": "Cysteine, cystine or N-acetylcysteine supplementation in parenterally fed neonates.",
-     "year": "2006",
-     "cited_by": 53
-    },
-    {
-     "pmid": "37451266",
-     "doi": "10.1016/j.chembiol.2023.06.021",
-     "title": "Proteome-wide structural analysis identifies warhead- and coverage-specific biases in cysteine-focused chemoproteomics.",
-     "year": "2023",
-     "cited_by": 45
-    },
-    {
-     "pmid": "31254666",
-     "doi": "10.1016/j.phrs.2019.104332",
-     "title": "The beneficial effects of N-acetyl cysteine (NAC) against obesity associated complications: A systematic review of pre-clinical studies.",
-     "year": "2019",
-     "cited_by": 43
-    },
-    {
-     "pmid": "26047669",
-     "doi": "10.3382/ps/pev129",
-     "title": "Meta-analysis of the influence of dietary glycine and serine, with consideration of methionine and cysteine, on growth and feed conversion of broilers.",
+     "pmid": "25957927",
+     "doi": "10.1016/j.neubiorev.2015.04.015",
+     "title": "Clinical trials of N-acetylcysteine in psychiatry and neurology: A systematic review.",
      "year": "2015",
-     "cited_by": 36
+     "cited_by": 324
     },
     {
-     "pmid": "33722689",
-     "doi": "10.1016/j.aohep.2021.100340",
-     "title": "N-acetyl cysteine versus standard of care for non-acetaminophen induced acute liver injury: a systematic review and meta-analysis.",
-     "year": "2021",
-     "cited_by": 21
+     "pmid": "12944058",
+     "doi": "10.1016/s0140-6736(03)14189-x",
+     "title": "Acetylcysteine for prevention of contrast nephropathy: meta-analysis.",
+     "year": "2003",
+     "cited_by": 265
     },
     {
-     "pmid": "34592079",
-     "doi": "10.1515/jbcpp-2020-0107",
-     "title": "&lt;i&gt;N&lt;/i&gt;-acetyl-cysteine as adjuvant therapy in female infertility: a systematic review and meta-analysis.",
-     "year": "2020",
-     "cited_by": 16
+     "pmid": "21859972",
+     "doi": "10.1161/circulationaha.111.038943",
+     "title": "Acetylcysteine for prevention of renal outcomes in patients undergoing coronary and peripheral vascular angiography: main results from the randomized Acetylcysteine for Contrast-induced nephropathy Trial (ACT).",
+     "year": "2011",
+     "cited_by": 224
     },
     {
-     "pmid": "26629962",
-     "doi": "10.1097/jcp.0000000000000431",
-     "title": "What Future Role Might N-Acetyl-Cysteine Have in the Treatment of Obsessive Compulsive and Grooming Disorders?: A Systematic Review.",
-     "year": "2016",
-     "cited_by": 16
+     "pmid": "14712421",
+     "doi": "10.1053/j.ajkd.2003.09.009",
+     "title": "Prevention of radiocontrast nephropathy with N-acetylcysteine in patients with chronic kidney disease: a meta-analysis of randomized, controlled trials.",
+     "year": "2004",
+     "cited_by": 173
     },
     {
-     "pmid": "33906513",
-     "doi": "10.1177/15579883211011371",
-     "title": "A Meta-Analysis of the Efficacy of L-Carnitine/L-Acetyl-Carnitine or N-Acetyl-Cysteine in Men With Idiopathic Asthenozoospermia.",
-     "year": "2021",
-     "cited_by": 13
+     "pmid": "10968500",
+     "doi": "10.1034/j.1399-3003.2000.16b12.x",
+     "title": "The effect of oral N-acetylcysteine in chronic bronchitis: a quantitative systematic review.",
+     "year": "2000",
+     "cited_by": 169
+    },
+    {
+     "pmid": "15086476",
+     "doi": "10.1111/j.1523-1755.2004.00516.x",
+     "title": "Systematic review of the impact of N-acetylcysteine on contrast nephropathy.",
+     "year": "2004",
+     "cited_by": 153
+    },
+    {
+     "pmid": "10743980",
+     "doi": "10.1016/s0149-2918(00)88479-9",
+     "title": "Efficacy of oral long-term N-acetylcysteine in chronic bronchopulmonary disease: a meta-analysis of published double-blind, placebo-controlled clinical trials.",
+     "year": "2000",
+     "cited_by": 147
+    },
+    {
+     "pmid": "26324807",
+     "doi": "10.1183/16000617.00002215",
+     "title": "Influence of N-acetylcysteine on chronic bronchitis or COPD exacerbations: a meta-analysis.",
+     "year": "2015",
+     "cited_by": 138
+    },
+    {
+     "pmid": "19280424",
+     "doi": "10.1080/15563650802665587",
+     "title": "Adverse reactions associated with acetylcysteine.",
+     "year": "2009",
+     "cited_by": 135
+    },
+    {
+     "pmid": "14978179",
+     "doi": "10.1097/01.asn.0000116241.47678.49",
+     "title": "N-acetylcysteine for the prevention of radiocontrast induced nephropathy: a meta-analysis of prospective controlled trials.",
+     "year": "2004",
+     "cited_by": 125
     }
    ],
    "idisk_interactions": [],
@@ -18989,7 +19332,6 @@ window.CATALOG = {
    "origin": "Brain 25 Evidence (MIT)",
    "patched": {
     "pmids": [
-     "33764214",
      "33764214"
     ],
     "note": "Мета-анализ 2022 (Crit Rev Food Sci Nutr) прямо показывает снижение гомоцистеина у людей (WMD -1.30 мкмоль/л), поэтому «не подтверждено» исправлено на «работает»; рост общего холестерина привязан к дозам от 4 г/сут, как в том же обзоре и в MA 2021 по липидам, а не к «длительному приёму» вообще."
@@ -19285,9 +19627,6 @@ window.CATALOG = {
    "origin": "Brain 25 Evidence (MIT)",
    "patched": {
     "pmids": [
-     "40323503",
-     "40323503",
-     "40323503",
      "40323503"
     ],
     "note": "effect:1 «ЖКТ-расстройства как единственный наблюдаемый риск» стоял на уровне «работает» и был привязан к цели «кишечник»: описание риска выдавалось на странице цели за доказанную пользу. По правилу 28.10 (вердикт не сильнее самого сильного доказанного эффекта, понижать можно) уровень понижен до «не подтверждено», текст переформулирован честно: SR 2025 по безопасности (40323503) оценивала только безопасность, её основные наблюдаемые нежелательные явления это желудочно-кишечные расстройства, а пользы для кишечника не показал ни один обзор пула. Остальные эффекты без изменений. Дополнение после слепой сверки: effect:0 «Переносимость перорального приёма» стоял на «не подтверждено», но SR 2025 (40323503) оценивала переносимость прямо: значимых нежелательных явлений не выявлено, разница риска 0.00 (95% CI ±0.02, p = 1.00), NOAEL 12000 мг в сутки; по правилу свежего обзора уровень поднят до «зависит» (переносимость показана в границах изученных доз и длительности), текст переписан с числами обзора. Слова «ЖКТ» и «кишечник» в тексте effect:0 намеренно отсутствуют: иначе пересчёт целей привязал бы строчку о переносимости к цели «кишечник», и на странице цели она, как более сильная, вытеснила бы честную строку «не подтверждено» (код страницы цели показывает сильнейший из привязанных эффектов)."
@@ -19532,8 +19871,37 @@ window.CATALOG = {
     }
    ],
    "origin": "Brain 25 Evidence (MIT)",
-   "reviews_total": 0,
-   "reviews": [],
+   "reviews_total": 11,
+   "reviews": [
+    {
+     "pmid": "4877188",
+     "doi": "10.1002/jps.2600570902",
+     "title": "Sulfonamides, structure-activity relationship, and mode of action. Structural problems of the antibacterial action of 4-aminobenzoic acid (PABA) antagonists.",
+     "year": "1968",
+     "cited_by": 51
+    },
+    {
+     "pmid": "31015895",
+     "doi": "10.5487/tr.2019.35.2.131",
+     "title": "Risk Assessment of Ethylhexyl Dimethyl PABA in Cosmetics.",
+     "year": "2019",
+     "cited_by": 14
+    },
+    {
+     "pmid": "37893060",
+     "doi": "10.3390/biomedicines11102686",
+     "title": "Novel Para-Aminobenzoic Acid Analogs and Their Potential Therapeutic Applications.",
+     "year": "2023",
+     "cited_by": 12
+    },
+    {
+     "pmid": "12226987",
+     "doi": "",
+     "title": "[Para-aminobenzoic acid and prospects of its use in ophthalmology].",
+     "year": "2002",
+     "cited_by": 0
+    }
+   ],
    "idisk_interactions": [],
    "idisk_adverse": []
   },
@@ -19935,10 +20303,10 @@ window.CATALOG = {
     "тестостерон"
    ],
    "about": "Корень растения эврикома длиннолистная из Юго-Восточной Азии. Продаётся как «бустер тестостерона».",
-   "who_needs": "Мужчины с низким тестостероном: как дополнение к лечению, после анализа.",
+   "who_needs": "Мужчины, кто хочет поднять тестостерон: по МА 2022 эффект есть и при его нехватке, и у здоровых; при низком тестостероне как дополнение к лечению, после анализа.",
    "effects": [
     {
-     "text": "Тестостерон выше, сильнее при его нехватке",
+     "text": "Тестостерон: МА 2022 находит значимый рост и у здоровых, и у мужчин с исходно низким, но исследований мало (9 в СР, 5 РКИ в МА), для практики нужно больше данных",
      "level": "зависит",
      "goals": [
       "тестостерон"
@@ -19947,8 +20315,8 @@ window.CATALOG = {
    ],
    "dosage": "200-400 мг стандартизированного экстракта в день (дозы испытаний)",
    "upper_limit": null,
-   "onset": null,
-   "course": null,
+   "onset": "Эректильная функция: 12 недель (оценка IIEF-5 в РКИ); сроки по тестостерону и острый эффект аннотации обзоров не называют.",
+   "course": "12 недель (длительность РКИ эректильной функции); более длинные курсы в обзорах не описаны.",
    "forms_note": "Стандартизированный экстракт (LJ100) изучен лучше всего.",
    "forms": [
     {
@@ -19958,8 +20326,8 @@ window.CATALOG = {
     }
    ],
    "food": null,
-   "myths": null,
-   "caution": null,
+   "myths": "«Улучшает эрекцию любому»: в МА 2 РКИ общий эффект на IIEF-5 не значим, прибавка 2.15 балла только при исходно низкой функции. «Подтверждён всеми исследованиями»: из 11 клинических исследований 4 не нашли достаточного эффекта.",
+   "caution": "Тонгкат али: экстракт корня эврикомы, продаётся как «бустер тестостерона». Доказательства неоднородны: из 11 клинических исследований обзора 2017 года 4 не нашли достаточного эффекта. МА по эректильной функции (2 РКИ, 139 участников) общего значимого улучшения IIEF-5 не подтверждает: прибавка есть только при исходно низких баллах, авторы требуют новых испытаний. МА 2022 по тестостерону в плюс (SMD 1.352, подтверждено в подгруппе гипогонадизма), но для клинической практики данных недостаточно, тонгкат назван лишь потенциально безопасной опцией. Побочных эффектов и групп риска аннотации обзоров не называют. Не замена терапии при гипогонадизме: сначала анализ тестостерона и врач.",
    "interactions": [],
    "indirect": [],
    "sources": [
@@ -19979,6 +20347,14 @@ window.CATALOG = {
     }
    ],
    "origin": "PubMed",
+   "patched": {
+    "pmids": [
+     "36013514",
+     "26365449",
+     "28259255"
+    ],
+    "note": "Кумулятивная правка (второй проход). По правилу свежего обзора ослаблено условие «сильнее при его нехватке»: свежейший МА 2022 (36013514) сообщает значимое улучшение общего тестостерона и у здоровых добровольцев, и у мужчин с гипогонадизмом, поэтому эффект переписан как рост в обеих группах (уровень «зависит» оставлен: в СР всего 9 исследований, в МА 5 РКИ, и сами авторы пишут, что для применения в клинической практике нужно больше исследований), who_needs выровнен с эффектом: эффект есть и при нехватке, и у здоровых, при низком тестостероне как дополнение к лечению, после анализа. Прежние заполненные поля сохранены. onset и course опираются на единственную временную точку, названную в аннотациях: МА по эректильной функции (26365449) оценивает изменение IIEF-5 на 12-й неделе, отсюда и срок ожидания эффекта, и длительность испытаний 12 недель; сроки наступления эффекта по тестостерону ни одна аннотация не называет, что отражено в тексте. caution собран из ограничений, которые сами обзоры формулируют: МА 2022 (36013514) находит рост общего тестостерона (SMD 1.352), подтверждённый в подгруппе гипогонадизма, но пишет, что для применения в клинической практике исследований недостаточно, и называет тонгкат лишь потенциально безопасной опцией; МА по эрекции (26365449, 2 РКИ, 139 участников) не подтверждает общий эффект (WMD 0.91 не значим при гетерогенности), улучшение видно только при исходно низких баллах IIEF-5, авторы требуют новых испытаний; СР 2017 (28259255): 4 из 11 исследований не нашли достаточного эффекта. Конкретных побочных эффектов и групп риска аннотации не называют, поэтому предостережения в caution касаются уровня доказательств и статуса «не замена терапии», без выдуманных органов и групп. myths: миф «улучшает эрекцию любому» опровергается отсутствием общего значимого эффекта в МА и подгрупповым характером улучшения (2.15 балла только при исходно низкой функции, речь об эрекции, а не о тестостероне); миф «подтверждён всеми исследованиями» опровергается 4 из 11 исследований без эффекта. upper_limit пропущен: предельную безопасную дозу не называет ни одна аннотация (23419023 упоминает adverse effects, toxicology и dosing лишь как разделы полной статьи, без конкретики в аннотации), выдумывать дозу нельзя."
+   },
    "reviews_total": 5,
    "reviews": [
     {
@@ -20058,8 +20434,8 @@ window.CATALOG = {
     }
    ],
    "food": null,
-   "myths": null,
-   "caution": null,
+   "myths": "«Сжигает жир и гарантирует похудение»: доказательства противоречивы. В систематическом обзоре 2026 года (4 РКИ) экстракт колеуса, возможно, снижает массу жира и процент жира, но результаты по снижению веса и составу тела в целом непоследовательны.",
+   "caution": "Долгосрочная безопасность не подтверждена: в 4 РКИ побочные эффекты были в целом лёгкими и редкими, но для подтверждения эффективности и безопасности требуются высококачественные длительные двойные слепые рандомизированные плацебо-контролируемые испытания.",
    "interactions": [],
    "indirect": [],
    "sources": [
@@ -20072,8 +20448,22 @@ window.CATALOG = {
     }
    ],
    "origin": "PubMed",
-   "reviews_total": 0,
-   "reviews": [],
+   "patched": {
+    "pmids": [
+     "42847203"
+    ],
+    "note": "Единственный систематический обзор по заголовочному запросу (PMID 42847203, 2026, Journal of Integrative and Complementary Medicine): PubMed ещё не присвоил ему тип Systematic Review (в pubType только Review и Journal Article), тип объявлен в самом заголовке, поэтому строгий запрос дополнен условием TITLE:(\"systematic review\" OR \"meta-analysis\"). Аннотация не содержит данных о дозах, сроке наступления эффекта и длительности приёма, поэтому поля upper_limit, onset и course оставлены пустыми; заполнены только myths (противоречивые данные по снижению веса при возможном снижении массы жира, 4 РКИ) и caution (лёгкие редкие побочные в 4 РКИ, долгосрочная безопасность не подтверждена)."
+   },
+   "reviews_total": 1,
+   "reviews": [
+    {
+     "pmid": "42847203",
+     "doi": "10.1177/27683605261492576",
+     "title": "The Effectiveness and Safety of &lt;i&gt;Coleus forskohlii&lt;/i&gt; Extract as an Anti-Obesity Agent: A Systematic Review.",
+     "year": "2026",
+     "cited_by": 0
+    }
+   ],
    "idisk_interactions": [],
    "idisk_adverse": []
   },
@@ -20104,8 +20494,8 @@ window.CATALOG = {
    ],
    "dosage": "20-40 г белка за приём, по нехватке белка в еде",
    "upper_limit": null,
-   "onset": null,
-   "course": null,
+   "onset": "Мышцы и сила: как от сывороточного в исследованиях от 6 недель; холестерин: главный спад в первые недели приёма, ЛПВП растёт только после 12 недель.",
+   "course": "постоянно как замена животному белку: регулярные 1-2 порции в день (15-30 г) благотворны для липидов; у диабетиков 2 типа и при метаболическом синдроме глюкоза, ЛПНП и СРБ снижаются сильнее при длительности от 6 месяцев.",
    "forms_note": "Для мышц равен сывороточному на длинной дистанции.",
    "forms": [
     {
@@ -20115,8 +20505,8 @@ window.CATALOG = {
     }
    ],
    "food": null,
-   "myths": null,
-   "caution": null,
+   "myths": "«Соя снижает тестостерон у мужчин»: мета-анализ РКИ не нашёл влияния на общий и свободный тестостерон, ГСПГ. «Изофлавоны сои провоцируют рак»: наоборот, у людей с высоким потреблением сои заболеваемость раком ниже на 10%.",
+   "caution": "Эстрогеновые опасения: у мужчин мета-анализ не нашёл влияния сои на общий и свободный тестостерон, ГСПГ (19524224); у женщин сдвиги скромные: в пременопаузе ФСГ и ЛГ ниже примерно на 20%, в постменопаузе возможен небольшой недостоверный подъём эстрадиола, клиническое значение не определено (19299447); у спортсменов в отдельных исследованиях колебания тестостерона и кортизола, данных мало (37603200). Щитовидка и аллергия на сою в 30 обзорах базы не разобраны.",
    "interactions": [],
    "indirect": [],
    "sources": [
@@ -20129,6 +20519,19 @@ window.CATALOG = {
     }
    ],
    "origin": "PubMed",
+   "patched": {
+    "pmids": [
+     "29722584",
+     "15699227",
+     "21730216",
+     "26996569",
+     "19524224",
+     "19299447",
+     "37603200",
+     "35308286"
+    ],
+    "note": "Заполняю пропуски собственной карточки сои по аннотациям 30 обзоров пула. upper_limit пропущен: ни один обзор пула не называет предельную дозу (в аннотациях нет UL, NOAEL или допустимого максимума). onset: для мышц мета-анализ (29722584) оперирует длинными исследованиями от 6 недель и не находит отличий сои от сыворотки по приростам силы и тощей массы (острое превосходство сыворотки по стимуляции синтеза белка видно только в краткосрочных измерениях и не переходит в долгосрочную разницу); для липидов сроки даёт мета-анализ (15699227): сильнейшее снижение общего холестерина, ЛПНП и триглицеридов приходится на короткий начальный период приёма, а рост ЛПВП наблюдается только в исследованиях длиннее 12 недель. course: обзоры описывают не курсы, а регулярное потребление: 1-2 порции (15-30 г) в день благотворны для липидного профиля (21730216); в мета-анализе у диабетиков 2 типа и метаболического синдрома при длительности от 6 месяцев значимо снижаются глюкоза, ЛПНП и СРБ (26996569), отсюда формулировка «постоянно как замена животному белку». caution: эстрогеновые опасения: у мужчин мета-анализ не нашёл влияния на общий тестостерон, свободный тестостерон, ГСПГ и FAI (19524224); у женщин гормональные сдвиги скромные: в пременопаузе ФСГ и ЛГ ниже примерно на 20%, в постменопаузе небольшой недостоверный рост эстрадиола около 14%, клиническое значение не определено (19299447); у спортсменов в отдельных РКИ отмечены колебания тестостерона и кортизола, данных мало (37603200). Щитовидка и аллергия на сою в аннотациях пула не разобраны (щитовидные гормоны упомянуты лишь в критериях включения обзора 19299447, результатов в аннотации нет), поэтому предупреждений по ним не добавлено, а в caution честно указано отсутствие данных. myths: два мифа опровергнуты обзорами: «соя снижает тестостерон у мужчин» (19524224: нет значимых эффектов на Т, SHBG, свободный Т и FAI ни в одной модели) и «изофлавоны сои провоцируют рак» (35308286: высокое потребление сои связано со снижением заболеваемости раком на 10%, каждые дополнительные 25 г/день снижают риск на 4%). interactions оставлены пустыми: данных по взаимодействиям в аннотациях пула нет."
+   },
    "reviews_total": 30,
    "reviews": [
     {
@@ -20231,9 +20634,9 @@ window.CATALOG = {
     }
    ],
    "dosage": "30-60 г углеводов в час нагрузки дольше часа",
-   "upper_limit": null,
-   "onset": null,
-   "course": null,
+   "upper_limit": "Формального предела нет; выше 90 г/ч описано для нагрузок дольше 2 часов, там лучше смесь глюкоза+фруктоза, подбор по переносимости.",
+   "onset": "Во время самой нагрузки: около часа эффект идёт от сигнала углеводов во рту в мозг (усвоение не нужно), на длинной дистанции от доставки и окисления.",
+   "course": "по необходимости, на нагрузке примерно от часа и дольше; польза растёт с длительностью; на совсем короткой нагрузке почти не нужны",
    "forms_note": "Это быстрые углеводы. Смесь глюкозы и фруктозы работает лучше одной глюкозы.",
    "forms": [
     {
@@ -20243,8 +20646,8 @@ window.CATALOG = {
     }
    ],
    "food": null,
-   "myths": null,
-   "caution": null,
+   "myths": "«Гель питает мышцы быстрой энергией»: при нагрузке около часа эффект даёт не энергия, а сигнал углеводов со рта в мозг, работает даже полоскание. «Больше геля, больше энергии»: выше 90 г/ч имеет смысл на нагрузках дольше 2 часов и со смесью глюкоза+фруктоза, лишняя фруктоза может снижать пользу.",
+   "caution": "ЖКТ-дискомфорт возможен у части спортсменов. Обычная еда перед и во время нагрузки по результату не хуже гелей, но чуть чаще даёт ЖКТ-симптомы, особенно при нагрузке дольше 2 часов. В жару ЖКТ-симптомы обычны, а стабильного прироста результата углеводы не дают, важнее питьё и тренировка кишечника. Дозу подбирают по индивидуальной переносимости. На короткой тренировке не нужны: при нагрузке около часа тип и количество углеводов на результат не влияют. Фруктоза выше 0.25 г/кг/ч может снижать пользу.",
    "interactions": [],
    "indirect": [],
    "sources": [
@@ -20264,6 +20667,16 @@ window.CATALOG = {
     }
    ],
    "origin": "PubMed",
+   "patched": {
+    "pmids": [
+     "24951297",
+     "21411610",
+     "35231883",
+     "42105255",
+     "21846165"
+    ],
+    "note": "Карточка собственная, полей upper_limit/onset/course/caution/myths в ней не было; заполнены по аннотациям пула из 12 обзоров. upper_limit: формальный UL ни один обзор не задаёт, но систематический обзор 24951297 называет высокие дозы, выше 90 г/ч, механизмом эффекта для нагрузок дольше 2 часов, смеси глюкоза+фруктоза там выгоднее, а рекомендации подгоняют под индивидуальную переносимость. onset: эффект прямо в нагрузке: при работе около часа работает сам контакт углеводов со ртом (полоскание или гель при достаточном времени во рту, сигнал в центры удовольствия мозга), усвоение при этом не важно; при долгой нагрузке механизм это высокая скорость доставки и окисления (обе цитаты 24951297). course: по необходимости, на нагрузке примерно от часа и дольше: уже при работе около часа есть польза, через сигнал углеводов со рта в мозг, даже без усвоения (24951297, отдельная цитата в evidence); мета-анализ 21411610 оценивал приём при нагрузках от 1 часа; польза растёт с длительностью нагрузки (корреляция в 24951297); на совсем короткой нагрузке почти не нужны. Дополнение после слепой сверки: прежнее «только на нагрузке дольше часа» было слишком строгим: по правилу свежего обзора учтено, что 24951297 показывает пользу и при нагрузке около часа, механизм со рта в мозг, поэтому текст course смягчён и добавлена дословная цитата про этот механизм; остальные поля и их evidence сохранены без изменений. caution: ЖКТ-симптомы у части спортсменов, обычная еда даёт их чаще добавок и особенно при нагрузке дольше 2 часов (35231883); в жару ЖКТ-симптомы обычны, углеводы не дают стабильного прироста результата, важнее питьё и тренировка кишечника (42105255); доза по переносимости (24951297); на короткой тренировке тип и количество углеводов на результат не влияют (24951297); фруктоза выше 0.25 г/кг/ч возможно снижает пользу (21846165). myths: миф «быстрая энергия в мышцы» опровергается центральным механизмом при короткой нагрузке (24951297); миф «больше геля, больше энергии» опровергается границей 90 г/ч для долгих нагрузок, выгодой смесей и возможным вредом избытка фруктозы (24951297, 21846165)."
+   },
    "reviews_total": 12,
    "reviews": [
     {

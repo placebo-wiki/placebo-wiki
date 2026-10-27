@@ -1,0 +1,65 @@
+{
+ "id": "gels",
+ "changes": {
+  "upper_limit": "Формального предела нет; выше 90 г/ч описано для нагрузок дольше 2 часов, там лучше смесь глюкоза+фруктоза, подбор по переносимости.",
+  "onset": "Во время самой нагрузки: около часа эффект идёт от сигнала углеводов во рту в мозг (усвоение не нужно), на длинной дистанции от доставки и окисления.",
+  "course": "по необходимости, на нагрузке примерно от часа и дольше; польза растёт с длительностью; на совсем короткой нагрузке почти не нужны",
+  "caution": "ЖКТ-дискомфорт возможен у части спортсменов. Обычная еда перед и во время нагрузки по результату не хуже гелей, но чуть чаще даёт ЖКТ-симптомы, особенно при нагрузке дольше 2 часов. В жару ЖКТ-симптомы обычны, а стабильного прироста результата углеводы не дают, важнее питьё и тренировка кишечника. Дозу подбирают по индивидуальной переносимости. На короткой тренировке не нужны: при нагрузке около часа тип и количество углеводов на результат не влияют. Фруктоза выше 0.25 г/кг/ч может снижать пользу.",
+  "myths": "«Гель питает мышцы быстрой энергией»: при нагрузке около часа эффект даёт не энергия, а сигнал углеводов со рта в мозг, работает даже полоскание. «Больше геля, больше энергии»: выше 90 г/ч имеет смысл на нагрузках дольше 2 часов и со смесью глюкоза+фруктоза, лишняя фруктоза может снижать пользу."
+ },
+ "evidence": [
+  {
+   "pmid": "24951297",
+   "quote": "For longer duration exercise (>2 h), where muscle glycogen stores are stressed, the primary mechanism by which carbohydrate supplementation enhances performance is via high rates of CHO delivery (>90 g/h), resulting in high rates of CHO oxidation."
+  },
+  {
+   "pmid": "24951297",
+   "quote": "Use of multiple transportable carbohydrates (glucose:fructose) are beneficial in prolonged exercise, although individual recommendations for athletes should be tailored according to each athlete's individual tolerance."
+  },
+  {
+   "pmid": "24951297",
+   "quote": "In short duration exercise situations (∼1 h), oral receptor exposure to CHO, via either mouthwash or oral consumption (with enough oral contact time), which then stimulates the pleasure and reward centers of the brain, provide a central nervous system-based mechanism for enhanced performance."
+  },
+  {
+   "pmid": "24951297",
+   "quote": "Thus, the type and (or) amount of CHO and its ability to be absorbed and oxidized appear completely irrelevant to enhancing performance in short duration exercise situations."
+  },
+  {
+   "pmid": "24951297",
+   "quote": "There was a significant (p = 0.0036) correlative relationship between increasing total exercise time and the subsequent percent increase in performance with CHO intake versus placebo."
+  },
+  {
+   "pmid": "24951297",
+   "quote": "In short duration exercise situations (∼1 h), oral receptor exposure to CHO, via either mouthwash or oral consumption (with enough oral contact time), which then stimulates the pleasure and reward centers of the brain, provide a central nervous system-based mechanism for enhanced performance."
+  },
+  {
+   "pmid": "21411610",
+   "quote": "Included studies were PLA-controlled, randomized, crossover designs in which CHO ingestion not exceeding 8% and between 30 and 80 g/h during exercise of ≥1 h was evaluated via time trial (TT) or exercise time to exhaustion (TTE)."
+  },
+  {
+   "pmid": "35231883",
+   "quote": "Greater GI symptoms were reported with food compared with supplemental sources."
+  },
+  {
+   "pmid": "35231883",
+   "quote": "Food choices of carbohydrate consumed immediately before and during endurance exercise result in similar exercise performance/capacity responses to supplemental carbohydrate sources, but may slightly increase GI symptoms in some athletes, particularly with exercise >2 hr."
+  },
+  {
+   "pmid": "42105255",
+   "quote": "Given that prior research shows gastrointestinal symptoms is common in endurance events in hot environments, the absence of symptom investigations in seven out of nine studies reviewed has important implications for interpreting findings."
+  },
+  {
+   "pmid": "42105255",
+   "quote": "Athletes may focus on maintaining hydration during exercise and practice gut-training, based on the wider literature."
+  },
+  {
+   "pmid": "42105255",
+   "quote": "Carbohydrate intake during endurance exercise in the heat does not consistently improve exercise performance."
+  },
+  {
+   "pmid": "21846165",
+   "quote": "Substantial reductions in the benefit of a supplement were possibly moderate with a supplement providing >0.25 g/kg/h fructose, and possibly small with an increase in ambient temperature of 10°C."
+  }
+ ],
+ "note": "Карточка собственная, полей upper_limit/onset/course/caution/myths в ней не было; заполнены по аннотациям пула из 12 обзоров. upper_limit: формальный UL ни один обзор не задаёт, но систематический обзор 24951297 называет высокие дозы, выше 90 г/ч, механизмом эффекта для нагрузок дольше 2 часов, смеси глюкоза+фруктоза там выгоднее, а рекомендации подгоняют под индивидуальную переносимость. onset: эффект прямо в нагрузке: при работе около часа работает сам контакт углеводов со ртом (полоскание или гель при достаточном времени во рту, сигнал в центры удовольствия мозга), усвоение при этом не важно; при долгой нагрузке механизм это высокая скорость доставки и окисления (обе цитаты 24951297). course: по необходимости, на нагрузке примерно от часа и дольше: уже при работе около часа есть польза, через сигнал углеводов со рта в мозг, даже без усвоения (24951297, отдельная цитата в evidence); мета-анализ 21411610 оценивал приём при нагрузках от 1 часа; польза растёт с длительностью нагрузки (корреляция в 24951297); на совсем короткой нагрузке почти не нужны. Дополнение после слепой сверки: прежнее «только на нагрузке дольше часа» было слишком строгим: по правилу свежего обзора учтено, что 24951297 показывает пользу и при нагрузке около часа, механизм со рта в мозг, поэтому текст course смягчён и добавлена дословная цитата про этот механизм; остальные поля и их evidence сохранены без изменений. caution: ЖКТ-симптомы у части спортсменов, обычная еда даёт их чаще добавок и особенно при нагрузке дольше 2 часов (35231883); в жару ЖКТ-симптомы обычны, углеводы не дают стабильного прироста результата, важнее питьё и тренировка кишечника (42105255); доза по переносимости (24951297); на короткой тренировке тип и количество углеводов на результат не влияют (24951297); фруктоза выше 0.25 г/кг/ч возможно снижает пользу (21846165). myths: миф «быстрая энергия в мышцы» опровергается центральным механизмом при короткой нагрузке (24951297); миф «больше геля, больше энергии» опровергается границей 90 г/ч для долгих нагрузок, выгодой смесей и возможным вредом избытка фруктозы (24951297, 21846165)."
+}

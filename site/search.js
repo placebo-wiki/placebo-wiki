@@ -219,8 +219,8 @@ function goalHtml(goal) {
   return `<article class="card">
     <h1>${esc(goal[0].toUpperCase() + goal.slice(1))}</h1>
     <p class="lead">${works ? `Доказано работают: ${works} из ${rows.length}.` : "Надёжно доказанного нет."} Сначала самое надёжное.</p>
-    <div class="list">${rows.map(({ it, best }) => `<div class="row" data-q="${esc(it.name)}"><div><div class="nm">${esc(it.name)}${ME && !PROFILE.isEmpty(ME) && PROFILE.warningsFor(it, ME).length ? ' <span class="me-dot">осторожно вам</span>' : ""}</div><div class="ef">${esc(best.text)}</div></div><span class="badge b-${LV[best.level]}">${LV_TEXT[best.level]}</span></div>`).join("")}</div>
-    ${ind.length ? `<h2>Опосредованно</h2><p class="mlabel">Действуют не напрямую, а через посредника; итог не сильнее самого слабого звена цепочки.</p><div class="list">${ind.map(({ it, x }) => `<div class="row" data-q="${esc(it.name)}"><div><div class="nm">${esc(it.name)}</div><div class="ef">${esc(x.via)} → ${esc(goal)}: ${esc(x.text)}. ${esc(x.note)}</div></div><span class="badge b-${LV[x.level]}">${LV_TEXT[x.level]}</span></div>`).join("")}</div>` : ""}
+    <div class="list">${rows.map(({ it, best }) => `<div class="row" data-q="${esc(it.name)}" tabindex="0" role="button"><div><div class="nm">${esc(it.name)}${ME && !PROFILE.isEmpty(ME) && PROFILE.warningsFor(it, ME).length ? ' <span class="me-dot">осторожно вам</span>' : ""}</div><div class="ef">${esc(best.text)}</div></div><span class="badge b-${LV[best.level]}">${LV_TEXT[best.level]}</span></div>`).join("")}</div>
+    ${ind.length ? `<h2>Опосредованно</h2><p class="mlabel">Действуют не напрямую, а через посредника; итог не сильнее самого слабого звена цепочки.</p><div class="list">${ind.map(({ it, x }) => `<div class="row" data-q="${esc(it.name)}" tabindex="0" role="button"><div><div class="nm">${esc(it.name)}</div><div class="ef">${esc(x.via)} → ${esc(goal)}: ${esc(x.text)}. ${esc(x.note)}</div></div><span class="badge b-${LV[x.level]}">${LV_TEXT[x.level]}</span></div>`).join("")}</div>` : ""}
   </article>`;
 }
 
@@ -277,6 +277,7 @@ $("#form").onsubmit = (e) => {
 };
 $("#sugg").addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) go(b.dataset.q); });
 $("#out").addEventListener("click", (e) => { const r = e.target.closest(".row"); if (r) go(r.dataset.q); });
+$("#out").addEventListener("keydown", (e) => { const r = e.target.closest(".row"); if (r && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); go(r.dataset.q); } });
 document.addEventListener("click", (e) => { if (!e.target.closest(".field")) $("#sugg").hidden = true; });
 for (const id of ["#logo", "#home"]) $(id).onclick = (e) => { e.preventDefault(); history.pushState({}, "", "./"); $("#q").value = ""; morph(() => render("")); $("#q").focus(); };
 window.addEventListener("popstate", () => { const q = new URLSearchParams(location.search).get("q") || ""; $("#q").value = q; render(q); });

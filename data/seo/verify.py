@@ -33,7 +33,7 @@ def check(article: str, card_id: str) -> list[str]:
     low = article.lower()
     errors = []
     allowed = card_numbers(card)
-    body = re.sub(r"Обновлено[^\n]*", "", article.split("Источники")[0])
+    body = re.sub(r"Обновлено[^\n]*", "", re.split(r"\n## Источники", article)[0])
     body = re.sub(r"(\d)[  ](?=\d{3}\b)", r"\1", body)
     for n in NUM.findall(body):
         if n.replace(",", ".") not in allowed:

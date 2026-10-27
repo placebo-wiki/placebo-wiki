@@ -37,7 +37,7 @@ def page(title: str, desc: str, body: str, path: str, ld: dict) -> str:
     return f"""<!doctype html>
 <html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{e(title)}</title><meta name="description" content="{e(desc)}">
-<link rel="canonical" href="{BASE}/{path}"><link rel="icon" href="../favicon.ico" sizes="32x32"><link rel="icon" href="../img/logo.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="../img/icon-180.png"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(desc)}"><meta property="og:image" content="https://placebo.wiki/img/og.png"><meta name="twitter:card" content="summary_large_image"><link rel="preload" href="../fonts/Geist-cyrillic.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="../fonts/Geist-latin.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="../search.css">
+<link rel="canonical" href="{BASE}/{path}"><link rel="icon" href="../favicon.ico" sizes="32x32"><link rel="icon" href="../img/logo.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="../img/icon-180.png"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(desc)}"><meta property="og:image" content="https://placebo.wiki/img/og.png"><meta name="twitter:card" content="summary_large_image"><link rel="preload" href="../fonts/Geist-cyrillic.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="../search.css">
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
 </head><body class="has-answer">
 <a class="skip" href="#main">К содержимому</a><nav class="bar"><a href="../" class="bar-mark" id="home" aria-label="placebo.wiki"><svg class="bar-svg" viewBox="0 0 512 512" aria-hidden="true"><defs><mask id="lm"><rect width="512" height="512" fill="#fff"/><g fill="#000" transform="translate(-33 -4)"><rect x="150" y="140" width="64" height="240" rx="32"/><circle cx="266" cy="236" r="96"/><circle class="lm-dot" cx="394" cy="298" r="34"/></g><circle cx="233" cy="232" r="40" fill="#fff"/></mask></defs><rect width="512" height="512" rx="116" fill="currentColor" mask="url(#lm)"/></svg></a><div class="bar-links"><a href="../b/">Все БАДы</a>{'<a href="../s/">Статьи</a>' if HAS_ART else ''}<a href="../about.html">Наши правила</a><a href="../mcp.html">Для агентов</a></div></nav>
@@ -121,6 +121,14 @@ def study_count(sid: str) -> int:
     return sum(json.loads(f.read_text())["n"]) if f.exists() else 0
 
 
+def patched_note(it: dict) -> str:
+    p = it.get("patched")
+    if not p or not p.get("pmids"):
+        return ""
+    links = ", ".join(f'<a href="https://pubmed.ncbi.nlm.nih.gov/{m}/" rel="noopener">{m}</a>' for m in p["pmids"])
+    return f'<p class="text mlabel">Уровни уточнены по свежим обзорам: {links}.</p>'
+
+
 def item_page(it: dict, art: bool = False) -> str:
     effects = sorted(it["effects"], key=lambda x: RANK[x["level"]])
     short = f"{it['name']}: {LV_TEXT[it['verdict']]}. {it['about'] or ''}"
@@ -147,7 +155,7 @@ def item_page(it: dict, art: bool = False) -> str:
 {sec('С лекарствами', ''.join(f'<div class="ef"><span>{e(x["with"][:1].upper() + x["with"][1:])}</span><span class="mlabel">{e(x["note"])}</span></div>' for x in it['interactions'])) if it['interactions'] else ''}
 {sec('Из еды', f'<p class="big">{e(it["food"])}</p>') if it.get('food') else ''}
 <section class="sec people" id="people" data-sid="{e(it['id'])}" hidden></section>
-{sec('Источники', ''.join(f'<p class="src"><a href="{src_link(s)}" rel="noopener">{e(s["title"] or "")}</a> <span class="t">{s.get("year") or ""} {e(s.get("type") or "")}</span></p>' for s in it['sources']) + reviews_block(it) + f'<p class="text mlabel">Оценка: {e(it["origin"])}.</p>')}
+{sec('Источники', ''.join(f'<p class="src"><a href="{src_link(s)}" rel="noopener">{e(s["title"] or "")}</a> <span class="t">{s.get("year") or ""} {e(s.get("type") or "")}</span></p>' for s in it['sources']) + reviews_block(it) + patched_note(it) + f'<p class="text mlabel">Оценка: {e(it["origin"])}.</p>')}
 </article>"""
     qa = [(f"{it['name']}: работает ли?", re.sub(r"<[^>]+>", "", say_line(it, effects))),
           (f"{it['name']}: какая доза?", it.get("dosage")),
@@ -227,7 +235,7 @@ def index_page() -> str:
 <div class="list" id="az">{rows}</div></article>
 <script>{{const az=document.getElementById("az");document.querySelectorAll(".filter input").forEach((r)=>r.onchange=()=>{{az.querySelectorAll(".row").forEach((x)=>x.hidden=r.value!=="all"&&x.dataset.v!==r.value);az.querySelectorAll(".az").forEach((s)=>s.hidden=![...s.querySelectorAll(".row")].some((x)=>!x.hidden));}});}}</script>"""
     ld = {"@context": "https://schema.org", "@type": "CollectionPage", "name": "Все БАДы: что работает по исследованиям", "inLanguage": "ru"}
-    return page("Все БАДы по алфавиту: что работает по исследованиям", f"{len(items)} добавок с оценкой по обзорам исследований: доказано работают {works}.", body, "b/index.html", ld)
+    return page("Все БАДы по алфавиту: что работает по исследованиям", f"{len(items)} добавок с оценкой по обзорам исследований: доказано работают {works}.", body, "b/", ld)
 
 
 def released_ids() -> list:
@@ -363,7 +371,7 @@ def articles_index(rel: list) -> str:
 <div class="list">{rows}</div></article>"""
     ld = {"@context": "https://schema.org", "@type": "CollectionPage", "name": "Статьи о БАДах по исследованиям", "inLanguage": "ru"}
     return page("Статьи о БАДах: что говорят исследования",
-                f"Статьи по {len(rel)} добавкам: работает ли, доза, мифы, сочетания. Только по обзорам исследований.", body, "s/index.html", ld)
+                f"Статьи по {len(rel)} добавкам: работает ли, доза, мифы, сочетания. Только по обзорам исследований.", body, "s/", ld)
 
 
 def build():
@@ -377,6 +385,7 @@ def build():
     (SITE / "b").mkdir(exist_ok=True)
     (SITE / "g").mkdir(exist_ok=True)
     urls = [f"{BASE}/", f"{BASE}/about.html", f"{BASE}/profile.html", f"{BASE}/privacy.html"]
+    lastmod = {}
     (SITE / "b" / "index.html").write_text(clean(index_page()))
     urls.append(f"{BASE}/b/")
     for it in CAT["items"]:
@@ -394,8 +403,11 @@ def build():
         for sid in rel:
             (SITE / "s" / f"{sid}.html").write_text(clean(article_page(sid, rel)))
             urls.append(f"{BASE}/s/{sid}.html")
+            m = re.search(r"Обновлено: (\d{2})\.(\d{2})\.(\d{4})", (ART / f"{sid}.md").read_text())
+            if m:
+                lastmod[f"{BASE}/s/{sid}.html"] = f"{m.group(3)}-{m.group(2)}-{m.group(1)}"
     (SITE / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-                                      + "".join(f"<url><loc>{u}</loc></url>\n" for u in urls) + "</urlset>\n")
+                                      + "".join(f'<url><loc>{u}</loc>{f"<lastmod>{lastmod[u]}</lastmod>" if u in lastmod else ""}</url>\n' for u in urls) + "</urlset>\n")
     (SITE / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {BASE}/sitemap.xml\n")
     print(len(urls), "urls")
 

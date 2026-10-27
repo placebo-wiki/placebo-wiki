@@ -1,0 +1,64 @@
+{
+  "id": "soy",
+  "changes": {
+    "onset": "Мышцы и сила: как от сывороточного в исследованиях от 6 недель; холестерин: главный спад в первые недели приёма, ЛПВП растёт только после 12 недель.",
+    "course": "постоянно как замена животному белку: регулярные 1-2 порции в день (15-30 г) благотворны для липидов; у диабетиков 2 типа и при метаболическом синдроме глюкоза, ЛПНП и СРБ снижаются сильнее при длительности от 6 месяцев.",
+    "caution": "Эстрогеновые опасения: у мужчин мета-анализ не нашёл влияния сои на общий и свободный тестостерон, ГСПГ (19524224); у женщин сдвиги скромные: в пременопаузе ФСГ и ЛГ ниже примерно на 20%, в постменопаузе возможен небольшой недостоверный подъём эстрадиола, клиническое значение не определено (19299447); у спортсменов в отдельных исследованиях колебания тестостерона и кортизола, данных мало (37603200). Щитовидка и аллергия на сою в 30 обзорах базы не разобраны.",
+    "myths": "«Соя снижает тестостерон у мужчин»: мета-анализ РКИ не нашёл влияния на общий и свободный тестостерон, ГСПГ. «Изофлавоны сои провоцируют рак»: наоборот, у людей с высоким потреблением сои заболеваемость раком ниже на 10%."
+  },
+  "evidence": [
+    {
+      "pmid": "29722584",
+      "quote": "Less clear is the extent to which the type of protein supplemented impacts strength and LBM in long-term studies (≥6 weeks)."
+    },
+    {
+      "pmid": "29722584",
+      "quote": "The results of this meta-analysis indicate that soy protein supplementation produces similar gains in strength and LBM in response to RET as whey protein."
+    },
+    {
+      "pmid": "15699227",
+      "quote": "The strongest lowering effects of soy protein containing isoflavones on total cholesterol, LDL cholesterol, and triacylglycerol occurred within the short initial period of intervention, whereas improvements in HDL cholesterol were only observed in studies of >12 wk duration."
+    },
+    {
+      "pmid": "21730216",
+      "quote": "Regular consumption of 1 to 2 servings of soy protein daily (15 to 30 g) has a significant favorable impact on serum lipoprotein risk factors for CHD."
+    },
+    {
+      "pmid": "26996569",
+      "quote": "Furthermore, soy protein supplementation for longer duration (≥6 mo) significantly reduced FPG, LDL-C, and CRP, while that for a shorter duration (<6 mo) significantly reduced FSI and HOMA-IR."
+    },
+    {
+      "pmid": "19524224",
+      "quote": "No significant effects of soy protein or isoflavone intake on T, SHBG, free T, or FAI were detected regardless of statistical model."
+    },
+    {
+      "pmid": "19524224",
+      "quote": "The results of this meta-analysis suggest that neither soy foods nor isoflavone supplements alter measures of bioavailable T concentrations in men."
+    },
+    {
+      "pmid": "19299447",
+      "quote": "In premenopausal women, meta-analysis suggested that soy or isoflavone consumption did not affect primary outcomes estradiol, estrone or SHBG concentrations, but significantly reduced secondary outcomes FSH and LH [by approximately 20% using standardized mean difference (SMD), P = 0.01 and 0.05, respectively]."
+    },
+    {
+      "pmid": "19299447",
+      "quote": "In post-menopausal women, there were no statistically significant effects on estradiol, estrone, SHBG, FSH or LH, although there was a small statistically non-significant increase in total estradiol with soy or isoflavones ( approximately 14%, SMD, P = 0.07, 21 studies)."
+    },
+    {
+      "pmid": "19299447",
+      "quote": "The clinical implications of these modest hormonal changes remain to be determined."
+    },
+    {
+      "pmid": "37603200",
+      "quote": "Some studies reported testosterone and cortisol fluctuations related to SP; however, more research is required."
+    },
+    {
+      "pmid": "35308286",
+      "quote": "A higher intake of soy was significantly associated with a 10% reduced risk of cancer incidence (RR, 0.90; 95% CI, 0.83-0.96)."
+    },
+    {
+      "pmid": "35308286",
+      "quote": "Each additional 25 g/d soy intake decreased the risk of cancer incidence by 4%."
+    }
+  ],
+  "note": "Заполняю пропуски собственной карточки сои по аннотациям 30 обзоров пула. upper_limit пропущен: ни один обзор пула не называет предельную дозу (в аннотациях нет UL, NOAEL или допустимого максимума). onset: для мышц мета-анализ (29722584) оперирует длинными исследованиями от 6 недель и не находит отличий сои от сыворотки по приростам силы и тощей массы (острое превосходство сыворотки по стимуляции синтеза белка видно только в краткосрочных измерениях и не переходит в долгосрочную разницу); для липидов сроки даёт мета-анализ (15699227): сильнейшее снижение общего холестерина, ЛПНП и триглицеридов приходится на короткий начальный период приёма, а рост ЛПВП наблюдается только в исследованиях длиннее 12 недель. course: обзоры описывают не курсы, а регулярное потребление: 1-2 порции (15-30 г) в день благотворны для липидного профиля (21730216); в мета-анализе у диабетиков 2 типа и метаболического синдрома при длительности от 6 месяцев значимо снижаются глюкоза, ЛПНП и СРБ (26996569), отсюда формулировка «постоянно как замена животному белку». caution: эстрогеновые опасения: у мужчин мета-анализ не нашёл влияния на общий тестостерон, свободный тестостерон, ГСПГ и FAI (19524224); у женщин гормональные сдвиги скромные: в пременопаузе ФСГ и ЛГ ниже примерно на 20%, в постменопаузе небольшой недостоверный рост эстрадиола около 14%, клиническое значение не определено (19299447); у спортсменов в отдельных РКИ отмечены колебания тестостерона и кортизола, данных мало (37603200). Щитовидка и аллергия на сою в аннотациях пула не разобраны (щитовидные гормоны упомянуты лишь в критериях включения обзора 19299447, результатов в аннотации нет), поэтому предупреждений по ним не добавлено, а в caution честно указано отсутствие данных. myths: два мифа опровергнуты обзорами: «соя снижает тестостерон у мужчин» (19524224: нет значимых эффектов на Т, SHBG, свободный Т и FAI ни в одной модели) и «изофлавоны сои провоцируют рак» (35308286: высокое потребление сои связано со снижением заболеваемости раком на 10%, каждые дополнительные 25 г/день снижают риск на 4%). interactions оставлены пустыми: данных по взаимодействиям в аннотациях пула нет."
+}

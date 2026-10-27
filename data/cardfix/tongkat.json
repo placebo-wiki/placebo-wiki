@@ -1,0 +1,58 @@
+{
+ "id": "tongkat",
+ "changes": {
+  "who_needs": "Мужчины, кто хочет поднять тестостерон: по МА 2022 эффект есть и при его нехватке, и у здоровых; при низком тестостероне как дополнение к лечению, после анализа.",
+  "effects": [
+   {
+    "text": "Тестостерон: МА 2022 находит значимый рост и у здоровых, и у мужчин с исходно низким, но исследований мало (9 в СР, 5 РКИ в МА), для практики нужно больше данных",
+    "level": "зависит",
+    "goals": [
+     "тестостерон"
+    ]
+   }
+  ],
+  "onset": "Эректильная функция: 12 недель (оценка IIEF-5 в РКИ); сроки по тестостерону и острый эффект аннотации обзоров не называют.",
+  "course": "12 недель (длительность РКИ эректильной функции); более длинные курсы в обзорах не описаны.",
+  "caution": "Тонгкат али: экстракт корня эврикомы, продаётся как «бустер тестостерона». Доказательства неоднородны: из 11 клинических исследований обзора 2017 года 4 не нашли достаточного эффекта. МА по эректильной функции (2 РКИ, 139 участников) общего значимого улучшения IIEF-5 не подтверждает: прибавка есть только при исходно низких баллах, авторы требуют новых испытаний. МА 2022 по тестостерону в плюс (SMD 1.352, подтверждено в подгруппе гипогонадизма), но для клинической практики данных недостаточно, тонгкат назван лишь потенциально безопасной опцией. Побочных эффектов и групп риска аннотации обзоров не называют. Не замена терапии при гипогонадизме: сначала анализ тестостерона и врач.",
+  "myths": "«Улучшает эрекцию любому»: в МА 2 РКИ общий эффект на IIEF-5 не значим, прибавка 2.15 балла только при исходно низкой функции. «Подтверждён всеми исследованиями»: из 11 клинических исследований 4 не нашли достаточного эффекта."
+ },
+ "evidence": [
+  {
+   "pmid": "36013514",
+   "quote": "A significant improvement in total testosterone levels after <i>E. longifolia</i> treatment was mostly reported in both healthy volunteers and hypogonadal men."
+  },
+  {
+   "pmid": "36013514",
+   "quote": "After literature screening, a total of nine studies was included in the systematic review. Five RCTs were included in the meta-analysis."
+  },
+  {
+   "pmid": "36013514",
+   "quote": "The random model effect revealed a significant increase (SMD = 1.352, 95% CI 0.565 to 2.138, <i>p</i> = 0.001) in the total testosterone levels in men receiving <i>E. longifolia</i> supplementation, which was confirmed in the hypogonadism subgroup."
+  },
+  {
+   "pmid": "36013514",
+   "quote": "Although more research is required before its use in clinical practice, this may represent a safe and promising therapeutic option, particularly in hypogonadal men."
+  },
+  {
+   "pmid": "26365449",
+   "quote": "No significance between group difference was found in the mean WMD of the change in the 5- item version of the international index of erectile function (IIEF-5) at week-12 (0.91; 95% CI: -1.50 to 3.33 with I(2)=89.5%, P-value=0.002) with statistical heterogeneity."
+  },
+  {
+   "pmid": "26365449",
+   "quote": "Based on the subgroup analysis, significant improved IIEF-5 score of 2.15 (95% CI 1.03-3.27) was found in subjects with lower baseline IIEF-5 score, but this was not seen among those with higher baseline IIEF-5 score."
+  },
+  {
+   "pmid": "26365449",
+   "quote": "Of the 342 articles identified, 2 studies involving a total of 139 participants were analyzed."
+  },
+  {
+   "pmid": "26365449",
+   "quote": "Based on current evidence, the herbal extract of Tongkat Ali may have clinical effect on erectile function. However, more efficacy trials are warranted to further support current evidence."
+  },
+  {
+   "pmid": "28259255",
+   "quote": "Among them, 7 studies revealed remarkable association between the use of EL and the efficacy in the treatment of male sexual disorders, and remaining 4 studies failed to demonstrate sufficient effects on male sexual health."
+  }
+ ],
+ "note": "Кумулятивная правка (второй проход). По правилу свежего обзора ослаблено условие «сильнее при его нехватке»: свежейший МА 2022 (36013514) сообщает значимое улучшение общего тестостерона и у здоровых добровольцев, и у мужчин с гипогонадизмом, поэтому эффект переписан как рост в обеих группах (уровень «зависит» оставлен: в СР всего 9 исследований, в МА 5 РКИ, и сами авторы пишут, что для применения в клинической практике нужно больше исследований), who_needs выровнен с эффектом: эффект есть и при нехватке, и у здоровых, при низком тестостероне как дополнение к лечению, после анализа. Прежние заполненные поля сохранены. onset и course опираются на единственную временную точку, названную в аннотациях: МА по эректильной функции (26365449) оценивает изменение IIEF-5 на 12-й неделе, отсюда и срок ожидания эффекта, и длительность испытаний 12 недель; сроки наступления эффекта по тестостерону ни одна аннотация не называет, что отражено в тексте. caution собран из ограничений, которые сами обзоры формулируют: МА 2022 (36013514) находит рост общего тестостерона (SMD 1.352), подтверждённый в подгруппе гипогонадизма, но пишет, что для применения в клинической практике исследований недостаточно, и называет тонгкат лишь потенциально безопасной опцией; МА по эрекции (26365449, 2 РКИ, 139 участников) не подтверждает общий эффект (WMD 0.91 не значим при гетерогенности), улучшение видно только при исходно низких баллах IIEF-5, авторы требуют новых испытаний; СР 2017 (28259255): 4 из 11 исследований не нашли достаточного эффекта. Конкретных побочных эффектов и групп риска аннотации не называют, поэтому предостережения в caution касаются уровня доказательств и статуса «не замена терапии», без выдуманных органов и групп. myths: миф «улучшает эрекцию любому» опровергается отсутствием общего значимого эффекта в МА и подгрупповым характером улучшения (2.15 балла только при исходно низкой функции, речь об эрекции, а не о тестостероне); миф «подтверждён всеми исследованиями» опровергается 4 из 11 исследований без эффекта. upper_limit пропущен: предельную безопасную дозу не называет ни одна аннотация (23419023 упоминает adverse effects, toxicology и dosing лишь как разделы полной статьи, без конкретики в аннотации), выдумывать дозу нельзя."
+}

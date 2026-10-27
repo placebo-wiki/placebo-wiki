@@ -11,6 +11,12 @@
    "goals": {
     "потенция": {"level": "работает", "note": "эрекция напрямую зависит от притока крови; вопрос только в том, насколько вещество его улучшает"}
    }
+  },
+  "инсулин": {
+   "label": "чувствительность к инсулину выше",
+   "goals": {
+    "вес и сахар": {"level": "зависит", "note": "инсулинорезистентность: один из драйверов веса и сахара; снижение резистентности помогает, когда она и есть причина"}
+   }
   }
  },
  "links": [
@@ -21,13 +27,21 @@
                {"pmid": "41740946", "doi": "10.1055/a-2802-8363", "title": "Hormonal Modulation with Withania somnifera: Systematic Review and Meta-Analysis of RCTs", "year": 2026}]},
   {"id": "l-tsitrullin", "mediator": "кровоток", "level": "зависит",
    "text": "предшественник оксида азота, расширяет сосуды; при лёгкой эректильной дисфункции испытания маленькие, прямая вазодилатация непостоянна",
-   "sources": []},
+   "sources": [{"pmid": "31977835", "doi": "10.1519/jsc.0000000000003426", "title": "Effects of Citrulline Supplementation on Exercise Performance in Humans: A Review of the Current Literature.", "year": 2020},
+               {"pmid": "40789388", "doi": "10.1016/j.clnesp.2025.07.1130", "title": "Does l-citrulline supplementation and watermelon intake reduce blood pressure in middle-aged and older adults? A systematic review and meta-analysis of randomized controlled trials.", "year": 2025},
+               {"pmid": "41323997", "doi": "10.3389/fnut.2025.1632952", "title": "Effects of L-citrulline supplementation and watermelon intake on arterial stiffness and endothelial function in middle-aged and older adults: a systematic review and meta-analysis of randomized controlled trials.", "year": 2025}]},
   {"id": "arginin", "mediator": "кровоток", "level": "зависит",
    "text": "предшественник оксида азота; мета-анализы: небольшое улучшение эректильной функции, дозы высокие",
    "sources": [{"pmid": "30770070", "doi": "10.1016/j.jsxm.2018.12.002", "title": "The Potential Role of Arginine Supplements on Erectile Dysfunction: A Systematic Review and Meta-Analysis", "year": 2019},
                {"pmid": "33587304", "doi": "10.1111/and.14007", "title": "Comparison of efficacy and safety of daily oral L-arginine and PDE5 inhibitors alone or in combination", "year": 2021}]},
   {"id": "piknogenol", "mediator": "кровоток", "level": "зависит",
    "text": "улучшает работу эндотелия сосудов; в паре с аргинином эффект на эректильную функцию заметнее",
-   "sources": [{"pmid": "37908749", "doi": "10.3389/fendo.2023.1211720", "title": "Efficacy of L-arginine and Pycnogenol in the treatment of male erectile dysfunction: a systematic review and meta-analysis", "year": 2023}]}
+   "sources": [{"pmid": "37908749", "doi": "10.3389/fendo.2023.1211720", "title": "Efficacy of L-arginine and Pycnogenol in the treatment of male erectile dysfunction: a systematic review and meta-analysis", "year": 2023}]},
+  {"id": "berberin", "mediator": "инсулин", "level": "работает",
+   "text": "снижает инсулинорезистентность (мета-анализы)",
+   "sources": [{"pmid": "34956436", "doi": "10.1155/2021/2074610", "title": "The Effect of Berberine on Metabolic Profiles in Type 2 Diabetic Patients: A Systematic Review and Meta-Analysis of Randomized Controlled Trials.", "year": 2021},
+               {"pmid": "36313096", "doi": "10.3389/fnut.2022.1013055", "title": "The effects of berberine supplementation on cardiovascular risk factors in adults: A systematic review and dose-response meta-analysis.", "year": 2022},
+               {"pmid": "36999891", "doi": "10.1002/ptr.7806", "title": "Berberine and health outcomes: An umbrella review.", "year": 2023},
+               {"pmid": "38429794", "doi": "10.1186/s12967-024-05011-2", "title": "The clinical efficacy and safety of berberine in the treatment of non-alcoholic fatty liver disease: a meta-analysis and systematic review.", "year": 2024}]}
  ]
 }

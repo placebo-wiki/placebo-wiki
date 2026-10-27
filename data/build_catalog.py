@@ -138,7 +138,7 @@ def apply_patches(rec: dict) -> dict:
         base = goals_of(blob)
         rec["goals"] = base + [g for g in goals_of(f"{rec.get('about') or ''} {rec.get('who_needs') or ''}")
                                if g in NARROW_GOALS and g not in base and g not in NOT_GOAL.get(rec["id"], set())]
-    rec["patched"] = {"pmids": [x.get("pmid") for x in p.get("evidence") or []], "note": p.get("note")}
+    rec["patched"] = {"pmids": list(dict.fromkeys(x.get("pmid") for x in p.get("evidence") or [])), "note": p.get("note")}
     return rec
 
 
