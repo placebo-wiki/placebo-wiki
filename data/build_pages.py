@@ -292,20 +292,31 @@ def article_page(sid: str) -> str:
     lead, secs, upd, disc = parse_article(sid)
     m = re.match(r"^([^.]{1,60}\.)", lead)
     say = f"<b>{m.group(1)}</b>{lead[m.end():]}" if m else lead
-    parts, links = [], []
+    n = study_count(sid)
+    facts = f'<span class="badge b-{LV[it["verdict"]]}">{LV_TEXT[it["verdict"]]}</span>'
+    if n:
+        facts += f" выжимка из {studies(n)}"
+    if GRADE.get(it["grade"] or ""):
+        facts += f" · {GRADE[it['grade'] or '']}"
+    parts = []
     for title, rows in secs:
-        cls = "src" if title == "Источники" else ""
-        body = '<div class="lines">' + "".join(f'<p class="{cls}">{r}</p>' for r in rows if r) + "</div>"
-        parts.append(f'<section class="sec rv"><h2>{e(title)}</h2>{body}</section>')
         if title == "Источники":
-            links = re.findall(r'href="([^"]+)"', body)
+            body = "".join(f'<p class="src"><a href="{src_link(s)}" rel="noopener">{e(s["title"] or "")}</a> '
+                           f'<span class="t">{s.get("year") or ""} {e(s.get("type") or "")}</span></p>'
+                           for s in it["sources"] if s.get("pmid") or s.get("doi")) + reviews_block(it)
+        else:
+            body = '<div class="lines">' + "".join(f"<p>{r}</p>" for r in rows if r) + "</div>"
+        parts.append(f'<section class="sec rv"><h2>{e(title)}</h2>{body}</section>')
+    links = [src_link(s) for s in it["sources"] if s.get("pmid") or s.get("doi")]
     card_row = (f'<div class="list"><a class="row" href="../b/{e(sid)}.html"><div>'
-                f'<div class="nm">Карточка: {e(nm)}</div><div class="ef">Доза и предел, формы, поле исследований по годам</div></div>'
+                f'<div class="nm">Карточка: {e(nm)}</div><div class="ef">Доза, предел, формы и оценки по обзорам</div></div>'
                 f'<span class="badge b-{LV[it["verdict"]]}">{LV_TEXT[it["verdict"]]}</span></a></div>')
     body = f"""<article class="card story">
 <p class="kicker">Статья</p>
-<h1>{e(nm)}: помогает ли и как принимать</h1>
+<h1>{e(nm)}</h1>
 <p class="say">{say}</p>
+<div class="grade">{facts}</div>
+<figure class="evf" data-src="../b/ev/{e(sid)}.json"></figure>
 {''.join(parts)}
 {f'<p class="mlabel">{upd}</p>' if upd else ''}
 {f'<p class="mlabel">{disc}</p>' if disc else ''}
