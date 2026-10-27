@@ -1,0 +1,38 @@
+{
+ "id": "tsistein",
+ "changes": {
+  "effects": [
+   {
+    "text": "снижение обострений и госпитализаций при стабильной COPD: данные муколитика NAC, на свободный цистеин не переносятся (МА 2024)",
+    "level": "не подтверждено"
+   },
+   {
+    "text": "детоксикация метаболитов парацетамола, защита печени: эффекты NAC как антидота, на свободный цистеин не переносятся (Cochrane 2018)",
+    "level": "не подтверждено"
+   },
+   {
+    "text": "эффекты вариативны, в основном незначимы (SR 2023)",
+    "level": "зависит"
+   }
+  ]
+ },
+ "evidence": [
+  {
+   "pmid": "12835357",
+   "quote": "A short cut review was carried out to establish whether methionine was better than n-acetyl cysteine at reducing the severity of liver damage after paracetamol overdose."
+  },
+  {
+   "pmid": "33722689",
+   "quote": "The role of N-acetylcysteine (NAC) in the treatment of acetaminophen induced acute liver injury (ALI) is well established but its role in non-acetaminophen induced ALI is still elusive."
+  },
+  {
+   "pmid": "34775122",
+   "quote": "N Acetyl cysteine (NAC) is known to destabilize the biofilms, as it cleaves the disulfide bonds of mucus glycoproteins, reducing the viscosity and thickness of mucus."
+  },
+  {
+   "pmid": "17054219",
+   "quote": "To determine the effects of supplementing parenteral nutrition with cysteine, cystine or its precursor N-acetylcysteine on neonatal growth and short and long-term outcomes."
+  }
+ ],
+ "note": "Оба эффекта «работает» опираются на данные по N-ацетилцистеину (NAC), а не по свободному цистеину: по аннотациям базы при передозировке парацетамола тяжесть поражения печени снижают NAC и метионин (12835357), роль NAC при парацетамоловом поражении печени хорошо установлена (33722689), муколитик, разжижающий мокроту, тоже NAC (34775122), а Cochrane-обзор по неонатальному питанию разделяет цистеин и NAC как отдельные вмешательства (17054219). Сам Cochrane 2018 (29473717) в базе аннотаций отсутствует; родственные аннотации подтверждают: лечение при отравлении парацетамолом это про NAC. Эффекты NAC на цистеин переносить нельзя, у самого цистеина эффектов такой силы не доказано, поэтому по правилу 28.10 (понижать можно) оба эффекта понижены до «не подтверждено» с честным указанием молекулы. Вердикт «не подтверждено» остаётся, about уже честен и правок не требует."
+}

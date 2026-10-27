@@ -1,0 +1,52 @@
+{
+ "id": "coq10",
+ "changes": {
+  "verdict": "зависит",
+  "about": "Переносчик электронов в митохондриях и антиоксидант; дефицит коррелирует с тяжестью сердечной недостаточности; эффект добавки условен: у принимающих статины (их уровень CoQ10 падает) и у пожилых зависит, у здоровых слабо; при СН вероятное снижение смертности и госпитализаций (умеренное качество), для рутинного приёма данных недостаточно (Cochrane).",
+  "effects": [
+   {
+    "text": "Энергия у принимающих статины/пожилых; у здоровых слабо",
+    "level": "зависит"
+   },
+   {
+    "text": "Сердечная недостаточность: дефицит убихинона коррелирует с тяжестью СН; Cochrane 2021 находит вероятное снижение смертности (RR 0.58) и госпитализаций (RR 0.62) при умеренном качестве данных, но убедительных доказательств для рутинного приёма авторы не видят",
+    "level": "зависит"
+   },
+   {
+    "text": "Кокрановский обзор: эффект на АД в первичной гипертензии недостоверен",
+    "level": "не подтверждено"
+   }
+  ]
+ },
+ "evidence": [
+  {
+   "pmid": "35608922",
+   "quote": "Coenzyme Q10 probably reduces the risk of all-cause mortality more than control (RR 0.58, 95% CI 0.35 to 0.95; 1 study, 420 participants; number needed to treat for an additional beneficial outcome (NNTB) 13.3; moderate-quality evidence)."
+  },
+  {
+   "pmid": "35608922",
+   "quote": "Coenzyme Q10 probably reduces hospitalisation related to heart failure (RR 0.62, 95% CI 0.49 to 0.78; 2 studies, 1061 participants; NNTB 9.7; moderate-quality evidence)."
+  },
+  {
+   "pmid": "35608922",
+   "quote": "There is currently no convincing evidence to support or refute the use of coenzyme Q10 for heart failure."
+  },
+  {
+   "pmid": "35608922",
+   "quote": "The severity of heart failure correlates with the severity of coenzyme Q10 deficiency."
+  },
+  {
+   "pmid": "26192349",
+   "quote": "The meta-analysis showed a significant reduction in plasma CoQ10 concentrations following treatment with statins."
+  },
+  {
+   "pmid": "17560286",
+   "quote": "Supplementation can raise the circulating levels of CoQ10, but data on the effect of CoQ10 supplementation on myopathic symptoms are scarce and contradictory."
+  },
+  {
+   "pmid": "14695924",
+   "quote": "six showed a modest improvement in exercise capacity with CoQ10 supplementation but five showed no effect"
+  }
+ ],
+ "note": "Вердикт понижен с «работает» до «зависит»: сильнейший уровень эффекта в карточке «зависит». Дополнено после слепой сверки: аннотация Cochrane 2021 (pmid 35608922) содержит оба вывода, поэтому эффект по СН дополнен, About уточнён: вероятное снижение смертности (RR 0.58) и госпитализаций (RR 0.62) при умеренном качестве данных, но убедительных доказательств для рутинного приёма при СН нет. Корреляция дефицита с тяжестью СН и условная польза у принимающих статины и пожилых сохранены; у здоровых данные разнородны: 5 из 11 исследований работоспособности без эффекта."
+}

@@ -22,4 +22,5 @@ up --include "*.js" --content-type "application/javascript; charset=utf-8" --con
 up --include "*.svg" --content-type "image/svg+xml" --content-encoding gzip --cache-control "$NC"
 up --include "*.woff2" --content-type "font/woff2" --cache-control "public, max-age=31536000, immutable"
 up --include "*.png" --include "*.ico" --cache-control "public, max-age=86400"
+python3 "$(dirname "$0")/ping_index.py" || echo "indexnow: пропущен"
 echo "deployed"

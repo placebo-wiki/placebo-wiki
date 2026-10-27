@@ -3,14 +3,34 @@
  "changes": {
   "about": "Антиоксидант и кофермент: сенсорные симптомы диабетической полинейропатии ниже; вес снижает незначительно (около 1 кг).",
   "effects": [
-   {"text": "Нейропатия: умеренно; вес и ИМТ снижаются, но немного (около 1 кг)", "level": "зависит"},
-   {"text": "Сенсорные симптомы диабетической полинейропатии ниже, дозозависимо (10 РКИ, 1242 чел.)", "level": "зависит"},
-   {"text": "Кокрановский обзор 2024: эффекта на симптомы через 6 мес мало/недостоверно (3 РКИ, 816 чел.)", "level": "не подтверждено"}
-  ]
+   {
+    "text": "Нейропатия: умеренно; вес и ИМТ снижаются, но немного (около 1 кг)",
+    "level": "зависит"
+   },
+   {
+    "text": "Сенсорные симптомы диабетической полинейропатии ниже, дозозависимо (10 РКИ, 1242 чел.)",
+    "level": "зависит"
+   },
+   {
+    "text": "Кокрановский обзор 2024: эффекта на симптомы через 6 мес мало/недостоверно (3 РКИ, 816 чел.)",
+    "level": "не подтверждено"
+   }
+  ],
+  "verdict": "зависит"
  },
  "evidence": [
-  {"pmid": "28295905", "quote": "Alpha-lipoic acid treatment showed small, yet significant short-term weight loss compared with placebo."},
-  {"pmid": "28629898", "quote": "The present study revealed that supplementation with ALA slightly but significantly decreased body weight and BMI."}
+  {
+   "pmid": "28295905",
+   "quote": "Alpha-lipoic acid treatment showed small, yet significant short-term weight loss compared with placebo."
+  },
+  {
+   "pmid": "28629898",
+   "quote": "The present study revealed that supplementation with ALA slightly but significantly decreased body weight and BMI."
+  },
+  {
+   "pmid": "37630823",
+   "quote": "ALA treatment had favorable effects on DSPN by reducing sensory symptoms, and it resulted in a dose-dependent response relative to the placebo for TSS and the global satisfaction score."
+  }
  ],
- "note": "Мета-анализы РКИ 2017 и 2018 показывают небольшое, но значимое снижение веса и ИМТ, поэтому формулировки «похудения не даёт» и «похудение: нет» исправлены на маленький, но значимый эффект; уровень оставлен «зависит», так как эффект клинически мал."
+ "note": "Мета-анализы РКИ 2017 и 2018 показывают небольшое, но значимое снижение веса и ИМТ, поэтому формулировки «похудения не даёт» и «похудение: нет» исправлены на маленький, но значимый эффект; уровень оставлен «зависит», так как эффект клинически мал. Круг 3: вердикт понижен до «зависит» по правилу: вердикт не сильнее самого сильного доказанного эффекта."
 }

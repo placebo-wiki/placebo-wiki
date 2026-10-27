@@ -1,0 +1,35 @@
+{
+ "id": "korditseps",
+ "changes": {
+  "verdict": "зависит",
+  "about": "Гриб ТКМ: при ХБП снижение креатинина/протеинурии не подтверждено: качество РКИ слабое, окончательных выводов Cochrane-обзор не делает; после трансплантации лучше метаболизм, но нужны более качественные данные.",
+  "caution": "Кордицепс (Cordyceps sinensis): гриб из традиционной китайской медицины. Для ХБП: Cochrane-обзор (25519252) видит возможное улучшение маркеров почек как адъюванта, но окончательных выводов не делает из-за низкого качества доказательств (риск систематической ошибки высокий в 4 РКИ и неясный в 18); свежий мета-анализ 2024 (39839641) по дисфункции почек оптимистичнее, эффективность остаётся предметом дискуссии, обзоры расходятся. Для реципиентов трансплантата почки: малые исследования с неясным риском систематической ошибки, результаты следует трактовать с осторожностью (26457607). Для выносливости: данные ограниченные (отдельные РКИ, не систематизированы). Для лёгочных заболеваний: данные ограниченные. Дорогой препарат, часто подделывают."
+ },
+ "evidence": [
+  {
+   "pmid": "25519252",
+   "quote": "However, definitive conclusions could not be made because of the low quality of evidence."
+  },
+  {
+   "pmid": "25519252",
+   "quote": "suboptimal reporting and flawed methodological approaches meant that risk of bias was assessed as high in four studies and unclear in 18 studies, and hence, these results need to be interpreted with caution."
+  },
+  {
+   "pmid": "26457607",
+   "quote": "Given the limited number of small studies, and high risk of bias, results should be interpreted with caution."
+  },
+  {
+   "pmid": "39839641",
+   "quote": "The effectiveness of using <i>Cordyceps sinensis</i> as an adjuvant therapy for patients with renal dysfunction (RD), especially acute kidney injury (AKI), is still a topic of debate."
+  },
+  {
+   "pmid": "28137532",
+   "quote": "Current evidence shows that cordyceps as an adjuvant to routine immunosuppressant therapy may benefit kidney transplant patient, however, better quality evidence is still required."
+  },
+  {
+   "pmid": "25682973",
+   "quote": "However, with regard to low-quality and significant heterogeneity of included trials, to further verify the current results from this meta-analysis, long-term and well-designed RCTs with high-quality study are warranted to ascertain the long-term efficacy of O. sinensis."
+  }
+ ],
+ "note": "Вердикт «работает» был сильнее любого эффекта карточки: VO2 и ХБП стоят «не подтверждено», трансплантация «зависит»; по правилу вердикт не сильнее самого сильного доказанного эффекта, поставлен «зависит». About и caution обещали эффект при ХБП сильнее таблицы эффектов; выровнены по уровню данных: Cochrane-обзор ХБП (25519252) сам не делает окончательных выводов из-за низкого качества доказательств, а «2 Cochrane-обзора показывают улучшение функции почек» завышало уровень (26457607 к тому же про реципиентов трансплантата, а не про ХБП). Обзоры расходятся: свежий мета-анализ 2024 (39839641) по дисфункции почек оптимистичнее Cochrane 2014, поэтому уровень «зависит» с пометкой о разнобое. Эффекты не менялись: их уровни соответствуют аннотациям."
+}

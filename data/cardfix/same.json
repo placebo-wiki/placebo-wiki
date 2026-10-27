@@ -1,0 +1,47 @@
+{
+  "id": "same",
+  "changes": {
+    "verdict": "зависит",
+    "about": "Донор метильных групп; при депрессии эффект показан лишь как добавка к СИОЗС (низкое качество данных), печёночные показатели улучшает; обезболивание при остеоартрозе не подтверждено (SMD -0.17, ~0.4 см VAS).",
+    "caution": "SAMe (S-аденозилметионин): универсальный донор метильных групп. Для депрессии: эффективность сравнима с СИОЗС в РКИ. Для остеоартроза: обезболивание не подтверждено, SMD -0.17 (95% CI -0.34 до 0.01, интервал включает ноль), ~0.4 см на VAS 10 см, функция без эффекта (SMD 0.02); Cochrane-обзор (19821403) не рекомендует рутинный приём. Для печени: есть данные. Для биполярного расстройства: ОСТОРОЖНО (риск мании). Высокая цена, низкая стабильность: нужны кишечнорастворимые формы. Доза: 400-1600 мг/день."
+  },
+  "evidence": [
+    {
+      "pmid": "19821403",
+      "quote": "For pain, the analysis indicated a small SMD of -0.17 (95% CI -0.34 to 0.01), corresponding to a difference in pain scores between SAMe and placebo of 0.4 cm on a 10 cm VAS, with no between trial heterogeneity (I(2) = 0)."
+    },
+    {
+      "pmid": "19821403",
+      "quote": "For function, the analysis suggested a SMD of 0.02 (95% CI -0.68 to 0.71) with a moderate degree of between-trial heterogeneity (I2 = 54%)."
+    },
+    {
+      "pmid": "19821403",
+      "quote": "The current systematic review is inconclusive, hampered by the inclusion of mainly small trials of questionable quality."
+    },
+    {
+      "pmid": "19821403",
+      "quote": "Meanwhile, routine use of SAMe should not be advised."
+    },
+    {
+      "pmid": "27727432",
+      "quote": "There was no strong evidence of a difference in terms of change in depressive symptoms from baseline to end of treatment between SAMe and placebo as monotherapy (standardised mean difference (SMD) -0.54, 95% confidence interval (CI) -1.54 to 0.46; P = 0.29; 142 participants; 2 studies; very low quality evidence)"
+    },
+    {
+      "pmid": "27727432",
+      "quote": "There was low quality evidence that SAMe is superior to placebo as add-on to SSRIs in terms of change in depressive symptoms from baseline to end of treatment"
+    },
+    {
+      "pmid": "27727432",
+      "quote": "There was little evidence of a difference in terms of change in depressive symptoms from baseline to end of treatment between SAMe and escitalopram, both as monotherapy (MD 0.12, 95% CI -2.75 to 2.99; P = 0.93; 129 participants; 1 study; low quality evidence)."
+    },
+    {
+      "pmid": "28682528",
+      "quote": "This review of SAMe in the treatment of major depressive disorder found promising but limited evidence of efficacy and safety to support its use as a monotherapy and as an augmentation for other antidepressants"
+    },
+    {
+      "pmid": "39519500",
+      "quote": "Overall, SAMe was effective in improving liver-related parameters with few adverse events, which were primarily mild, transient gastrointestinal complaints."
+    }
+  ],
+  "note": "Вердикт «работает» понижен до «зависит»: ни один эффект карточки не достигает уровня «работает» (депрессия адъювант «зависит», боль при остеоартрозе «не подтверждено», печень «зависит»), а по правилу вердикт не сильнее самого сильного доказанного эффекта. Депрессия: свежий Cochrane 2016 (27727432) не нашёл убедительных различий с плацебо при монотерапии (очень низкое качество доказательств), эффект показан только как добавка к СИОЗС и тоже при низком качестве; обзор 2017 (28682528) называет доказательства перспективными, но ограниченными; старые обзоры (7941964, 16021987) находили эффект против плацебо, отсюда разнобой и уровень «зависит». Боль при остеоартрозе: Cochrane 2009 (19821403) нашёл лишь малый SMD -0.17 с доверительным интервалом, включающим ноль, и без эффекта на функцию, вывод обзора неопределённый, рутинный приём не рекомендуется; поэтому из caution убрана фраза «подтверждает обезболивающий эффект» и заменена уровнем данных (SMD, интервал, функция), из about убрано обещание помощи при боли и добавлен малый SMD. Печень в about сохранена по 39519500 (улучшение печёночных показателей при редких НЯ). Эффекты не менялись: их уровни соответствуют аннотациям."
+}

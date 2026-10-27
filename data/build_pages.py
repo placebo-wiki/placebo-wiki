@@ -24,6 +24,8 @@ REL = SEO / "released.json"
 ART_PER_DAY = 50
 # Wordstat demand (site/top.json, 30 days): the most-searched supplements are released first.
 WORDSTAT_TOP = ["Магний", "Коллаген", "Витамин D", "Омега-3", "Глицин"]
+
+HAS_ART = False  # set by build() when a released batch of articles exists
 LV = {"работает": "w", "зависит": "d", "не подтверждено": "n"}
 LV_TEXT = {"работает": "работает", "зависит": "зависит от условий", "не подтверждено": "не доказано"}
 RANK = {"работает": 0, "зависит": 1, "не подтверждено": 2}
@@ -38,7 +40,7 @@ def page(title: str, desc: str, body: str, path: str, ld: dict) -> str:
 <link rel="canonical" href="{BASE}/{path}"><link rel="icon" href="../favicon.ico" sizes="32x32"><link rel="icon" href="../img/logo.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="../img/icon-180.png"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(desc)}"><meta property="og:image" content="https://placebo.wiki/img/og.png"><meta name="twitter:card" content="summary_large_image"><link rel="preload" href="../fonts/Geist-cyrillic.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="../fonts/Geist-latin.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="../search.css">
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
 </head><body class="has-answer">
-<a class="skip" href="#main">К содержимому</a><nav class="bar"><a href="../" class="bar-mark" id="home" aria-label="placebo.wiki"><svg class="bar-svg" viewBox="0 0 512 512" aria-hidden="true"><defs><mask id="lm"><rect width="512" height="512" fill="#fff"/><g fill="#000" transform="translate(-33 -4)"><rect x="150" y="140" width="64" height="240" rx="32"/><circle cx="266" cy="236" r="96"/><circle class="lm-dot" cx="394" cy="298" r="34"/></g><circle cx="233" cy="232" r="40" fill="#fff"/></mask></defs><rect width="512" height="512" rx="116" fill="currentColor" mask="url(#lm)"/></svg></a><div class="bar-links"><a href="../b/">Все БАДы</a><a href="../about.html">Наши правила</a><a href="../mcp.html">Для агентов</a></div></nav>
+<a class="skip" href="#main">К содержимому</a><nav class="bar"><a href="../" class="bar-mark" id="home" aria-label="placebo.wiki"><svg class="bar-svg" viewBox="0 0 512 512" aria-hidden="true"><defs><mask id="lm"><rect width="512" height="512" fill="#fff"/><g fill="#000" transform="translate(-33 -4)"><rect x="150" y="140" width="64" height="240" rx="32"/><circle cx="266" cy="236" r="96"/><circle class="lm-dot" cx="394" cy="298" r="34"/></g><circle cx="233" cy="232" r="40" fill="#fff"/></mask></defs><rect width="512" height="512" rx="116" fill="currentColor" mask="url(#lm)"/></svg></a><div class="bar-links"><a href="../b/">Все БАДы</a>{'<a href="../s/">Статьи</a>' if HAS_ART else ''}<a href="../about.html">Наши правила</a><a href="../mcp.html">Для агентов</a></div></nav>
 <header class="top"><a href="../" class="logo"><span class="logo-word">placebo<span>.wiki</span></span></a>
 <form class="field" action="../" role="search"><input name="q" type="search" placeholder="Другой БАД или цель" aria-label="Поиск"><button aria-label="Найти"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button><a class="mymap" href="../profile.html" aria-label="Моя карта здоровья"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><span class="tip">Моя карта здоровья</span></a></form></header>
 <main id="main">{body}</main>
@@ -171,10 +173,6 @@ def item_page(it: dict, art: bool = False) -> str:
     return page(title, desc, body, f"b/{it['id']}.html", ld)
 
 
-# Goals matched only by a summary line: an overall "работает" verdict is not proof for this goal.
-NARROW_GOALS = {"тестостерон", "печень", "зрение", "климакс", "потенция"}
-
-
 def indirect_rows(goal: str) -> str:
     rows = []
     for it in CAT["items"]:
@@ -197,7 +195,8 @@ def goal_page(goal: str, slug: str) -> str:
         if goal not in it["goals"]:
             continue
         own = sorted((x for x in it["effects"] if goal in x["goals"]), key=lambda x: RANK[x["level"]])
-        borrowed = "зависит" if goal in NARROW_GOALS and it["verdict"] == "работает" else it["verdict"]
+        # a borrowed verdict never claims "работает" for the goal (his rule of 28.10, now for all goals)
+        borrowed = "зависит" if it["verdict"] == "работает" else it["verdict"]
         rows.append((it, own[0] if own else {"text": it["about"], "level": borrowed}))
     rows.sort(key=lambda r: (RANK[r[1]["level"]], r[0]["grade"] or "Z"))
     works = sum(1 for _, b in rows if b["level"] == "работает")
@@ -286,7 +285,7 @@ def parse_article(sid: str):
     return lead, secs, upd, disc
 
 
-def article_page(sid: str) -> str:
+def article_page(sid: str, rel: list) -> str:
     it = BY[sid]
     nm = it["name"]
     lead, secs, upd, disc = parse_article(sid)
@@ -311,9 +310,19 @@ def article_page(sid: str) -> str:
     card_row = (f'<div class="list"><a class="row" href="../b/{e(sid)}.html"><div>'
                 f'<div class="nm">Карточка: {e(nm)}</div><div class="ef">Доза, предел, формы и оценки по обзорам</div></div>'
                 f'<span class="badge b-{LV[it["verdict"]]}">{LV_TEXT[it["verdict"]]}</span></a></div>')
+    shared = [x for x in rel if x != sid and set(BY[x]["goals"]) & set(it["goals"])]
+    related = sorted(shared, key=lambda x: -study_count(x))[:4]
+    rel_block = ""
+    if related:
+        rel_block = ('<section class="sec rv"><h2>Читайте также</h2><div class="list">'
+                     + "".join(f'<a class="row" href="{e(x)}.html"><div><div class="nm">{e(BY[x]["name"])}</div>'
+                               f'<div class="ef">{e(BY[x]["about"] or "")}</div></div>'
+                               f'<span class="badge b-{LV[BY[x]["verdict"]]}">{LV_TEXT[BY[x]["verdict"]]}</span></a>'
+                               for x in related)
+                     + "</div></section>")
     body = f"""<article class="card story">
 <p class="kicker">Статья</p>
-<h1>{e(nm)}</h1>
+<h1>{e(nm)}<span class="h1sub">: помогает ли и как принимать</span></h1>
 <p class="say">{say}</p>
 <div class="grade">{facts}</div>
 <figure class="evf" data-src="../b/ev/{e(sid)}.json"></figure>
@@ -321,11 +330,13 @@ def article_page(sid: str) -> str:
 {f'<p class="mlabel">{upd}</p>' if upd else ''}
 {f'<p class="mlabel">{disc}</p>' if disc else ''}
 {card_row}
+{rel_block}
 </article>"""
     plain = re.sub(r"<[^>]+>", "", say)
+    howto = next((rows for title, rows in secs if title == "Как принимать"), [])
+    # FAQ answers come from the article itself, not from the card fields: no verbatim duplication of the card page
     qa = [(f"{nm}: помогает ли?", plain),
-          (f"{nm}: как принимать?", it.get("dosage")),
-          (f"{nm}: с какими лекарствами нельзя?", "; ".join(f"{x['with']}: {x['note']}" for x in it["interactions"][:4]))]
+          (f"{nm}: как принимать?", re.sub(r"<[^>]+>", "", " ".join(howto)))]
     ld = {"@context": "https://schema.org", "@graph": [
           {"@type": "MedicalWebPage", "name": f"{nm}: помогает ли и как принимать",
            "about": {"@type": "DietarySupplement", "name": nm}, "inLanguage": "ru", "citation": links},
@@ -356,7 +367,13 @@ def articles_index(rel: list) -> str:
 
 
 def build():
+    global HAS_ART
     rel = released_ids()
+    HAS_ART = bool(rel)
+    stale_file = SEO / "stale.json"
+    stale = json.loads(stale_file.read_text()).get("stale", []) if stale_file.exists() else []
+    if stale:
+        print("ВНИМАНИЕ: статьи устарели после cardfix, нужна перегонка:", ", ".join(x["id"] for x in stale))
     (SITE / "b").mkdir(exist_ok=True)
     (SITE / "g").mkdir(exist_ok=True)
     urls = [f"{BASE}/", f"{BASE}/about.html", f"{BASE}/profile.html", f"{BASE}/privacy.html"]
@@ -371,10 +388,11 @@ def build():
         urls.append(f"{BASE}/g/{s}.html")
     if rel:
         (SITE / "s").mkdir(exist_ok=True)
+        (SITE / "articles.json").write_text(json.dumps([{"id": s, "name": BY[s]["name"]} for s in rel], ensure_ascii=False))
         (SITE / "s" / "index.html").write_text(clean(articles_index(rel)))
         urls.append(f"{BASE}/s/")
         for sid in rel:
-            (SITE / "s" / f"{sid}.html").write_text(clean(article_page(sid)))
+            (SITE / "s" / f"{sid}.html").write_text(clean(article_page(sid, rel)))
             urls.append(f"{BASE}/s/{sid}.html")
     (SITE / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
                                       + "".join(f"<url><loc>{u}</loc></url>\n" for u in urls) + "</urlset>\n")

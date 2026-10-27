@@ -1,5 +1,7 @@
 document.documentElement.classList.add("js");
 const C = window.CATALOG;
+let ARTICLES = new Set();
+fetch("articles.json", { cache: "no-cache" }).then((r) => (r.ok ? r.json() : [])).then((a) => { ARTICLES = new Set(a.map((x) => x.id)); }).catch(() => {});
 const LV = { "работает": "w", "зависит": "d", "не подтверждено": "n" };
 const LV_TEXT = { "работает": "работает", "зависит": "зависит от условий", "не подтверждено": "не доказано" };
 const RANK = { "работает": 0, "зависит": 1, "не подтверждено": 2 };
@@ -148,6 +150,7 @@ function cardHtml(it) {
     <div class="grade">${meter(g)}${GRADE_TEXT[g] || ""}</div>
     <figure class="evf" data-src="b/ev/${esc(it.id)}.json"></figure>
     <div class="nums rv">${num("Доза", it.dosage)}${num("Предел", it.upper_limit)}${num("Эффект через", it.onset)}${num("Кому нужно", it.who_needs)}</div>
+    ${ARTICLES.has(it.id) ? `<div class="list"><a class="row" href="s/${esc(it.id)}.html"><div><div class="nm">Статья: ${esc(it.name)}</div><div class="ef">Подробнее простыми словами: для чего, как принимать, мифы, сочетания</div></div><span class="badge b-w">Читать</span></a></div>` : ""}
     ${sec("Суть", `<p class="big">${esc(it.about)}</p>`)}
     ${sec("Что говорят исследования", effects.map((e) => `<div class="ef"><span>${esc(e.text)}</span><span class="badge b-${LV[e.level]}">${LV_TEXT[e.level]}</span></div>`).join(""))}
     ${forms || it.forms.length ? sec("Форма важна", `<div class="lines">${forms}${it.forms.map((f) => `<p><b>${esc(f.name)}${f.form ? ", " + esc(f.form) : ""}.</b> ${esc(f.note)}</p>`).join("")}</div>`) : ""}
@@ -202,12 +205,11 @@ function reveal() {
   els.forEach((el) => io.observe(el));
 }
 
-const NARROW_GOALS = ["тестостерон", "печень", "зрение", "климакс", "потенция"];
 function goalHtml(goal) {
   const rows = C.items.filter((it) => it.goals.includes(goal))
     .map((it) => {
       const own = it.effects.filter((e) => e.goals.includes(goal)).sort((a, b) => RANK[a.level] - RANK[b.level]);
-      const borrowed = NARROW_GOALS.includes(goal) && it.verdict === "работает" ? "зависит" : it.verdict;
+      const borrowed = it.verdict === "работает" ? "зависит" : it.verdict;
       return { it, best: own[0] || { text: it.about, level: borrowed } };
     })
     .sort((a, b) => RANK[a.best.level] - RANK[b.best.level] || (GRADE[b.it.grade] || 0) - (GRADE[a.it.grade] || 0));
