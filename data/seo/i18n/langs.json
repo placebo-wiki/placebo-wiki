@@ -1,0 +1,111 @@
+{
+ "order": ["en", "zh", "es", "ar", "id", "pt", "fr", "ja", "de"],
+ "en": {
+  "name": "English", "dir": "ltr",
+  "kicker": "Article", "h1sub": ": does it work, and how to take it",
+  "title": "{name}: what it's for, how to take it, combinations",
+  "desc": "What the research says: whether {name} works, at what dose, who should be careful with it and what not to mix it with. Verdict: {verdict}. No ads.",
+  "verdicts": {"работает": "works", "зависит": "it depends", "не подтверждено": "unproven"},
+  "updated": "Updated:", "disclaimer": "Not a medicine. Consult a doctor before use.",
+  "read_too": "Related articles", "card_nm": "Fact sheet: {name}", "card_ef": "Dose, upper limit, forms, and the evidence map by year",
+  "facts": "an extract of {n} studies", "index_lead": "{n} of 134. Published in batches, at most 50 a day.",
+  "articles_index_title": "Articles on supplements: what the research says",
+  "articles_index_h1": "Articles on supplements", "articles": "Articles"
+ },
+ "zh": {
+  "name": "简体中文", "dir": "ltr",
+  "kicker": "文章", "h1sub": "：是否有效，如何服用",
+  "title": "{name}：用途、服用方法、搭配建议",
+  "desc": "研究怎么说：{name}是否有效、剂量多少、哪些人需谨慎、不能与哪些药物同服。结论：{verdict}。无广告。",
+  "verdicts": {"работает": "有效", "зависит": "视情况而定", "не подтверждено": "未证实"},
+  "updated": "更新日：", "disclaimer": "本品非药品。服用前请咨询医生。",
+  "read_too": "相关阅读", "card_nm": "卡片：{name}", "card_ef": "剂量、上限、剂型与历年证据分布",
+  "facts": "基于{n}项研究的提炼", "index_lead": "134篇中{n}篇。分批发布，每天最多50篇。",
+  "articles_index_title": "补充剂文章：研究怎么说",
+  "articles_index_h1": "补充剂文章", "articles": "文章"
+ },
+ "es": {
+  "name": "Español", "dir": "ltr",
+  "kicker": "Artículo", "h1sub": ": si funciona y cómo se toma",
+  "title": "{name}: para qué sirve, cómo se toma, con qué se combina",
+  "desc": "Qué dice la investigación: si {name} funciona, en qué dosis, quién debe tener cuidado y con qué medicamentos no debe mezclarse. Veredicto: {verdict}. Sin publicidad.",
+  "verdicts": {"работает": "funciona", "зависит": "depende del caso", "не подтверждено": "no demostrado"},
+  "updated": "Actualizado:", "disclaimer": "No es un medicamento. Consulta a un médico antes de tomar el suplemento.",
+  "read_too": "Lee también", "card_nm": "Ficha: {name}", "card_ef": "Dosis, límite superior, formas y evidencia por año",
+  "facts": "un extracto de {n} estudios", "index_lead": "{n} de 134. Publicamos por lotes, máximo 50 al día.",
+  "articles_index_title": "Artículos sobre suplementos: qué dice la investigación",
+  "articles_index_h1": "Artículos sobre suplementos", "articles": "Artículos"
+ },
+ "ar": {
+  "name": "العربية", "dir": "rtl",
+  "kicker": "مقال", "h1sub": ": هل يعمل وكيف يؤخذ",
+  "title": "{name}: ما فائدته وكيف يؤخذ وما يمكن دمجه معه",
+  "desc": "ماذا تقول الأبحاث: هل {name} يعمل، بأي جرعة، من يجب أن يحترس، ومع أي أدوية لا ينبغي خلطه معها. الخلاصة: {verdict}. لا إعلانات.",
+  "verdicts": {"работает": "فعّال", "зависит": "يعتمد على الظروف", "не подтверждено": "غير مثبت"},
+  "updated": "آخر تحديث:", "disclaimer": "ليس دواء. استشر طبيبًا قبل الاستخدام.",
+  "read_too": "اقرأ أيضاً", "card_nm": "بطاقة: {name}", "card_ef": "الجرعة والحد الأقصى وأشكال المكمل وخريطة الأدلة عبر السنوات",
+  "facts": "خلاصة {n} دراسة", "index_lead": "{n} من 134. ننشر على دفعات، 50 في اليوم كحد أقصى.",
+  "articles_index_title": "مقالات عن المكملات: ماذا تقول الأبحاث",
+  "articles_index_h1": "مقالات عن المكملات", "articles": "مقالات"
+ },
+ "id": {
+  "name": "Bahasa Indonesia", "dir": "ltr",
+  "kicker": "Artikel", "h1sub": ": apakah efektif dan cara minumnya",
+  "title": "{name}: untuk apa, cara minum, dengan apa digabungkan",
+  "desc": "Menurut penelitian: apakah {name} efektif, dosisnya, siapa yang harus hati-hati, dan obat apa yang tidak boleh digabung. Kesimpulan: {verdict}. Tanpa iklan.",
+  "verdicts": {"работает": "efektif", "зависит": "tergantung kondisinya", "не подтверждено": "belum terbukti"},
+  "updated": "Diperbarui:", "disclaimer": "Bukan obat. Konsultasikan dengan dokter sebelum digunakan.",
+  "read_too": "Baca juga", "card_nm": "Info: {name}", "card_ef": "Dosis, batas atas, bentuk sediaan, dan peta bukti per tahun",
+  "facts": "rangkuman dari {n} studi", "index_lead": "{n} dari 134. Terbit bertahap, maksimal 50 per hari.",
+  "articles_index_title": "Artikel suplemen: apa kata penelitian",
+  "articles_index_h1": "Artikel suplemen", "articles": "Artikel"
+ },
+ "pt": {
+  "name": "Português (Brasil)", "dir": "ltr",
+  "kicker": "Artigo", "h1sub": ": se funciona e como tomar",
+  "title": "{name}: para que serve, como tomar, com o que combinar",
+  "desc": "O que dizem os estudos: se {name} funciona, em que dose, quem deve ter cuidado e com quais remédios não misturar. Veredito: {verdict}. Sem anúncios.",
+  "verdicts": {"работает": "funciona", "зависит": "depende das condições", "не подтверждено": "não comprovado"},
+  "updated": "Atualizado:", "disclaimer": "Não é um medicamento. Consulte seu médico antes de usar.",
+  "read_too": "Leia também", "card_nm": "Ficha: {name}", "card_ef": "Dose, limite máximo, formas e a evolução das evidências por ano",
+  "facts": "um resumo de {n} estudos", "index_lead": "{n} de 134. Publicamos em lotes, no máximo 50 por dia.",
+  "articles_index_title": "Artigos sobre suplementos: o que dizem os estudos",
+  "articles_index_h1": "Artigos sobre suplementos", "articles": "Artigos"
+ },
+ "fr": {
+  "name": "Français", "dir": "ltr",
+  "kicker": "Article", "h1sub": ": est-ce que ça marche et comment en prendre",
+  "title": "{name} : à quoi ça sert et comment en prendre",
+  "desc": "Ce que disent les études : si {name} fonctionne, à quelle dose, qui doit faire attention, quels médicaments ne pas associer. Verdict : {verdict}. Sans publicité.",
+  "verdicts": {"работает": "ça marche", "зависит": "ça dépend", "не подтверждено": "non prouvé"},
+  "updated": "Mis à jour :", "disclaimer": "Ceci n'est pas un médicament. Consultez un médecin avant toute prise.",
+  "read_too": "Lire aussi", "card_nm": "Fiche : {name}", "card_ef": "Dose, limite supérieure, formes et études par année",
+  "facts": "une synthèse de {n} études", "index_lead": "{n} sur 134. Publication par lots, 50 par jour au maximum.",
+  "articles_index_title": "Compléments alimentaires : ce que disent les études",
+  "articles_index_h1": "Articles sur les compléments alimentaires", "articles": "Articles"
+ },
+ "ja": {
+  "name": "日本語", "dir": "ltr",
+  "kicker": "記事", "h1sub": "：効くのか、どう飲むか",
+  "title": "{name}：効果はあるか、飲み方・組み合わせ",
+  "desc": "研究が示すこと：{name}は効くのか、用量、注意が必要な人、併用できない薬。結論：{verdict}。広告はありません。",
+  "verdicts": {"работает": "効果あり", "зависит": "条件による", "не подтверждено": "証明されていない"},
+  "updated": "更新日：", "disclaimer": "医薬品ではありません。服用前に医師にご相談ください。",
+  "read_too": "あわせて読む", "card_nm": "カード：{name}", "card_ef": "用量・上限量・剤形・年別のエビデンス分布",
+  "facts": "{n}件の研究の要約", "index_lead": "134件中{n}件。50件ずつ分けて公開。",
+  "articles_index_title": "サプリメントの記事：研究が示すこと",
+  "articles_index_h1": "サプリメントの記事", "articles": "記事"
+ },
+ "de": {
+  "name": "Deutsch", "dir": "ltr",
+  "kicker": "Artikel", "h1sub": ": ob es wirkt und wie man es einnimmt",
+  "title": "{name}: Wirkung, Dosis, Einnahme und Kombination",
+  "desc": "Was die Forschung sagt: ob {name} wirkt, in welcher Dosis, wer vorsichtig sein sollte und mit welchen Medikamenten man es nicht kombinieren sollte. Fazit: {verdict}. Keine Werbung.",
+  "verdicts": {"работает": "wirkt", "зависит": "kommt darauf an", "не подтверждено": "nicht belegt"},
+  "updated": "Aktualisiert:", "disclaimer": "Kein Arzneimittel. Vor der Einnahme ärztlichen Rat einholen.",
+  "read_too": "Auch interessant", "card_nm": "Steckbrief: {name}", "card_ef": "Dosis, Obergrenze, Darreichungsformen und die Evidenz nach Jahren",
+  "facts": "eine Zusammenfassung von {n} Studien", "index_lead": "{n} von 134. Veröffentlichung in Paketen, maximal 50 pro Tag.",
+  "articles_index_title": "Artikel zu Nahrungsergänzungsmitteln: Was die Forschung sagt",
+  "articles_index_h1": "Artikel zu Nahrungsergänzungsmitteln", "articles": "Artikel"
+ }
+}

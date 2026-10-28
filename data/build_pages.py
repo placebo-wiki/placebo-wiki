@@ -26,6 +26,12 @@ ART_PER_DAY = 50
 WORDSTAT_TOP = ["Магний", "Коллаген", "Витамин D", "Омега-3", "Глицин"]
 
 HAS_ART = False  # set by build() when a released batch of articles exists
+
+# Translations: data/seo/i18n/<lang>/<id>.md, interface strings in langs.json.
+# Language order is his list of 25.10 (Russian is the source, not in the list).
+I18N = SEO / "i18n"
+LANGS = json.loads((I18N / "langs.json").read_text())
+LANG_ORDER = LANGS["order"]
 LV = {"работает": "w", "зависит": "d", "не подтверждено": "n"}
 LV_TEXT = {"работает": "работает", "зависит": "зависит от условий", "не подтверждено": "не доказано"}
 RANK = {"работает": 0, "зависит": 1, "не подтверждено": 2}
@@ -33,11 +39,12 @@ GRADE = {"A": "много крупных обзоров", "B": "есть хор�
 e = html.escape
 
 
-def page(title: str, desc: str, body: str, path: str, ld: dict) -> str:
+def page(title: str, desc: str, body: str, path: str, ld: dict, lang: str = "ru", direction: str = "ltr", alt: str = "") -> str:
+    rtl = f' dir="{direction}"' if direction != "ltr" else ""
     return f"""<!doctype html>
-<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="{lang}"{rtl}><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{e(title)}</title><meta name="description" content="{e(desc)}">
-<link rel="canonical" href="{BASE}/{path}"><link rel="icon" href="../favicon.ico" sizes="32x32"><link rel="icon" href="../img/logo.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="../img/icon-180.png"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(desc)}"><meta property="og:image" content="https://placebo.wiki/img/og.png"><meta name="twitter:card" content="summary_large_image"><link rel="preload" href="../fonts/Geist-cyrillic.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="../search.css">
+<link rel="canonical" href="{BASE}/{path}">{alt}<link rel="icon" href="../favicon.ico" sizes="32x32"><link rel="icon" href="../img/logo.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="../img/icon-180.png"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(desc)}"><meta property="og:image" content="https://placebo.wiki/img/og.png"><meta name="twitter:card" content="summary_large_image"><link rel="preload" href="../fonts/Geist-cyrillic.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="../search.css">
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
 </head><body class="has-answer">
 <a class="skip" href="#main">К содержимому</a><nav class="bar"><a href="../" class="bar-mark" id="home" aria-label="placebo.wiki"><svg class="bar-svg" viewBox="0 0 512 512" aria-hidden="true"><defs><mask id="lm"><rect width="512" height="512" fill="#fff"/><g fill="#000" transform="translate(-33 -4)"><rect x="150" y="140" width="64" height="240" rx="32"/><circle cx="266" cy="236" r="96"/><circle class="lm-dot" cx="394" cy="298" r="34"/></g><circle cx="233" cy="232" r="40" fill="#fff"/></mask></defs><rect width="512" height="512" rx="116" fill="currentColor" mask="url(#lm)"/></svg></a><div class="bar-links"><a href="../b/">Все БАДы</a>{'<a href="../s/">Статьи</a>' if HAS_ART else ''}<a href="../about.html">Наши правила</a><a href="../mcp.html">Для агентов</a></div></nav>
@@ -264,10 +271,14 @@ def art_line(t: str) -> str:
     return ART_URL.sub(r'<a href="\1" rel="noopener">\1</a>', e(t.strip()))
 
 
-def parse_article(sid: str):
-    """data/seo/articles/<id>.md -> (lead, sections, updated, disclaimer); text escaped, URLs live."""
+def parse_article(sid: str, lang: "str | None" = None):
+    """Article .md -> (lead, sections, updated, disclaimer); text escaped, URLs live.
+    lang=None reads the Russian original; else data/seo/i18n/<lang>/<id>.md."""
+    src = (I18N / lang / f"{sid}.md") if lang else (ART / f"{sid}.md")
+    upd_mark = LANGS[lang]["updated"] if lang else "Обновлено:"
+    disc_mark = LANGS[lang]["disclaimer"] if lang else "Не является лекарственным"
     lead, secs, upd, disc, buf, cur = "", [], "", "", [], ["", []]
-    for ln in (ART / f"{sid}.md").read_text().split("\n"):
+    for ln in src.read_text().split("\n"):
         if ln.startswith("# "):
             continue
         if ln.startswith("## "):
@@ -281,9 +292,9 @@ def parse_article(sid: str):
             cur[1].extend(buf)
             buf = []
             t = art_line(ln)
-            if t.startswith("Обновлено:"):
+            if t.startswith(upd_mark):
                 upd = t
-            elif t.startswith("Не является лекарственным"):
+            elif t.startswith(disc_mark):
                 disc = t
             elif not lead:
                 lead = t
@@ -293,21 +304,37 @@ def parse_article(sid: str):
     return lead, secs, upd, disc
 
 
-def article_page(sid: str, rel: list) -> str:
+def art_paths(sid: str) -> list:
+    """Existing translations of the article, in the owner's priority order."""
+    return [lg for lg in LANG_ORDER if (I18N / lg / f"{sid}.md").exists()]
+
+
+def art_name(sid: str, lang: "str | None" = None) -> str:
+    """The article's own H1 name (translated when the translation exists)."""
+    if lang and (I18N / lang / f"{sid}.md").exists():
+        first = (I18N / lang / f"{sid}.md").read_text().split("\n", 1)[0]
+        first = first.lstrip("# ").strip()
+        return re.split(r"[:：]", first)[0].strip() or BY[sid]["name"]
+    return BY[sid]["name"]
+
+
+def article_page(sid: str, rel: list, lang: "str | None" = None) -> str:
     it = BY[sid]
-    nm = it["name"]
-    lead, secs, upd, disc = parse_article(sid)
+    L = LANGS.get(lang) if lang else None
+    nm = art_name(sid, lang)
+    lead, secs, upd, disc = parse_article(sid, lang)
     m = re.match(r"^([^.]{1,60}\.)", lead)
     say = f"<b>{m.group(1)}</b>{lead[m.end():]}" if m else lead
     n = study_count(sid)
-    facts = f'<span class="badge b-{LV[it["verdict"]]}">{LV_TEXT[it["verdict"]]}</span>'
+    badge = L["verdicts"][it["verdict"]] if L else LV_TEXT[it["verdict"]]
+    facts = f'<span class="badge b-{LV[it["verdict"]]}">{badge}</span>'
     if n:
-        facts += f" выжимка из {studies(n)}"
-    if GRADE.get(it["grade"] or ""):
+        facts += " " + (L["facts"].format(n=f"{n:,}".replace(",", " ")) if L else f"выжимка из {studies(n)}")
+    if not L and GRADE.get(it["grade"] or ""):
         facts += f" · {GRADE[it['grade'] or '']}"
     parts = []
     for title, rows in secs:
-        if title == "Источники":
+        if title == "Источники" and not L:
             body = "".join(f'<p class="src"><a href="{src_link(s)}" rel="noopener">{e(s["title"] or "")}</a> '
                            f'<span class="t">{s.get("year") or ""} {e(s.get("type") or "")}</span></p>'
                            for s in it["sources"] if s.get("pmid") or s.get("doi")) + reviews_block(it)
@@ -315,22 +342,26 @@ def article_page(sid: str, rel: list) -> str:
             body = '<div class="lines">' + "".join(f"<p>{r}</p>" for r in rows if r) + "</div>"
         parts.append(f'<section class="sec rv"><h2>{e(title)}</h2>{body}</section>')
     links = [src_link(s) for s in it["sources"] if s.get("pmid") or s.get("doi")]
+    card_nm = L["card_nm"].format(name=nm) if L else f"Карточка: {nm}"
+    card_ef = L["card_ef"] if L else "Доза, предел, формы и оценки по обзорам"
     card_row = (f'<div class="list"><a class="row" href="../b/{e(sid)}.html"><div>'
-                f'<div class="nm">Карточка: {e(nm)}</div><div class="ef">Доза, предел, формы и оценки по обзорам</div></div>'
-                f'<span class="badge b-{LV[it["verdict"]]}">{LV_TEXT[it["verdict"]]}</span></a></div>')
-    shared = [x for x in rel if x != sid and set(BY[x]["goals"]) & set(it["goals"])]
+                f'<div class="nm">{e(card_nm)}</div><div class="ef">{e(card_ef)}</div></div>'
+                f'<span class="badge b-{LV[it["verdict"]]}">{e(badge)}</span></a></div>')
+    shared = [x for x in rel if x != sid and set(BY[x]["goals"]) & set(it["goals"])
+              and (not L or (I18N / lang / f"{x}.md").exists())]
     related = sorted(shared, key=lambda x: -study_count(x))[:4]
     rel_block = ""
     if related:
-        rel_block = ('<section class="sec rv"><h2>Читайте также</h2><div class="list">'
-                     + "".join(f'<a class="row" href="{e(x)}.html"><div><div class="nm">{e(BY[x]["name"])}</div>'
-                               f'<div class="ef">{e(BY[x]["about"] or "")}</div></div>'
-                               f'<span class="badge b-{LV[BY[x]["verdict"]]}">{LV_TEXT[BY[x]["verdict"]]}</span></a>'
+        rel_block = (f'<section class="sec rv"><h2>{e(L["read_too"] if L else "Читайте также")}</h2><div class="list">'
+                     + "".join(f'<a class="row" href="{e(x)}.html"><div><div class="nm">{e(art_name(x, lang))}</div></div>'
+                               f'<span class="badge b-{LV[BY[x]["verdict"]]}">{e(L["verdicts"][BY[x]["verdict"]] if L else LV_TEXT[BY[x]["verdict"]])}</span></a>'
                                for x in related)
                      + "</div></section>")
+    kicker = L["kicker"] if L else "Статья"
+    h1sub = L["h1sub"] if L else ": помогает ли и как принимать"
     body = f"""<article class="card story">
-<p class="kicker">Статья</p>
-<h1>{e(nm)}<span class="h1sub">: помогает ли и как принимать</span></h1>
+<p class="kicker">{e(kicker)}</p>
+<h1>{e(nm)}<span class="h1sub">{e(h1sub)}</span></h1>
 <p class="say">{say}</p>
 <div class="grade">{facts}</div>
 <figure class="evf" data-src="../b/ev/{e(sid)}.json"></figure>
@@ -345,20 +376,38 @@ def article_page(sid: str, rel: list) -> str:
     # FAQ answers come from the article itself, not from the card fields: no verbatim duplication of the card page
     qa = [(f"{nm}: помогает ли?", plain),
           (f"{nm}: как принимать?", re.sub(r"<[^>]+>", "", " ".join(howto)))]
+    h1text = f"{nm}{h1sub}"
     ld = {"@context": "https://schema.org", "@graph": [
-          {"@type": "MedicalWebPage", "name": f"{nm}: помогает ли и как принимать",
-           "about": {"@type": "DietarySupplement", "name": nm}, "inLanguage": "ru", "citation": links},
+          {"@type": "MedicalWebPage", "name": h1text,
+           "about": {"@type": "DietarySupplement", "name": nm}, "inLanguage": lang or "ru", "citation": links},
           {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q,
            "acceptedAnswer": {"@type": "Answer", "text": re.sub(r"<[^>]+>", "", a or "")}} for q, a in qa if a]}]}
-    tries = [f"{nm}: для чего нужен, как принимать, с чем сочетается",
-             f"{nm}: для чего нужен и как принимать",
-             f"{nm}: помогает ли и как принимать",
-             f"{nm}: помогает ли?"]
-    title = next((t for t in tries if fits(t)), nm)
-    d = (f"Что говорят исследования: работает ли {nm}, в какой дозе, кому осторожно, "
-         f"с какими лекарствами нельзя. Вердикт: {LV_TEXT[it['verdict']]}.")
-    desc = (d + " Без рекламы и нейрослопа.") if len(d) <= 134 else d
-    return page(title, desc, body, f"s/{sid}.html", ld)
+    if L:
+        tries = [L["title"].format(name=nm), f"{nm}{h1sub}", nm]
+    else:
+        tries = [f"{nm}: для чего нужен, как принимать, с чем сочетается",
+                 f"{nm}: для чего нужен и как принимать",
+                 f"{nm}: помогает ли и как принимать",
+                 f"{nm}: помогает ли?"]
+    title = next((t for t in tries if t and fits(t)), nm)
+    if L:
+        desc = L["desc"].format(name=nm, verdict=badge)
+    else:
+        d = (f"Что говорят исследования: работает ли {nm}, в какой дозе, кому осторожно, "
+             f"с какими лекарствами нельзя. Вердикт: {LV_TEXT[it['verdict']]}.")
+        desc = (d + " Без рекламы и нейрослопа.") if len(d) <= 134 else d
+    alts = art_paths(sid)
+    alt = ""
+    if lang:
+        alt = (f'<link rel="alternate" hreflang="ru" href="{BASE}/s/{sid}.html">'
+               f'<link rel="alternate" hreflang="x-default" href="{BASE}/s/{sid}.html">'
+               + "".join(f'<link rel="alternate" hreflang="{lg}" href="{BASE}/s/{lg}/{sid}.html">'
+                         for lg in alts if lg != lang))
+    elif alts:
+        alt = ("".join(f'<link rel="alternate" hreflang="{lg}" href="{BASE}/s/{lg}/{sid}.html">' for lg in alts)
+               + f'<link rel="alternate" hreflang="x-default" href="{BASE}/s/{sid}.html">')
+    return page(title, desc, body, f"s/{lang + '/' if lang else ''}{sid}.html", ld,
+                lang=lang or "ru", direction=(L["dir"] if L else "ltr"), alt=alt)
 
 
 def articles_index(rel: list) -> str:
@@ -374,6 +423,19 @@ def articles_index(rel: list) -> str:
                 f"Статьи по {len(rel)} добавкам: работает ли, доза, мифы, сочетания. Только по обзорам исследований.", body, "s/", ld)
 
 
+def articles_index_lang(lang: str, ids: list) -> str:
+    L = LANGS[lang]
+    rows = "".join(
+        f'<a class="row" href="{sid}.html"><div><div class="nm">{e(art_name(sid, lang))}</div></div>'
+        f'<span class="badge b-{LV[BY[sid]["verdict"]]}">{e(L["verdicts"][BY[sid]["verdict"]])}</span></a>' for sid in ids)
+    body = f"""<article class="card story"><p class="kicker">{e(L["articles"])}</p><h1>{e(L["articles_index_h1"])}</h1>
+<p class="say"><b>{e(L["index_lead"].format(n=len(ids)))}</b></p>
+<div class="list">{rows}</div></article>"""
+    ld = {"@context": "https://schema.org", "@type": "CollectionPage", "name": L["articles_index_title"], "inLanguage": lang}
+    return page(L["articles_index_title"], L["index_lead"].format(n=len(ids)), body, f"s/{lang}/", ld,
+                lang=lang, direction=L["dir"])
+
+
 def build():
     global HAS_ART
     rel = released_ids()
@@ -386,6 +448,7 @@ def build():
     (SITE / "g").mkdir(exist_ok=True)
     urls = [f"{BASE}/", f"{BASE}/about.html", f"{BASE}/profile.html", f"{BASE}/privacy.html"]
     lastmod = {}
+    sm_alt = {}
     (SITE / "b" / "index.html").write_text(clean(index_page()))
     urls.append(f"{BASE}/b/")
     for it in CAT["items"]:
@@ -406,8 +469,30 @@ def build():
             m = re.search(r"Обновлено: (\d{2})\.(\d{2})\.(\d{4})", (ART / f"{sid}.md").read_text())
             if m:
                 lastmod[f"{BASE}/s/{sid}.html"] = f"{m.group(3)}-{m.group(2)}-{m.group(1)}"
-    (SITE / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-                                      + "".join(f'<url><loc>{u}</loc>{f"<lastmod>{lastmod[u]}</lastmod>" if u in lastmod else ""}</url>\n' for u in urls) + "</urlset>\n")
+        # Translations of released articles live one level deeper (s/<lang>/), so ../ links shift
+        for lg in LANG_ORDER:
+            ids = [sid for sid in rel if (I18N / lg / f"{sid}.md").exists()]
+            if not ids:
+                continue
+            (SITE / "s" / lg).mkdir(parents=True, exist_ok=True)
+            idx = clean(articles_index_lang(lg, ids))
+            idx = idx.replace('href="../', 'href="../../').replace('src="../', 'src="../../').replace('action="../', 'action="../../')
+            (SITE / "s" / lg / "index.html").write_text(idx)
+            urls.append(f"{BASE}/s/{lg}/")
+            for sid in ids:
+                h = clean(article_page(sid, rel, lg))
+                h = h.replace('href="../', 'href="../../').replace('src="../', 'src="../../').replace('action="../', 'action="../../')
+                (SITE / "s" / lg / f"{sid}.html").write_text(h)
+                urls.append(f"{BASE}/s/{lg}/{sid}.html")
+                ru_url = f"{BASE}/s/{sid}.html"
+                if ru_url in lastmod:
+                    lastmod[f"{BASE}/s/{lg}/{sid}.html"] = lastmod[ru_url]
+                sm_alt[ru_url] = sm_alt.get(ru_url, "") + f'<xhtml:link rel="alternate" hreflang="{lg}" href="{BASE}/s/{lg}/{sid}.html"/>'
+                sm_alt[f"{BASE}/s/{lg}/{sid}.html"] = (f'<xhtml:link rel="alternate" hreflang="ru" href="{ru_url}"/>'
+                                                       f'<xhtml:link rel="alternate" hreflang="x-default" href="{ru_url}"/>')
+    (SITE / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n'
+                                      '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
+                                      + "".join(f'<url><loc>{u}</loc>{f"<lastmod>{lastmod[u]}</lastmod>" if u in lastmod else ""}{sm_alt.get(u, "")}</url>\n' for u in urls) + "</urlset>\n")
     (SITE / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {BASE}/sitemap.xml\n")
     print(len(urls), "urls")
 
